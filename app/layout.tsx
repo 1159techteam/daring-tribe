@@ -95,7 +95,7 @@ export default function RootLayout({
     description:
       "A fearless movement for Realtors who dare to dominate the market and build lasting wealth through real estate.",
     url: "https://daringtribe.1159realty.com",
-    logo: "https://daringtribe.1159realty.com/icon.svg",
+    logo: "https://daringtribe.1159realty.com/log.png",
     sameAs: [
       "https://www.instagram.com/1159_realty",
       "https://www.facebook.com/1159realty",
