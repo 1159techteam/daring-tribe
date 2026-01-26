@@ -99,7 +99,7 @@ export function Hero() {
                 </div>
                 <div className="w-[140px] h-[200px] sm:w-[220px] sm:h-[320px] md:w-[300px] md:h-[420px] relative rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl border-4 md:border-[8px] border-white bg-gradient-to-r">
                   <Image
-                    src="/realtor-hero-1.png"
+                    src="/sinmi.jpeg"
                     alt="Young Realtor Team"
                     fill
                     priority
@@ -119,7 +119,7 @@ export function Hero() {
 
                 <div className="w-[140px] h-[200px] sm:w-[220px] sm:h-[320px] md:w-[300px] md:h-[420px] relative rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl border-4 md:border-[8px] border-white bg-[#9c682cb9]">
                   <Image
-                    src="/realtor-hero-2.png"
+                    src="/ope.jpeg"
                     alt="Young Real Estate Investor"
                     fill
                     priority
