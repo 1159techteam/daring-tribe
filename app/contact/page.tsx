@@ -61,12 +61,12 @@ export default function ContactPage() {
 
             <div className="space-y-8 md:space-y-12">
               {/* Phone Channel */}
-              <a href="tel:08061747003" className="group block">
+              <a href="tel:07063055656" className="group block">
                 <div className="flex items-center justify-between border-b border-[#3E2C1C]/10 pb-6">
                   <div>
                     <p className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-widest mb-1">Voice / WhatsApp</p>
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#3E2C1C] font-cinzel group-hover:text-[#D4AF37] transition-colors break-all">
-                      08061747003
+                      07063055656
                     </h2>
                   </div>
                   <ArrowUpRight className="w-6 h-6 text-[#3E2C1C]/20 group-hover:text-[#D4AF37] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shrink-0" />

@@ -27,17 +27,17 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/how-to-join" className="hover:text-accent transition-colors">
+                  <Link href="/course" className="hover:text-accent transition-colors">
                     How to Join
                   </Link>
                 </li>
                 <li>
-                  <Link href="/success-stories" className="hover:text-accent transition-colors">
+                  <Link href="/testimonials" className="hover:text-accent transition-colors">
                     Success Stories
                   </Link>
                 </li>
                 <li>
-                  <Link href="/training" className="hover:text-accent transition-colors">
+                  <Link href="/course" className="hover:text-accent transition-colors">
                     Training Program
                   </Link>
                 </li>
@@ -54,17 +54,12 @@ export function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://1159realty.com/apartments/" className="hover:text-accent transition-colors">
-                    Apartment Reservations
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:info@1159realty.com?subject=Blog%20and%20Insights" className="hover:text-accent transition-colors">
+                  <a href="/blog" className="hover:text-accent transition-colors">
                     Blog & Insights
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:info@1159realty.com?subject=Support%20Request" className="hover:text-accent transition-colors">
+                  <a href="/contact" className="hover:text-accent transition-colors">
                     Support Center
                   </a>
                 </li>
@@ -83,8 +78,8 @@ export function Footer() {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0" />
-                  <a href="tel:08061747003" className="hover:text-accent transition-colors text-xs sm:text-sm">
-                    08061747003
+                  <a href="tel:07063055656" className="hover:text-accent transition-colors text-xs sm:text-sm">
+                    07063055656
                   </a>
                 </li>
                 <li className="flex items-center gap-2">
