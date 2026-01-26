@@ -48,11 +48,11 @@ export function Footer() {
             <div>
               <h4 className="mb-4 font-semibold text-primary-foreground text-sm sm:text-base">Resources</h4>
               <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-primary-foreground/70">
-                <li>
+                {/* <li>
                   <a href="https://1159realty.com/land/" className="hover:text-accent transition-colors">
                     Browse Properties
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="/blog" className="hover:text-accent transition-colors">
                     Blog & Insights
@@ -140,14 +140,14 @@ export function Footer() {
                   1159 Realty
                 </a>
               </p>
-              <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm text-primary-foreground/70">
+              {/* <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm text-primary-foreground/70">
                 <a href="https://1159realty.com/privacy-policy" className="hover:text-accent transition-colors">
                   Privacy Policy
                 </a>
                 <a href="https://1159realty.com/terms-of-service" className="hover:text-accent transition-colors">
                   Terms of Service
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
