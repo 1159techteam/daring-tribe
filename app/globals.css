@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors: Gold #D4AF37 + Dark Earth Brown #3E2C1C + Beige White #F5F5F0 */
+  --background: oklch(0.97 0.003 85); /* Beige White #F5F5F0 */
+  --foreground: oklch(0.23 0.04 55); /* Dark Earth Brown #3E2C1C */
+  --card: oklch(1 0 0); /* Pure white */
+  --card-foreground: oklch(0.23 0.04 55); /* Dark Earth Brown */
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.23 0.04 55);
+  --primary: oklch(0.23 0.04 55); /* Dark Earth Brown #3E2C1C */
+  --primary-foreground: oklch(0.97 0.003 85); /* Beige White */
+  --secondary: oklch(0.95 0.005 85); /* Light beige */
+  --secondary-foreground: oklch(0.23 0.04 55);
+  --muted: oklch(0.92 0.005 85); /* Muted beige */
+  --muted-foreground: oklch(0.45 0.03 55); /* Medium brown */
+  --accent: oklch(0.73 0.10 85); /* Brand Gold #D4AF37 */
+  --accent-foreground: oklch(0.23 0.04 55); /* Dark text on gold */
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.88 0.01 85); /* Light beige border */
+  --input: oklch(0.88 0.01 85);
+  --ring: oklch(0.73 0.10 85); /* Brand Gold focus ring */
+  --chart-1: oklch(0.23 0.04 55);
+  --chart-2: oklch(0.73 0.10 85);
+  --chart-3: oklch(0.45 0.03 55);
+  --chart-4: oklch(0.88 0.01 85);
+  --chart-5: oklch(0.97 0.003 85);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.23 0.04 55);
+  --sidebar-primary: oklch(0.23 0.04 55);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.23 0.04 55);
+  --sidebar-border: oklch(0.88 0.01 85);
+  --sidebar-ring: oklch(0.73 0.10 85);
+}
+
+.dark {
+  /* Dark mode: Black #000000 with brand gold accents */
+  --background: oklch(0 0 0); /* Pure black */
+  --foreground: oklch(0.97 0.003 85); /* Beige white */
+  --card: oklch(0.15 0.01 55); /* Very dark brown card */
+  --card-foreground: oklch(0.97 0.003 85);
+  --popover: oklch(0.15 0.01 55);
+  --popover-foreground: oklch(0.97 0.003 85);
+  --primary: oklch(0.40 0.05 55); /* Lighter brown in dark mode */
+  --primary-foreground: oklch(0.97 0.003 85);
+  --secondary: oklch(0.18 0.02 55); /* Dark brown */
+  --secondary-foreground: oklch(0.97 0.003 85);
+  --muted: oklch(0.20 0.02 55);
+  --muted-foreground: oklch(0.65 0.02 85);
+  --accent: oklch(0.78 0.12 85); /* Brighter gold in dark mode */
+  --accent-foreground: oklch(0 0 0);
+  --destructive: oklch(0.50 0.20 25);
+  --destructive-foreground: oklch(0.97 0.003 85);
+  --border: oklch(0.25 0.02 55);
+  --input: oklch(0.25 0.02 55);
+  --ring: oklch(0.78 0.12 85);
+  --chart-1: oklch(0.40 0.05 55);
+  --chart-2: oklch(0.78 0.12 85);
+  --chart-3: oklch(0.65 0.02 85);
+  --chart-4: oklch(0.25 0.02 55);
+  --chart-5: oklch(0.18 0.02 55);
+  --sidebar: oklch(0.15 0.01 55);
+  --sidebar-foreground: oklch(0.97 0.003 85);
+  --sidebar-primary: oklch(0.40 0.05 55);
+  --sidebar-primary-foreground: oklch(0.97 0.003 85);
+  --sidebar-accent: oklch(0.20 0.02 55);
+  --sidebar-accent-foreground: oklch(0.97 0.003 85);
+  --sidebar-border: oklch(0.25 0.02 55);
+  --sidebar-ring: oklch(0.78 0.12 85);
+}
+
+@theme inline {
+  /* Brand Fonts: Cinzel (display/headings) + Poppins (body) */
+  --font-sans: "Poppins", "Poppins Fallback", system-ui, sans-serif;
+  --font-display: "Cinzel", "Cinzel Fallback", serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  /* Adding container centering to ensure all sections are properly centered */
+  .container {
+    @apply mx-auto w-full;
+  }
+}
+
+@layer utilities {
+  /* Gradient Mesh Backgrounds - Uvest Style */
+  .gradient-mesh-1 {
+    background: radial-gradient(at 0% 0%, oklch(0.8 0.12 85 / 0.2) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, oklch(0.75 0.15 45 / 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, oklch(0.8 0.12 85 / 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, oklch(0.75 0.15 45 / 0.15) 0px, transparent 50%);
+  }
+
+  .gradient-mesh-2 {
+    background: radial-gradient(at 20% 30%, oklch(0.8 0.12 85 / 0.25) 0px, transparent 50%),
+                radial-gradient(at 80% 20%, oklch(0.75 0.15 45 / 0.2) 0px, transparent 50%),
+                radial-gradient(at 70% 80%, oklch(0.8 0.12 85 / 0.15) 0px, transparent 50%);
+  }
+
+  .gradient-mesh-3 {
+    background: radial-gradient(at 50% 0%, oklch(0.8 0.12 85 / 0.3) 0px, transparent 60%),
+                radial-gradient(at 0% 50%, oklch(0.75 0.15 45 / 0.2) 0px, transparent 60%);
+  }
+
+  /* Accent gradient backgrounds */
+  .bg-accent-gradient {
+    background: linear-gradient(135deg, oklch(0.78 0.12 85 / 0.1) 0%, oklch(0.75 0.15 45 / 0.05) 100%);
+  }
+
+  .bg-accent-radial {
+    background: radial-gradient(circle at center, oklch(0.78 0.12 85 / 0.15) 0%, transparent 70%);
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Glow effects */
+  .glow-accent {
+    box-shadow: 0 0 40px oklch(0.78 0.12 85 / 0.3);
+  }
+
+  .glow-accent-lg {
+    box-shadow: 0 0 60px oklch(0.78 0.12 85 / 0.4);
+  }
+
+  /* Geometric Triangle/Polygon Mesh Pattern */
+  .geometric-pattern {
+    background-image:
+      linear-gradient(30deg, transparent 40%, oklch(0.8 0.12 85 / 0.05) 40%, oklch(0.8 0.12 85 / 0.05) 60%, transparent 60%),
+      linear-gradient(150deg, transparent 40%, oklch(0.78 0.12 85 / 0.08) 40%, oklch(0.78 0.12 85 / 0.08) 60%, transparent 60%),
+      linear-gradient(270deg, transparent 40%, oklch(0.75 0.15 45 / 0.05) 40%, oklch(0.75 0.15 45 / 0.05) 60%, transparent 60%);
+    background-size: 300px 300px, 400px 400px, 350px 350px;
+    background-position: 0 0, 100px 100px, 200px 0;
+  }
+
+  /* Animated Triangle Pattern */
+  @keyframes triangleMove {
+    0% {
+      background-position: 0 0, 100px 100px, 200px 0;
+    }
+    100% {
+      background-position: 300px 300px, 400px 400px, 550px 350px;
+    }
+  }
+
+  .geometric-pattern-animated {
+    background-image:
+      linear-gradient(30deg, transparent 40%, oklch(0.8 0.12 85 / 0.05) 40%, oklch(0.8 0.12 85 / 0.05) 60%, transparent 60%),
+      linear-gradient(150deg, transparent 40%, oklch(0.78 0.12 85 / 0.08) 40%, oklch(0.78 0.12 85 / 0.08) 60%, transparent 60%),
+      linear-gradient(270deg, transparent 40%, oklch(0.75 0.15 45 / 0.05) 40%, oklch(0.75 0.15 45 / 0.05) 60%, transparent 60%);
+    background-size: 300px 300px, 400px 400px, 350px 350px;
+    animation: triangleMove 40s ease-in-out infinite;
+  }
+
+  /* Low Poly / Triangulated Background */
+  .low-poly-bg {
+    background:
+      linear-gradient(135deg, oklch(0.97 0.003 85) 0%, oklch(0.95 0.005 85) 100%);
+    position: relative;
+  }
+
+  .low-poly-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      conic-gradient(from 45deg at 20% 30%, transparent, oklch(0.8 0.12 85 / 0.1), transparent 90deg),
+      conic-gradient(from 135deg at 80% 70%, transparent, oklch(0.78 0.12 85 / 0.12), transparent 90deg),
+      conic-gradient(from 225deg at 50% 50%, transparent, oklch(0.75 0.15 45 / 0.08), transparent 90deg);
+    background-size: 400px 400px, 500px 500px, 450px 450px;
+    background-position: 0 0, 200px 200px, 100px 100px;
+    opacity: 0.5;
+  }
+
+  /* SVG-like Triangle Mesh (Using clip-path) */
+  .triangle-mesh {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .triangle-mesh::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 60%;
+    height: 150%;
+    background: linear-gradient(135deg, oklch(0.8 0.12 85 / 0.15), oklch(0.78 0.12 85 / 0.1));
+    clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+    opacity: 0.4;
+  }
+
+  .triangle-mesh::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    width: 60%;
+    height: 150%;
+    background: linear-gradient(225deg, oklch(0.75 0.15 45 / 0.12), oklch(0.78 0.12 85 / 0.08));
+    clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 30% 100%);
+    opacity: 0.4;
+  }
+}
