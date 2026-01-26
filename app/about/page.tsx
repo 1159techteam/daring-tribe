@@ -26,7 +26,7 @@ export default function AboutPage() {
                 <span className="italic text-[#D4AF37] font-normal">Empower.</span>
               </h1>
               <p className="text-xl md:text-2xl text-[#3E2C1C]/70 leading-relaxed max-w-xl">
-                We are building a movement of young Nigerians to create jobs and become impactful leaders, using <span className="text-[#3E2C1C] font-semibold italic">Real Estate</span> as our anchor.
+                We are building a movement of visionary professionals to create jobs and become impactful leaders, using <span className="text-[#3E2C1C] font-semibold italic">Real Estate</span> as our anchor.
               </p>
             </div>
 
