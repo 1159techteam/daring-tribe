@@ -32,16 +32,16 @@ export default function AboutPage() {
 
             {/* The "Anchor" Image - Gives the hero weight */}
             <div className="lg:w-1/3 w-full relative">
-              <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl border-[12px] border-white">
+              <div className="relative aspect-[18/12] rounded-[2rem] overflow-hidden shadow-2xl border-[12px] border-white">
                 <Image
-                  src="/hero-about-sfd.jpg"
+                  src="/gp.jpg"
                   alt="SFD Leadership"
                   fill
                   className="object-cover"
                 />
               </div>
               {/* Floating Stat Badge */}
-              <div className="absolute -bottom-6 -left-6 bg-[#3E2C1C] text-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-[#3E2C1C] text-white p-5 ml-3 rounded-2xl shadow-xl">
                 {/* <p className="text-3xl font-bold font-cinzel text-[#D4AF37]">246K</p> */}
                 <p className="text-[10px] uppercase tracking-widest opacity-70">Daring tribe</p>
               </div>

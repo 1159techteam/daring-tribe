@@ -1,9 +1,7 @@
 import { Hero } from "@/components/hero"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Star, Target } from "lucide-react"
-import Link from "next/link"
+import { Target } from "lucide-react"
 
 export default function Home() {
   return (
