@@ -48,7 +48,7 @@ export const BLOG_DATA: BlogPost[] = [
     category: "What's Daring?",
     title: "Your Daring Corner of the Internet",
     author: "Opemipo Akingbade",
-    date: "JANUARY 2025",
+    date: "JANUARY 2026",
     image: "/tribe-action.jpg",
     excerpt:
       "Hey there! You found us! If you're here, then you're daring to be the better version of yourself.",
@@ -70,34 +70,45 @@ Join the tribe.
 
 Signed, your daring corner of the internet.`,
   },
-  //     {
-  //         id: "01",
-  //         slug: "your-daring-corner-of-the-internet",
-  //         categoryId: "daring",
-  //         category: "What's Daring?",
-  //         title: "Your Daring Corner of the Internet",
-  //         author: "Opemipo Akingbade",
-  //         date: "JANUARY 2025",
-  //         image: "/tribe-action.jpg",
-  //         excerpt: "Hey there! You found us! If you're here, then you're daring to be the better version of yourself.",
-  //         content: `Hey there! You found us!
-  // If you're here, then you're daring to be the better version of yourself.
+  {
+    id: "02",
+    slug: "inside-the-daring-tribe-salesbook",
+    categoryId: "daring",
+    category: "What's Daring?",
+    title: "YOUR NEXT BIG SALE",
+    author: "",
+    date: "JANUARY 2026",
+    image: "/cisca1.png",
+    excerpt:
+      "Realtors, listen up something exciting has just arrived in Agbowo, Ibadan, and it’s the kind of project you’ll want to show every client. Cisca Villa isn’t just another apartment complex,   it’s a bold statement in modern living and smart investment for young professionals. From design to location, this estate is built to sell itself but you’ll need to guide clients to see why it’s a move they can’t miss.",
+    content: `
 
-  // You're probably here because you want to learn real estate properly, figure out sales as you go or get exposed to opportunities that can champion your next level.
+**Sell the Experience, Not Just the Apartment**
 
-  // So here we are. Welcome to the Daring Tribe website!
-  // It's a whole experience of learning, earning and winning.
+Cisca Villa isn’t your typical estate. Think fully furnished room-and-parlour apartments that combine comfort, style, and practicality. Every detail is intentional rooftop gardens for relaxation, heat extraction ventilation systems for comfort, solar-powered energy for stability, biometric fingerprint access for security, CCTV monitoring, and 24/7 water supply.
 
-  // **So… What Now?**
+When showing clients, emphasize this: it’s a complete living experience, not just four walls. Young professionals want more than a place to sleep they want a home that reflects their lifestyle, their ambition, and their taste. This is where you can position Cisca Villa as a must-have for modern living.
 
-  // Join the tribe.
-  // - Explore
-  // - Read
-  // - Bookmark
-  // - Come back
+ 
 
-  // Signed, your daring corner of the internet.`
-  //     },
+**LOCATION SELLS ITSELF**
+
+Location is everything, and Cisca Villa nails it. Agbowo, Ibadan is vibrant, accessible, and close to universities, business hubs, and everyday conveniences. For young professionals, this is huge: short commutes, easy access to social spots, and a thriving community.
+
+When pitching, highlight how this estate balances privacy, connectivity, and lifestyle. Investors will immediately recognize the long-term value because location drives both rental income and property appreciation.
+
+ 
+
+**POSITIONING IT AS A SMART INVESTMENT**
+
+Here’s where you close the deal: Cisca Villa isn’t just about luxury living it’s about earning while owning. Apartments here are built to grow in value and generate yearly returns for young professionals. Whether they rent it out or live in it, they’re making a financial move that pays off.
+
+You can say: “Invest in an apartment today, and it earns for you tomorrow. Passive income while your property appreciates. Comfort, convenience, and long-term growth   all in one place.”
+
+Realtors, this is your angle: sell opportunity, wealth-building, and security, not just the apartment. Cisca Villa is made for the new generation of investors who understand that real estate is more than accommodation it’s a pathway to financial freedom.
+
+Guide your clients through this story, and watch how quickly they see the value. Agbowo is about to feel the difference, and your clients’ bank accounts will too.`,
+  },
   //     {
   //         id: "02",
   //         slug: "inside-the-daring-tribe-salesbook",
