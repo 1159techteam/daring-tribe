@@ -60,8 +60,19 @@ export function Hero() {
                 className="w-full sm:w-auto bg-[#8D5B3E] hover:bg-[#724932] text-white font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
                 asChild
               >
-                <a href="/course" className="flex items-center gap-2">
+                <a target="_blank" href="https://forms.gle/xQHGSzQN1csm2Bxi7" className="flex items-center gap-2">
                   Start Your Journey
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </Button>
+
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-[white] hover:bg-[white] text-#724932 font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
+                asChild
+              >
+                <a href="/course" className="flex items-center gap-2">
+                  Classroom and Validation
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
