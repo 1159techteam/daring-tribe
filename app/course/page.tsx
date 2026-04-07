@@ -76,14 +76,32 @@ export default function CoursePage() {
                   ))}
                 </ul>
               </div>
-              <Button
-                asChild
-                className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
-              >
-                <a href="https://classroom.google.com" target="_blank" rel="noopener noreferrer">
-                  Access Classroom <ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
-                </a>
-              </Button>
+              <div className="flex flex-col items-center gap-4">
+                <Button
+                  asChild
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
+                >
+                  <a href="https://classroom.google.com/c/ODQxMjc3ODcwNjY1?cjc=g6r747s2" target="_blank" rel="noopener noreferrer">
+                    Introduction to Real Estate<ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
+                >
+                  <a href="https://classroom.google.com/c/ODQxMjc4MzYwNjUx?cjc=4mdt3jjn" target="_blank" rel="noopener noreferrer">
+                    1159 Ethics and Professionalism <ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
+                >
+                  <a href="https://classroom.google.com/c/ODM3OTEzNTA0NzMz?cjc=p4i7w43u" target="_blank" rel="noopener noreferrer">
+                    Access Classroom <ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
+                  </a>
+                </Button>
+              </div>
             </div>
 
             {/* STEP 2: THE TEST GATEKEEPER */}
