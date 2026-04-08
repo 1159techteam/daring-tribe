@@ -47,7 +47,7 @@ export default function CoursePage() {
             Master the <span className="italic text-[#D4AF37] font-normal">Game</span>
           </h1>
           <p className="mt-4 md:mt-6 mx-auto max-w-2xl text-sm md:text-xl text-stone-300 font-poppins px-2">
-            Your journey into the Daring Tribe begins with mastery. Select 'Access Classroom' below to complete your training, once finished, you will be invited to take the Validation exam.
+            Your journey into the Daring Tribe begins with mastery. Select each courses listed below to complete your training, once finished and fully onboarded, click the “yes, I’ve completed my courses” to invite you into the community
           </p>
         </div>
       </section>
@@ -66,15 +66,15 @@ export default function CoursePage() {
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 font-cinzel">01. The Training</h2>
                 <p className="text-stone-400 text-sm md:text-lg mb-6 md:mb-8 font-poppins">
-                  Enter our official Google Classroom. Immerse yourself in the strategies used by the top 1% of the real estate industry.
+                  Enter our official Google classroom and immerse yourself in the basic knowledge of the  real estate industry and onboarding classes.
                 </p>
-                <ul className="grid grid-cols-1 gap-3 mb-8 md:mb-10">
+                {/* <ul className="grid grid-cols-1 gap-3 mb-8 md:mb-10">
                   {['Real Estate Investment', 'Digital Technology', 'Wealth Growth'].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-stone-300 font-medium text-xs md:text-sm font-poppins">
                       <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" /> {item}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
               <div className="flex flex-col items-center gap-4">
                 <Button
@@ -98,7 +98,7 @@ export default function CoursePage() {
                   className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
                 >
                   <a href="https://classroom.google.com/c/ODM3OTEzNTA0NzMz?cjc=p4i7w43u" target="_blank" rel="noopener noreferrer">
-                    Access Classroom <ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
+                    Transaction and Closing <ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
                   </a>
                 </Button>
               </div>
@@ -111,38 +111,20 @@ export default function CoursePage() {
               </div>
               <h2 className="text-2xl md:text-3xl font-bold text-[#3E2C1C] mb-3 md:mb-4 font-cinzel">02. Validation</h2>
               <p className="text-[#3E2C1C]/70 text-sm md:text-lg mb-6 md:mb-8 max-w-sm font-poppins">
-                Have you completed your classes? Proving your mastery is the final step to your entrepreneurial badge.
+                Have you completed your classes? Click the button below as the final step to your entrepreneurial badge.
               </p>
 
-              {!showTest ? (
-                <div className="space-y-4 w-full">
-                  <p className="text-[10px] md:text-xs font-bold text-[#D4AF37] uppercase tracking-widest">Mastery Gate</p>
-                  <Button
-                    onClick={() => setShowTest(true)}
-                    variant="outline"
-                    className="w-full py-6 md:py-8 text-sm md:text-lg font-bold border-2 border-[#3E2C1C] text-[#3E2C1C] hover:bg-[#3E2C1C] hover:text-white transition-all rounded-xl md:rounded-2xl font-poppins"
-                  >
+              <div className="space-y-4 w-full">
+                <p className="text-[10px] md:text-xs font-bold text-[#D4AF37] uppercase tracking-widest">Mastery Gate</p>
+                <Button
+                  variant="outline"
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold border-2 border-[#3E2C1C] text-[#3E2C1C] hover:bg-[#3E2C1C] hover:text-white transition-all rounded-xl md:rounded-2xl font-poppins"
+                >
+                  <a href="https://forms.gle/xQHGSzQN1csm2Bxi7" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     Yes, Class Completed <ArrowRight className="ml-2 w-4 h-4 md:w-5 h-5" />
-                  </Button>
-                </div>
-              ) : (
-                <div className="w-full animate-in fade-in slide-in-from-top-4 duration-500">
-                  <div className="p-4 md:p-6 bg-[#F5F5F0] rounded-xl md:rounded-2xl border-2 border-dashed border-[#D4AF37]/30 mb-4 md:mb-6">
-                    <p className="text-[#D4AF37] font-bold text-xs md:text-sm uppercase tracking-tight">Test Unlocked 🔓</p>
-                  </div>
-                  <Button
-                    className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#3E2C1C] text-white rounded-xl md:rounded-2xl font-poppins"
-                  >
-                    Start Final Assessment
-                  </Button>
-                  <button
-                    onClick={() => setShowTest(false)}
-                    className="mt-4 text-[10px] md:text-xs text-[#3E2C1C]/50 underline uppercase tracking-widest"
-                  >
-                    Return to Classroom step
-                  </button>
-                </div>
-              )}
+                  </a>
+                </Button>
+              </div>
             </div>
 
           </div>
