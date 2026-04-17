@@ -58,11 +58,10 @@ export default function BlogPage() {
                             <button
                                 key={cat.id}
                                 onClick={() => setActiveCategory(cat.id)}
-                                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${
-                                    activeCategory === cat.id
+                                className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 ${activeCategory === cat.id
                                         ? 'bg-[#3E2C1C] text-white shadow-lg'
                                         : 'bg-white text-[#3E2C1C]/70 hover:bg-[#3E2C1C]/5 border border-[#3E2C1C]/10 hover:border-[#3E2C1C]/20'
-                                }`}
+                                    }`}
                             >
                                 {cat.id !== "all" && (
                                     <span className={activeCategory === cat.id ? 'text-[#D4AF37]' : 'text-[#D4AF37]/70'}>
