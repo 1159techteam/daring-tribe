@@ -180,9 +180,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                         const items = paragraph.split('\n').filter(item => item.match(/^\d+\./))
                                         return (
                                             <ol key={index} className="list-decimal pl-6 space-y-2 my-4">
-                                                {items.map((item, i) => (
-                                                    <li key={i}>{item.replace(/^\d+\.\s*/, '')}</li>
-                                                ))}
+                                                {items.map((item, i) => {
+                                                    const numMatch = item.match(/^(\d+)\.\s*/)
+                                                    const num = numMatch ? parseInt(numMatch[1]) : i + 1
+                                                    return (
+                                                        <li key={i} value={num}>{item.replace(/^\d+\.\s*/, '')}</li>
+                                                    )
+                                                })}
                                             </ol>
                                         )
                                     }
