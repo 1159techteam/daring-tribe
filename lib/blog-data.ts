@@ -305,7 +305,7 @@ Guide your clients through this story, and watch how quickly they see the value.
 
   Featuring our Q1 Deal Closers.
 
-  *Coming soon...*
+  Coming soon...
 
   Every quarter, we recognize the realtors in our community who have demonstrated exceptional performance. These are the closers who are setting the pace for others to follow.
 
@@ -319,21 +319,42 @@ Guide your clients through this story, and watch how quickly they see the value.
     categoryId: "insights",
     category: "Real Estate Insight",
     title: "Real Estate 101: Before You Call Yourself a Realtor… Read This",
-    author: "",
+    author: "Oladokun Janet",
     date: "APRIL 2026",
     image: "/prospecting.png",
     excerpt:
-      "Let’s be honest…Some of you want to sell property but if a client asks you one or two questions… you begin to stammer.",
-    content: `Let’s be honest…Some of you want to sell property but if a client asks you one or two questions… you begin to stammer. Relax, this is a safe space. If you’ve done the Daring Tribe crash course, this is your “oh yes” moment. If you haven’t… just read quietly and pretend you have.
- So what exactly is real estate? No big grammar. Real estate is simply: Land + anything standing on it. That’s it. House? Real estate. Shop? Real estate. But as a Daring Realtor, it’s deeper than that. This thing we’re selling? It's an opportunity. It’s money. It’s future soft life Now let’s break it down 
+      "Let’s be honest… Some of you want to sell property but if a client asks you one or two questions… you begin to stammer.",
+    content: `Let’s be honest… Some of you want to sell property but if a client asks you one or two questions… you begin to stammer. Relax, this is a safe space. If you’ve done the Daring Tribe crash course, this is your “oh yes” moment. If you haven’t… just read quietly and pretend you have.
+
+So what exactly is real estate? No big grammar. Real estate is simply: Land + anything standing on it. That’s it. House? Real estate. Shop? Real estate. But as a Daring Realtor, it’s deeper than that. This thing we’re selling? It's an opportunity. It’s money. It’s future soft life.
+
+Now let’s break it down.
+
 Everything you’ll ever sell falls into 4 categories:
-Residential – Where people live (Your clients that want “something calm and standard”)
-Commercial – Where money is made (Shops, offices… where business happens )
-Industrial – Serious business zones (Factories, warehouses… not your everyday client)
-Land – The OG investment (The one people will say “I’ll buy later” until price doubles )
- let’s not lie… There’s a difference between: “I sell property” and “I know what I’m doing”  When you understand this thing well: • You stop sounding unsure • Clients start taking you seriously • You explain things without checking Google mid-conversation  • And most importantly… you CLOSE DEALS
- This market is full of “realtors" but not all of them actually understand what they’re selling. Don’t be that person. Be the one that: Knows, Explains, Confidently collects payment 
-Stop just posting flyers. Stop copying captions. Know your product. Because the moment you understand it well… You won’t need to convince clients. They’ll convince themselves`,
+
+Residential – Where people live (your clients that want “something calm and standard”).
+Commercial – Where money is made (shops, offices… where business happens).
+Industrial – Serious business zones (factories, warehouses… not your everyday client).
+Land – The OG investment (the one people will say “I’ll buy later” until price doubles).
+
+Let’s not lie… There’s a difference between: “I sell property” and “I know what I’m doing.”
+
+When you understand this thing well:
+• You stop sounding unsure
+• Clients start taking you seriously
+• You explain things without checking Google mid-conversation
+• And most importantly… you CLOSE DEALS
+
+This market is full of “realtors,” but not all of them actually understand what they’re selling. Don’t be that person.
+
+Be the one that:
+Knows.
+Explains.
+Confidently collects payment.
+
+Stop just posting flyers. Stop copying captions. Know your product.
+
+Because the moment you understand it well… you won’t need to convince clients. They’ll convince themselves.`,
   },
 
   {
@@ -342,25 +363,57 @@ Stop just posting flyers. Stop copying captions. Know your product. Because the 
     categoryId: "salesbook",
     category: "The daring sales book",
     title: "Prospecting Doesn’t Have to Suck: Here’s How",
-    author: "",
+    author: "Favour Abiodun",
     date: "APRIL 2026",
-    image: "/prospecting1.png",
+    image: "/deal-closers.png",
     excerpt:
       "You’ve probably heard this a million times if you are a realtor: “Prospecting is hard.”",
-    content: `You’ve  probably heard this a million times if you are a realtor:  “Prospecting is hard.” “I don’t know what to say.” “Clients don’t reply anyway.” Sound familiar? 
-Let me tell you something… prospecting doesn’t have to suck. In fact, if done right, it can become the easiest part of your day, the part where clients actually come to you instead of you chasing them. 
-Let’s be honest, most people treat prospecting like punishment. You scroll endlessly through social media, shoot messages, hope someone responds… and nothing. Then frustration hits .
+    content: `You’ve probably heard this a million times if you are a realtor: “Prospecting is hard.” “I don’t know what to say.” “Clients don’t reply anyway.” Sound familiar?
+
+Let me tell you something… prospecting doesn’t have to suck. In fact, if done right, it can become the easiest part of your day—the part where clients actually come to you instead of you chasing them.
+
+Let’s be honest, most people treat prospecting like punishment. You scroll endlessly through social media, shoot messages, hope someone responds… and nothing. Then frustration hits.
+
 Prospecting fails when it’s inconsistent or aimless. Showing up once in a while won’t cut it. But show up daily, with a system, and you start to see magic happen.
-Step 1: Grab Attention First 
-Before you can sell, you need to be seen. Stop being just another name in someone’s DM list or social media feed. • Share tips your audience actually cares about • Drop mini “how-to” guides in short posts • Share success stories of clients (without bragging, just proof ) The goal? Make them notice you, not just your listing.
-Step 2: Show Value, Not Just Features 
+
+Step 1: Grab Attention First
+
+Before you can sell, you need to be seen. Stop being just another name in someone’s DM list or social media feed.
+• Share tips your audience actually cares about  
+• Drop mini “how-to” guides in short posts  
+• Share success stories of clients (without bragging, just proof)  
+
+The goal? Make them notice you, not just your listing.
+
+Step 2: Show Value, Not Just Features
+
 People don’t buy houses. They buy how the house will make their life better.
-Instead of saying: “This apartment has 3 bedrooms and 2 bathrooms.” Try: “Imagine waking up in your own 3-bedroom space with sunlight pouring in every morning… and knowing it’s officially yours.” See the difference? You’re not just selling a building, you're selling a dream they can picture.
-Step 3: Consistency is Everything 
-Prospecting isn’t a one-time thing. It’s like exercising, the results come with habit. • Post consistently on social media • Follow up with potential clients daily/weekly • Keep your network updated on new opportunities Even if it feels like nothing is happening, trust me: the people you touch now will remember you later.
+
+Instead of saying: “This apartment has 3 bedrooms and 2 bathrooms.”
+Try: “Imagine waking up in your own 3-bedroom space with sunlight pouring in every morning… and knowing it’s officially yours.”
+
+See the difference? You’re not just selling a building, you're selling a dream they can picture.
+
+Step 3: Consistency is Everything
+
+Prospecting isn’t a one-time thing. It’s like exercising—the results come with habit.
+• Post consistently on social media  
+• Follow up with potential clients daily/weekly  
+• Keep your network updated on new opportunities  
+
+Even if it feels like nothing is happening, trust me: the people you touch now will remember you later.
+
 Step 4: Follow Up Like a Pro
-Here’s the ugly truth: most deals are lost not because clients aren’t interested, but because realtors stop following up too soon. Follow-ups don’t have to be awkward. A simple: “Hey, just checking in to see if you had any questions about the property we discussed.” …goes a long way. Polite, consistent, and respectful = results. 
-Do this, and suddenly… deals aren’t a game of luck. They’re predictable, repeatable, and yours for the taking`,
+
+Here’s the ugly truth: most deals are lost not because clients aren’t interested, but because realtors stop following up too soon.
+
+Follow-ups don’t have to be awkward. A simple:
+“Hey, just checking in to see if you had any questions about the property we discussed.”
+…goes a long way.
+
+Polite, consistent, and respectful = results.
+
+Do this, and suddenly… deals aren’t a game of luck. They’re predictable, repeatable, and yours for the taking.`,
   },
 
   {
@@ -369,52 +422,71 @@ Do this, and suddenly… deals aren’t a game of luck. They’re predictable, r
     categoryId: "daring",
     category: "What’s Daring?",
     title: "This Is What Daring Looks Like ft Q1 deal closers",
-    author: "",
+    author: "Balogun Mutmainnah, Christian Kuyet Martha, Samuel Deborah",
     date: "APRIL 2026",
-    image: "/deal-closers.png",
+    image: "/prospecting1.png",
     excerpt:
       "What does it truly mean to be daring in today’s real estate space?",
     content: `What does it truly mean to be daring in today’s real estate space?
- Is it about taking risks, showing up daily, or pushing forward even when results aren’t immediate?
-In Q1, a few standout realtors didn’t just set goals, they went after them with intention, resilience, and bold action. From hosting their first webinars to converting skeptical prospects into paying clients, these individuals embodied what it means to step out of comfort zones and win.
-This feature highlights real stories from our Q1 deal closers individuals who chose consistency over excuses, courage over fear, and action over doubt. Who knows? Your story might be next!
-Straight from the desk of Balogun Mutmainnah, the Real Estate Queen and one of our top Q1 closers
-What was your biggest driving force to close deals in Q1? 
-I created a target to close 10 deals for evergreen farms Phase 1, creating my own target is one of the reasons why I always show up everyday until I made my first sale
-What specific action helped you convert a prospect into a paying client(e.g, follow-ups, content, referrals,etc.)
-   I created my own strategy which is educating people. Normally I like to educate people on things I know and that is why I created my first webinar for undergraduates.
-Can you briefly walk us through one deal you successfully closed?
- It wasn't easy but with the support of my sweet coach and the community lead Miss Opemipo_drealtor at the daring tribe group I was able to organise the first webinar, she was my first speaker and the first person that welcome and encourage me on the daring tribe group, she supported me a lot, on how to prospect, how to reply clients and motivate me to keep showing up.
-A well deserved story from the top selling triber in Q1: Christian Kuyet Martha
-1. What was the most daring move you took that paid off?
-The most daring move I took was securing my first plot of land even when my bank account was telling me not to and this became a point of sale for me.
 
+Is it about taking risks, showing up daily, or pushing forward even when results aren’t immediate?
 
-2. What challenge did you face, and how did you overcome it?
-One challenge I faced was clients hesitating to make payment despite indicating interest to buy a property.
-I overcame this challenge by creating an urgency. I told the clients that there was limited land available and the land could be sold out if they don't make payment on time.
+In Q1, a few standout realtors didn’t just set goals—they went after them with intention, resilience, and bold action. From hosting their first webinars to converting skeptical prospects into paying clients, these individuals embodied what it means to step out of comfort zones and win.
 
+This feature highlights real stories from our Q1 deal closers—individuals who chose consistency over excuses, courage over fear, and action over doubt. Who knows? Your story might be next.
 
-3. What one piece of advice would you give realtors looking to close deals in Q2?
-My advice for realtors in Q2 is to focus on consistent follow-ups and educating clients. Many deals are not closed because realtors stop following up too early. Most clients need time, information, and trust before making payment.
+Straight from the desk of Balogun Mutmainnah, the Real Estate Queen and one of our top Q1 closers:
 
+1. What was your biggest driving force to close deals in Q1?
 
- Featuring Samuel Deborah, a Q1 deal closer, highlighting how she closed her deals-
-1. What specific action helped you convert a prospect into a paying client?
-Consistent follow-ups and making them see the reason why  they should get the property and show them the positive side of the property played a major role.I made sure to stay in touch with prospects, provide them with relevant property options, and promptly answer their questions, which helped build trust and confidence.
+I created a target to close 10 deals for Evergreen Farms Phase 1. Creating my own target is one of the reasons why I always showed up every day until I made my first sale.
 
+2. What specific action helped you convert a prospect into a paying client (e.g., follow-ups, content, referrals, etc.)?
+
+I created my own strategy, which is educating people. I like to educate people on things I know, and that is why I created my first webinar for undergraduates.
 
 3. Can you briefly walk us through one deal you successfully closed?
-I engaged a prospect who was initially undecided. I took time to understand their needs and Baj court was the best option, showed them suitable options, and maintained consistent communication. 
-I made him see the future in that it’s not far from a school so it has a very great future..The client was considering the money aspect but I showed him the future and after a few days I closed the deals. 
 
+It wasn't easy, but with the support of my coach and the community lead, Miss Opemipo (DRealtor) at the Daring Tribe group, I was able to organize my first webinar. She was my first speaker and one of the first people who welcomed and encouraged me in the group. She supported me a lot—teaching me how to prospect, how to reply to clients, and motivating me to keep showing up.
 
-2. What was the most daring move you took that paid off?
-The most daring move I took was reaching out persistently to a cold lead who had initially shown little interest. Through consistent follow-ups and providing value, the lead eventually converted into a paying client.
+A well-deserved story from the top-selling triber in Q1: Christian Kuyet Martha
+
+1. What was the most daring move you took that paid off?
+
+The most daring move I took was securing my first plot of land even when my bank account was telling me not to. This became a strong point of sale for me.
+
+2. What challenge did you face, and how did you overcome it?
+
+One challenge I faced was clients hesitating to make payment despite showing interest. I overcame this by creating urgency—letting them know that the land was limited and could be sold out if they delayed payment.
+
 3. What one piece of advice would you give realtors looking to close deals in Q2?
+
+Focus on consistent follow-ups and educating clients. Many deals are not closed because realtors stop following up too early. Most clients need time, information, and trust before making payment.
+
+Featuring Samuel Deborah, a Q1 deal closer:
+
+1. What specific action helped you convert a prospect into a paying client?
+
+Consistent follow-ups and helping clients see the value of the property played a major role. I stayed in touch with prospects, provided relevant property options, and answered their questions promptly, which helped build trust and confidence.
+
+2. Can you briefly walk us through one deal you successfully closed?
+
+I engaged a prospect who was initially undecided. I took time to understand their needs, and Baj Court turned out to be the best option. I showed them suitable options and maintained consistent communication.
+
+I helped the client see the future value—that the property was close to a school and had strong potential. Although the client was concerned about the cost, I helped them focus on the long-term benefits, and after a few days, I closed the deal.
+
+3. What was the most daring move you took that paid off?
+
+The most daring move I took was reaching out persistently to a cold lead who initially showed little interest. Through consistent follow-ups and providing value, the lead eventually converted into a paying client.
+
+4. What one piece of advice would you give realtors looking to close deals in Q2?
+
 Stay consistent and don’t give up on follow-ups. Many deals are closed through persistence, proper communication, and building genuine relationships with clients.
-As we step into Q2, let these stories challenge you to do more, be more, and push beyond your limits. Set your targets, refine your strategies, and most importantly stay committed to the process.
+
+As we step into Q2, let these stories challenge you to do more, be more, and push beyond your limits. Set your targets, refine your strategies, and most importantly, stay committed to the process.
+
 Your next closed deal could be one decision, one follow-up, or one bold move away.
+
 So the question is… what daring step will you take next?`,
   },
 ];
