@@ -253,18 +253,18 @@ Guide your clients through this story, and watch how quickly they see the value.
   },
   {
     id: "06",
-    slug: "baj-villa-new-estate-alert",
+    slug: "baj-court-new-estate-alert",
     categoryId: "daring",
     category: "What's Daring?",
-    title: "BAJ Villa Has Entered the Chat: New Estate Alert!",
+    title: "BAJ Court Has Entered the Chat: New Estate Alert!",
     author: "Daring Tribe",
     date: "FEBRUARY 2025",
     image: "/villa.jpg",
     excerpt:
-      "New Estate Alert! BAJ Villa has officially joined the Daring Tribe portfolio.",
+      "New Estate Alert! BAJ Court has officially joined the Daring Tribe portfolio.",
     content: `New Estate Alert!
 
-  BAJ Villa has officially joined the Daring Tribe portfolio.
+  BAJ Court has officially joined the Daring Tribe portfolio.
 
   *More details coming soon...*
 
