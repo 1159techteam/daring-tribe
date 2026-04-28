@@ -81,6 +81,14 @@ export default function CoursePage() {
                   asChild
                   className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
                 >
+                  <a href="https://classroom.google.com/c/ODYxNjU4NjEzNzM2?cjc=jmnx33rw" target="_blank" rel="noopener noreferrer">
+                    Welcome address (MD, 1159 realty)<ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
+                >
                   <a href="https://classroom.google.com/c/ODQxMjc3ODcwNjY1?cjc=g6r747s2" target="_blank" rel="noopener noreferrer">
                     Introduction to Real Estate<ExternalLink className="ml-2 w-4 h-4 md:w-5 h-5" />
                   </a>
