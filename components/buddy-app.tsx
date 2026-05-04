@@ -5,7 +5,7 @@ const features = [
   {
     icon: Flame,
     label: "Complete Quests",
-    desc: "Take on daily and weekly quests tied to real activities — showings, calls, closings.",
+    desc: "Real activities- joining training sessions, group engagement, social media engagements, quizzes participation, and closing",
   },
   {
     icon: Star,
