@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero"
+import { BuddyApp } from "@/components/buddy-app"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { Target } from "lucide-react"
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="min-h-screen relative overflow-hidden">
       <Navigation />
       <Hero />
+      <BuddyApp />
       {/* Mission Statement - With Radial Gradient */}
       <section className="py-16 md:py-24 bg-background relative overflow-hidden">
         <div className="absolute inset-0 gradient-mesh-3 opacity-70" />
