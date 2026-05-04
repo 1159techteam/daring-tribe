@@ -1,21 +1,21 @@
-import { ArrowRight, Smartphone, Users2, Zap } from "lucide-react"
+import { ArrowRight, Trophy, Star, Flame, BarChart2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const features = [
   {
-    icon: Users2,
-    label: "Find Your Buddy",
-    desc: "Get matched with an accountability partner in the tribe.",
+    icon: Flame,
+    label: "Complete Quests",
+    desc: "Take on daily and weekly quests tied to real activities — showings, calls, closings.",
   },
   {
-    icon: Zap,
-    label: "Track Progress",
-    desc: "Log deals, goals, and milestones together in real-time.",
+    icon: Star,
+    label: "Earn XP & Redeem Rewards",
+    desc: "Stack experience points and trade them in for real incentives.",
   },
   {
-    icon: Smartphone,
-    label: "Stay Connected",
-    desc: "Communicate, share wins, and push each other forward.",
+    icon: BarChart2,
+    label: "Track Your Performance",
+    desc: "See your progress, rank, and growth all within your organization.",
   },
 ]
 
@@ -41,25 +41,25 @@ export function BuddyApp() {
             {/* --- LEFT: TEXT + CTA --- */}
             <div className="flex-1 text-left max-w-xl">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#8D5B3E]/20 bg-[#8D5B3E]/5 px-4 py-2 text-xs font-bold text-[#8D5B3E] uppercase tracking-wider mb-6">
-                <Smartphone className="h-3.5 w-3.5" />
-                <span>Now Available</span>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-4 py-2 text-xs font-bold text-[#8D5B3E] uppercase tracking-wider mb-6">
+                <Trophy className="h-3.5 w-3.5 text-[#D4AF37]" />
+                <span>Gamified Real Estate</span>
               </div>
 
               <div className="mb-4">
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] text-[#3E2F28] tracking-tight">
-                  Meet the{" "}
-                  <span className="font-serif italic text-[#8D5B3E] font-normal">
-                    Buddy
-                  </span>{" "}
+                  Quests, Rewards
                   <br className="hidden sm:block" />
-                  <span className="text-[#D4AF37]">App</span>
+                  <span className="text-[#D4AF37]">&amp; Growth</span>{" "}
+                  <span className="font-serif italic text-[#8D5B3E] font-normal">
+                    in one place
+                  </span>
                 </h2>
                 <div className="mt-3 h-1 w-24 bg-gradient-to-r from-[#8D5B3E] via-[#D4AF37] to-[#8D5B3E] rounded-full" />
               </div>
 
               <p className="text-base md:text-lg text-[#6D5D56] leading-relaxed mt-6 mb-10 font-medium">
-                Your accountability partner is one tap away. The Buddy App connects you with a fellow tribe member so you never grind alone — track goals, share wins, and level up together.
+                Complete quests, earn XP, redeem rewards, and track your performance — all within your organization. Your real estate journey, gamified.
               </p>
 
               <Button
@@ -73,21 +73,21 @@ export function BuddyApp() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
                 >
-                  Open Buddy App
+                  Start Playing
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
             </div>
 
             {/* --- RIGHT: FEATURE CARDS --- */}
-            <div className="flex-1 w-full grid gap-4 sm:grid-cols-1">
+            <div className="flex-1 w-full grid gap-4">
               {features.map(({ icon: Icon, label, desc }) => (
                 <div
                   key={label}
-                  className="group flex items-start gap-5 bg-white rounded-2xl px-6 py-5 border border-[#F3EFE9] shadow-sm hover:shadow-md hover:border-[#8D5B3E]/20 transition-all"
+                  className="group flex items-start gap-5 bg-white rounded-2xl px-6 py-5 border border-[#F3EFE9] shadow-sm hover:shadow-md hover:border-[#D4AF37]/30 transition-all"
                 >
-                  <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-[#8D5B3E]/10 flex items-center justify-center group-hover:bg-[#8D5B3E]/20 transition-colors">
-                    <Icon className="h-5 w-5 text-[#8D5B3E]" />
+                  <div className="flex-shrink-0 h-12 w-12 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center group-hover:bg-[#D4AF37]/20 transition-colors">
+                    <Icon className="h-5 w-5 text-[#D4AF37]" />
                   </div>
                   <div>
                     <p className="font-bold text-[#3E2F28] mb-0.5">{label}</p>
@@ -96,11 +96,11 @@ export function BuddyApp() {
                 </div>
               ))}
 
-              {/* Decorative badge */}
+              {/* Decorative tagline card */}
               <div className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-[#D4AF37]/30 bg-[#D4AF37]/5">
-                <span className="text-2xl">🤝</span>
+                <span className="text-2xl">🏆</span>
                 <p className="text-sm font-semibold text-[#8D5B3E]">
-                  No one wins alone — that's the Daring Tribe way.
+                  Your grind earns more than a commission — it earns you a crown.
                 </p>
               </div>
             </div>
