@@ -489,6 +489,129 @@ Your next closed deal could be one decision, one follow-up, or one bold move awa
 
 So the question is… what daring step will you take next?`,
   },
+
+  // MAY BLOGS
+
+  {
+    id: "12",
+    slug: "from-shaky-hands-to-signed-deals",
+    categoryId: "community",
+    category: "Community Hub",
+    title:
+      "From Shaky Hands to Signed Deals: A Realtor’s Journey from Fear to Confidence",
+    author: "Opemipo Akingbade",
+    date: "MAY 2026",
+    image: "/may1.png",
+    excerpt:
+      "I remember my early days in real estate so clearly. There was one particular morning I had a lead to call.",
+    content: `I remember my early days in real estate so clearly. There was one particular morning I had a lead to call. Nothing serious, just a simple follow-up. But I sat there, phone in hand, staring at the number like it was something bigger than it actually was.
+
+My heart was racing. I kept overthinking what to say. And honestly… I almost didn’t call. It sounds small, but if you’re a realtor, you understand. That moment? It’s real.
+
+When I started, I thought the biggest challenge would be learning the business, understanding properties, pricing, documents, all of that. But no one really prepares you for the internal battles. The fear of sounding unprofessional. The fear of rejection. The fear that maybe… you’re not as ready as you thought. Every time a client said “I’ll think about it,” I took it personally. Every “no” felt like I wasn’t good enough. And every delay made me question myself. There were days I genuinely wondered if I chose the right path.
+
+At some point, I had to be honest with myself. I realized something: If I kept waiting to feel confident, I might never move. So I made a decision — I would act, even if I was still scared.
+
+I started small. Every morning, I took time to go over my listings properly. I studied the market, practiced how I would talk to clients, and tried to sound more natural — not perfect, just better than yesterday. Then I started making the calls anyway. Not perfectly. Not confidently at first. But consistently.
+
+One thing that really changed my approach was this: I stopped focusing on “what if they reject me?” and started focusing on “how can I help this person?”
+
+That shift made everything easier. I listened more. I paid attention to what clients actually needed. I stopped trying to impress and started trying to understand. And slowly… conversations started to feel different.
+
+I won’t lie, growth took time. There were still awkward calls. Still moments I doubted myself. Still deals that didn’t go through. But there were also small wins. A call that went smoothly. A client that trusted my opinion. A meeting where I didn’t feel nervous for once.
+
+And then, one day, I closed a deal that reminded me why I started. That moment meant everything to me. Not just because of the deal, but because I knew how far I had come.
+
+Today, I won’t say I’m fearless. But I’m definitely more confident. Not because fear disappeared, but because I’ve learned how to move in spite of it. Now, I pick up calls without overthinking. I speak with more clarity. I trust what I know. And the same things that once scared me… are now part of my everyday work.
+
+If you’re in real estate and you’ve ever felt scared, unsure, or not “ready enough” — I get it. I’ve been there.
+
+But here’s what I’ve learned: Confidence doesn’t come before action. It comes because of action.
+
+You don’t need to have it all figured out. You just need to start. One call. One meeting. One step at a time.
+
+Real estate has taught me more than just how to sell properties. It has taught me how to grow as a person. How to manage my mindset. How to handle pressure. How to show up even when I don’t feel 100% ready. And honestly, that’s where the real success starts.
+
+Fear is real — I won’t pretend it’s not.
+
+But so is growth. So is progress. And so is the version of you that becomes better because you didn’t give up.
+
+I’m still growing. Still learning. Still pushing myself. But one thing I know for sure is this: I’m no longer the person who was too scared to make that call.
+
+And if I could get past that… You can too.`,
+  },
+
+  {
+    id: "13",
+    slug: "i-almost-ignored-this-house-until-it-turned-into-a-smart-deal",
+    categoryId: "insights",
+    category: "Real Estate Insights",
+    title: "I Almost Ignored This House… Until It Turned Into a Smart Deal",
+    author: "Adeola Olowolayemo",
+    date: "MAY 2026",
+    image: "/may2.png",
+    excerpt:
+      "Let me tell you something funny… the first time I saw that property, I was not impressed at all.",
+    content: `Let me tell you something funny… the first time I saw that property, I was not impressed at all.
+
+It didn’t have that “wow” factor. No fancy finishing, no dramatic entrance, nothing that would make you instantly fall in love. Just a regular house sitting quietly like it had nothing to offer.
+
+And my client? Already unconvinced.
+
+“Are you sure this is worth it?” they asked.
+
+Honestly, I understood them. Because at first glance, it really didn’t look like much.
+
+But I’ve learned something in real estate: if you judge a property too quickly, you might miss money without even realizing it. So instead of brushing it off, I decided to look deeper.
+
+I went back, this time with intention. I paid attention to things I didn’t notice the first time. I checked what similar properties in that area were going for. I looked at how accessible the location was. I started asking questions about the neighborhood, the development around it, and what the future could look like there.
+
+And that’s when everything changed.
+
+That “ordinary” house was actually sitting in a location that was quietly growing. The kind of place people overlook today… and rush into tomorrow when prices have doubled.
+
+Suddenly, it wasn’t just a house anymore. It had potential.
+
+Now the real work started not convincing myself, but helping my client see what I was seeing.
+
+Because let’s be honest, clients don’t care about your research sheets or how long you spent analyzing data. They care about what it means for them.
+
+So when I spoke to them again, I didn’t start listing features like I was reading from a script. I didn’t say, “It has three bedrooms and a nice kitchen.” Please, that one won’t move anybody 😭
+
+Instead, I told a story.
+
+I showed them what the property could become. I helped them see how the value could grow over time, how it could fit into their plans, and even how it could make them money if they decided to rent it out later.
+
+And just like that, the energy shifted.
+
+The same client that was unsure started asking better questions. Curious questions. Interesting questions.
+
+Before I knew it, we had moved from hesitation… to decision.
+
+That was one of the moments that really taught me what evaluating a property actually means.
+
+It’s not just about looking at a building and stating the obvious. Anybody can do that.
+
+It’s about seeing what’s not immediately visible. It’s about understanding value beyond the surface and translating that in a way your client understands and believes.
+
+Because the truth is, every property has a story. Some are just louder than others.
+
+And as a realtor, your job is to bring that story to life.
+
+The more I grew in this business, the more I realized that this skill is what separates an average realtor from a smart one. When you can walk into a space, understand its value, and communicate that value with confidence, people start to trust you differently.
+
+You’re no longer just showing houses. You’re guiding decisions.
+
+And that changes everything.
+
+So now, whenever I walk into a property that looks “just okay,” I don’t rush to judge it. I pause. I observe. I ask questions. Because I know there’s always more than meets the eye.
+
+And more often than not, that’s where the real opportunity is hiding.
+
+At the end of the day, evaluating a property like a pro isn’t about being perfect or knowing everything. It’s about being curious enough to look deeper, smart enough to connect the dots, and confident enough to help someone else see what you see.
+
+Because sometimes, the house that doesn’t impress you at first glance…is the one that ends up making the smartest deal.`,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
