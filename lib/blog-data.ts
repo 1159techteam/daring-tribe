@@ -501,14 +501,16 @@ So the question is… what daring step will you take next?`,
       "From Shaky Hands to Signed Deals: A Realtor’s Journey from Fear to Confidence",
     author: "Opemipo Akingbade",
     date: "MAY 2026",
-    image: "/may1.png",
+    image: "/may01.jpeg",
     excerpt:
       "I remember my early days in real estate so clearly. There was one particular morning I had a lead to call.",
     content: `I remember my early days in real estate so clearly. There was one particular morning I had a lead to call. Nothing serious, just a simple follow-up. But I sat there, phone in hand, staring at the number like it was something bigger than it actually was.
 
 My heart was racing. I kept overthinking what to say. And honestly… I almost didn’t call. It sounds small, but if you’re a realtor, you understand. That moment? It’s real.
 
-When I started, I thought the biggest challenge would be learning the business, understanding properties, pricing, documents, all of that. But no one really prepares you for the internal battles. The fear of sounding unprofessional. The fear of rejection. The fear that maybe… you’re not as ready as you thought. Every time a client said “I’ll think about it,” I took it personally. Every “no” felt like I wasn’t good enough. And every delay made me question myself. There were days I genuinely wondered if I chose the right path.
+When I started, I thought the biggest challenge would be learning the business, understanding properties, pricing, documents, all of that. But no one really prepares you for the internal battles. The fear of sounding unprofessional. The fear of rejection. The fear that maybe… you’re not as ready as you thought.
+
+Every time a client said “I’ll think about it,” I took it personally. Every “no” felt like I wasn’t good enough. And every delay made me question myself. There were days I genuinely wondered if I chose the right path.
 
 At some point, I had to be honest with myself. I realized something: If I kept waiting to feel confident, I might never move. So I made a decision — I would act, even if I was still scared.
 
@@ -530,7 +532,9 @@ But here’s what I’ve learned: Confidence doesn’t come before action. It co
 
 You don’t need to have it all figured out. You just need to start. One call. One meeting. One step at a time.
 
-Real estate has taught me more than just how to sell properties. It has taught me how to grow as a person. How to manage my mindset. How to handle pressure. How to show up even when I don’t feel 100% ready. And honestly, that’s where the real success starts.
+Real estate has taught me more than just how to sell properties. It has taught me how to grow as a person. How to manage my mindset. How to handle pressure. How to show up even when I don’t feel 100% ready.
+
+And honestly, that’s where the real success starts.
 
 Fear is real — I won’t pretend it’s not.
 
@@ -549,7 +553,7 @@ And if I could get past that… You can too.`,
     title: "I Almost Ignored This House… Until It Turned Into a Smart Deal",
     author: "Adeola Olowolayemo",
     date: "MAY 2026",
-    image: "/may2.png",
+    image: "/may02.jpeg",
     excerpt:
       "Let me tell you something funny… the first time I saw that property, I was not impressed at all.",
     content: `Let me tell you something funny… the first time I saw that property, I was not impressed at all.
@@ -572,7 +576,7 @@ That “ordinary” house was actually sitting in a location that was quietly gr
 
 Suddenly, it wasn’t just a house anymore. It had potential.
 
-Now the real work started not convincing myself, but helping my client see what I was seeing.
+Now the real work started — not convincing myself, but helping my client see what I was seeing.
 
 Because let’s be honest, clients don’t care about your research sheets or how long you spent analyzing data. They care about what it means for them.
 
