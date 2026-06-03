@@ -46,7 +46,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-bold font-cinzel text-[#3E2C1C] mb-4 text-balance leading-snug">
-                  No. 23, Offa Road, Opposite Kwara State Registry, Ilorin, Kwara State.
+                  Pipeline road beside Mount Olive Anglican Church, Tanke Ilorin, Kwara state.
                 </h3>
                 <p className="text-[#3E2C1C]/60 text-sm md:text-base leading-relaxed">
                   Our office is open for scheduled consultations and Daring Tribe hangouts.

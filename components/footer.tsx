@@ -73,7 +73,7 @@ export function Footer() {
                 <li className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-accent shrink-0 mt-0.5" />
                   <span className="text-xs sm:text-sm">
-                    No. 23, Offa Road, Opposite Kwara State Registry, Ilorin, Kwara State
+                    Pipeline road beside Mount Olive Anglican Church, Tanke Ilorin, Kwara state
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
