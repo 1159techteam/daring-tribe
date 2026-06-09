@@ -116,7 +116,7 @@ Guide your clients through this story, and watch how quickly they see the value.
     category: "The Daring Salesbook",
     title: "Inside the Daring Tribe Salesbook",
     author: "Sinmiloluwa Oyemakinde",
-    date: "JANUARY 2025",
+    date: "JANUARY 2026",
     image: "/modern-luxury-office-interior-with-floor-to-ceilin.jpg",
     excerpt:
       "Sales is often misunderstood. At the Daring Tribe, we see sales differently. Sales is a skill. A process. And most importantly, a transfer of value.",
@@ -159,7 +159,7 @@ Guide your clients through this story, and watch how quickly they see the value.
     category: "Real Estate Insights",
     title: "A Realtor's Guide to Identifying Land Size Without Guesswork",
     author: "Janet Oladokun",
-    date: "FEBRUARY 2025",
+    date: "FEBRUARY 2026",
     image: "/property-detail.jpg",
     excerpt:
       "Have you ever been in that situation where you're on a site inspection, the client turns to you and asks: 'So… how big is this land?' And for a split second, your mind goes blank.",
@@ -239,7 +239,7 @@ Guide your clients through this story, and watch how quickly they see the value.
     category: "Community Hub",
     title: "Before 1159 Realty vs After: My Growth Story",
     author: "Daring Tribe Member",
-    date: "FEBRUARY 2025",
+    date: "FEBRUARY 2026",
     image: "/successful-real-estate-team-celebration.jpg",
     excerpt:
       "Five Years of 1159 Realty, 1 year of my Personal Journey. A transformation story from the community.",
@@ -258,7 +258,7 @@ Guide your clients through this story, and watch how quickly they see the value.
     category: "What's Daring?",
     title: "BAJ Court Has Entered the Chat: New Estate Alert!",
     author: "Daring Tribe",
-    date: "FEBRUARY 2025",
+    date: "FEBRUARY 2026",
     image: "/villa.jpg",
     excerpt:
       "New Estate Alert! BAJ Court has officially joined the Daring Tribe portfolio.",
@@ -271,25 +271,25 @@ Guide your clients through this story, and watch how quickly they see the value.
   Stay tuned for the full announcement about this exciting new addition to our estate offerings.`,
   },
   // MARCH
-  {
-    id: "07",
-    slug: "prospecting-101",
-    categoryId: "salesbook",
-    category: "The Daring Salesbook",
-    title: "Prospecting 101: How Top Realtors Actually Find Clients",
-    author: "Emerald Akinjayeju",
-    date: "MARCH 2025",
-    image: "/prospecting.jpg",
-    excerpt:
-      "Success in real estate isn't about waiting for the phone to ring; it's about knowing whose phone to ring.",
-    content: `Success in real estate isn't about waiting for the phone to ring; it's about knowing whose phone to ring.
+  // {
+  //   id: "07",
+  //   slug: "prospecting-101",
+  //   categoryId: "salesbook",
+  //   category: "The Daring Salesbook",
+  //   title: "Prospecting 101: How Top Realtors Actually Find Clients",
+  //   author: "Emerald Akinjayeju",
+  //   date: "MARCH 2026",
+  //   image: "/prospecting.jpg",
+  //   excerpt:
+  //     "Success in real estate isn't about waiting for the phone to ring; it's about knowing whose phone to ring.",
+  //   content: `Success in real estate isn't about waiting for the phone to ring; it's about knowing whose phone to ring.
 
-  *Full article coming soon...*
+  // *Full article coming soon...*
 
-  Emerald Akinjayeju breaks down the frameworks used by the top realtors to find high-value clients without 'chasing' them.
+  // Emerald Akinjayeju breaks down the frameworks used by the top realtors to find high-value clients without 'chasing' them.
 
-  Stay tuned for the complete guide on prospecting strategies that actually work.`,
-  },
+  // Stay tuned for the complete guide on prospecting strategies that actually work.`,
+  // },
   {
     id: "08",
     slug: "q1-deal-closers",
@@ -297,7 +297,7 @@ Guide your clients through this story, and watch how quickly they see the value.
     category: "What's Daring?",
     title: "This Is What Daring Looks Like ft Q1 Deal Closers",
     author: "Daring Tribe",
-    date: "MARCH 2025",
+    date: "MARCH 2026",
     image: "/modern-luxury-residential-development-aerial-view.jpg",
     excerpt:
       "Celebrating our top performers who closed deals in Q1. See who made the list!",
