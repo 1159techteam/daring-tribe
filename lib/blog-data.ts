@@ -616,6 +616,95 @@ At the end of the day, evaluating a property like a pro isn’t about being perf
 
 Because sometimes, the house that doesn’t impress you at first glance…is the one that ends up making the smartest deal.`,
   },
+
+  // JUNE BLOGS
+
+  {
+    id: "14",
+    slug: "closing-deals-through-trust-relationships-and-consistency",
+    categoryId: "daring",
+    category: "What’s Daring?",
+    title: "Closing Deals Through Trust, Relationships, and Consistency",
+    author: "Adeola Olowolayemo",
+    date: "JUNE 2026",
+    image: "/ade.png",
+    excerpt:
+      "In this edition of our Deal Closer Spotlight, we feature Miss Adeola Olowolayemo, one of our outstanding Q2 performers whose success story demonstrates the power of relationship building, trust, and consistency in real estate sales.",
+    content: `In this edition of our Deal Closer Spotlight, we feature Miss Adeola Olowolayemo, one of our outstanding Q2 performers whose success story demonstrates the power of relationship building, trust, and consistency in real estate sales. She shares valuable insights into how she successfully converted a prospect into a client and the lessons she learned throughout the process.
+
+**1. What do you think helped you close this sale?**
+
+One of the biggest factors that contributed to closing this deal was building and maintaining a strong relationship with the client. By consistently engaging with him and nurturing the relationship over time, trust was established long before the final decision to invest was made.
+
+**2. Was there anything you did that convinced the client to buy?**
+
+The client’s confidence was largely influenced by the company’s reputation for integrity and excellence. Through proper due diligence, transparent communication, and complete documentation, the client was assured that he was dealing with a trustworthy company that consistently delivers on its promises.
+
+**3. Did the client have any concerns before buying? How did you handle them?**
+
+Yes. The client was concerned about the quality of finishing and whether the project would be delivered to the expected standard. These concerns were addressed by showcasing the company’s previous developments, particularly Dias Crest. Seeing the quality of completed projects gave the client the confidence that the same standard would be maintained.
+
+**4. What part of the process helped the most in closing the deal?**
+
+Several factors played a significant role in the successful close. God’s grace was instrumental throughout the process. Additionally, the company’s strong integrity, the support and leadership of Miss Comfort, and the well-structured systems already in place for the project all helped build the client’s confidence and contributed to the successful outcome.
+
+**5. What advice would you give someone trying to make more sales?**
+
+Don’t give up. Stay consistent, keep following up, and remain committed to the process. Every interaction with a prospect is an opportunity, and your next deal may be much closer than you think. This is a principle I constantly remind myself of as well.
+
+This success story reinforces an important lesson in real estate sales: people buy from those they trust. Building genuine relationships, maintaining integrity, and consistently showing up for your clients can make all the difference between a prospect and a closed deal.`,
+  },
+
+  {
+    id: "15",
+    slug: "i-used-to-struggle-with-sales-calls-but-now-that-has-completely-changed",
+    categoryId: "salesbook",
+    category: "The Daring Salesbook",
+    title:
+      "I Used to Struggle With Sales Calls But Now That Has Completely Changed",
+    author: "Emerald Akinjayeju",
+    date: "JUNE 2026",
+    image: "/june02.png",
+    excerpt:
+      "In real estate, every client interaction is a potential turning point. One conversation can be the difference between losing a lead and closing a deal worth millions.",
+    content: `In real estate, every client interaction is a potential turning point. One conversation can be the difference between losing a lead and closing a deal worth millions. Yet many realtors, especially those just starting out, often find themselves unsure of how to properly guide conversations toward a successful close.
+
+This is where sales frameworks become important. They are not scripts. They are structured, step-by-step approaches that give conversations direction, confidence, and consistency.
+
+A young realtor like Ada experienced this early in her career. She had plenty of leads, but her results were inconsistent. Conversations would start well, introductions were smooth, and small talk flowed easily. However, somewhere along the line, momentum would drop. Clients would hesitate, objections would come up, and deals would not move forward.
+
+The issue was not lack of effort or knowledge, but lack of structure. Once she adopted a clear sales framework, her results changed significantly.
+
+**Preparation: The Foundation of Every Successful Call**
+
+Preparation is the foundation of every successful client call. Entering a conversation without understanding the client or the property creates uncertainty. Ada began researching her leads properly, understanding their goals, background, and possible concerns. She also studied each property carefully, identifying key features, benefits, and selling points.
+
+With this level of preparation, she no longer approached calls with anxiety. Instead, she had clarity. She could anticipate questions, communicate confidently, and present information with authority. Preparation is not only about knowledge, but also about mindset. When a realtor is well-prepared, clients naturally trust their credibility.
+
+**Discovery: Listen Before You Present**
+
+The next important step is discovery, which focuses on listening before presenting. Many realtors make the mistake of pitching too early. However, effective communication begins with understanding the client first. Ada started asking intentional questions that revealed her clients’ real needs, whether they were focused on long-term investment, rental income, family safety, or lifestyle preferences.
+
+These insights helped her shift from generic presentations to personalized conversations. Clients felt heard and understood, which made them more open and engaged. Discovery turns a simple sales call into a meaningful conversation where the client feels guided rather than sold to.
+
+**Value Presentation: Benefits Over Features**
+
+After understanding the client’s needs, the next step is value presentation. At this stage, the focus is not on listing features but on communicating benefits. Ada learned to translate property details into real-life value. Instead of simply describing rooms or square footage, she helped clients visualize the experience — how a balcony could become a peaceful morning space, how a living room could support family moments, or how energy-efficient features could reduce long-term costs.
+
+This approach made properties feel more relevant and desirable. A property is not just a structure; it represents opportunity, comfort, and investment potential when properly presented.
+
+**Objection Handling: Turn Concerns Into Confidence**
+
+Objection handling is another critical part of the process. Concerns about price, location, or timing are natural in real estate conversations. Instead of reacting with pressure or defensiveness, Ada learned to respond calmly and strategically. She acknowledged concerns, provided clarity, and aligned responses with the client’s goals.
+
+With this approach, objections became part of the conversation rather than barriers. Instead of creating doubt, they became opportunities to build trust and confidence.
+
+**Closing: The Natural Outcome**
+
+The final step is closing. When the earlier stages are done correctly, closing becomes a natural outcome rather than a forced action. Because Ada had prepared well, understood her clients, presented value effectively, and handled concerns professionally, her closing conversations became smooth and natural.
+
+The lesson is simple: structure creates confidence, and confidence closes deals. If you find yourself struggling on calls, the answer is rarely more pressure or more pitching. It is a clearer, more intentional process — one that puts the client first at every stage.`,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

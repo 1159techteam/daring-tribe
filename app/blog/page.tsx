@@ -19,11 +19,13 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 export default function BlogPage() {
     const [activeCategory, setActiveCategory] = useState<string>("all")
 
-    const filteredPosts = activeCategory === "all"
-        ? BLOG_DATA
-        : BLOG_DATA.filter(post => post.categoryId === activeCategory)
+    const sortedPosts = [...BLOG_DATA].reverse()
 
-    const featuredPost = BLOG_DATA[0]
+    const filteredPosts = activeCategory === "all"
+        ? sortedPosts
+        : sortedPosts.filter(post => post.categoryId === activeCategory)
+
+    const featuredPost = sortedPosts[0]
     const regularPosts = activeCategory === "all"
         ? filteredPosts.slice(1)
         : filteredPosts
