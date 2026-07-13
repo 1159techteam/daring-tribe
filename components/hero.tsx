@@ -45,8 +45,8 @@ export function Hero() {
               </p>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] text-[#3E2F28] tracking-tight">
-                Young and <br />
-                <span className="font-serif italic text-[#8D5B3E] font-normal">Daring</span>
+                Young & <br />
+                <span className="font-sans font-bold text-[#8D5B3E]">Daring</span>
               </h1>
 
               <p className="text-base md:text-xl text-[#6D5D56] max-w-lg leading-relaxed font-medium">
@@ -60,7 +60,7 @@ export function Hero() {
                 className="w-full sm:w-auto bg-[#8D5B3E] hover:bg-[#724932] text-white font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
                 asChild
               >
-                <a target="_blank" href="https://forms.gle/xQHGSzQN1csm2Bxi7" className="flex items-center gap-2">
+                <a href="/signup" className="flex items-center gap-2">
                   Start Your Journey
                   <ArrowRight className="h-5 w-5" />
                 </a>
@@ -68,11 +68,11 @@ export function Hero() {
 
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-[white] hover:bg-[white] text-#724932 font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
+                className="w-full sm:w-auto bg-[white] hover:bg-[white] text-[#724932] font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
                 asChild
               >
-                <a href="/course" className="flex items-center gap-2">
-                  Classroom and Validation
+                <a href="/learn" className="flex items-center gap-2">
+                  Start Learning
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
@@ -82,7 +82,7 @@ export function Hero() {
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-3xl font-bold text-[#3E2F28]">
                   <TrendingUp className="h-6 w-6 text-[#8D5B3E]" />
-                  $2.5B+
+                  ₦2.5B+
                 </div>
                 <div className="text-sm font-semibold text-[#6D5D56] uppercase tracking-tighter">Closed Sales</div>
               </div>

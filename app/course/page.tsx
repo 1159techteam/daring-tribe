@@ -47,7 +47,11 @@ export default function CoursePage() {
             Master the <span className="italic text-[#D4AF37] font-normal">Game</span>
           </h1>
           <p className="mt-4 md:mt-6 mx-auto max-w-2xl text-sm md:text-xl text-stone-300 font-poppins px-2">
-            Your journey into the Daring Tribe begins with mastery. Select each courses listed below to complete your training, once finished and fully onboarded, click the “yes, I’ve completed my courses” to invite you into the community
+            Train inside the School for the Daring. Complete native lessons on{" "}
+            <a href="/learn" className="text-[#D4AF37] underline">
+              Learn
+            </a>{" "}
+            to earn XP, or use the legacy Classroom links below while we finish migrating content.
           </p>
         </div>
       </section>
@@ -77,6 +81,14 @@ export default function CoursePage() {
                 </ul> */}
               </div>
               <div className="flex flex-col items-center gap-4">
+                <Button
+                  asChild
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-white text-[#3E2C1C] hover:bg-[#D4AF37] transition-all rounded-xl md:rounded-2xl"
+                >
+                  <a href="/learn">
+                    Open School for the Daring (Learn)<ArrowRight className="ml-2 w-4 h-4 md:w-5 h-5" />
+                  </a>
+                </Button>
                 <Button
                   asChild
                   className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#D4AF37] hover:bg-white hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl"
@@ -125,11 +137,20 @@ export default function CoursePage() {
               <div className="space-y-4 w-full">
                 <p className="text-[10px] md:text-xs font-bold text-[#D4AF37] uppercase tracking-widest">Mastery Gate</p>
                 <Button
+                  asChild
+                  className="w-full py-6 md:py-8 text-sm md:text-lg font-bold bg-[#3E2C1C] text-white hover:bg-[#D4AF37] hover:text-[#3E2C1C] transition-all rounded-xl md:rounded-2xl font-poppins"
+                >
+                  <a href="/learn" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    Continue on Learn <ArrowRight className="ml-2 w-4 h-4 md:w-5 h-5" />
+                  </a>
+                </Button>
+                <Button
                   variant="outline"
                   className="w-full py-6 md:py-8 text-sm md:text-lg font-bold border-2 border-[#3E2C1C] text-[#3E2C1C] hover:bg-[#3E2C1C] hover:text-white transition-all rounded-xl md:rounded-2xl font-poppins"
+                  asChild
                 >
                   <a href="https://forms.gle/xQHGSzQN1csm2Bxi7" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    Yes, Class Completed <ArrowRight className="ml-2 w-4 h-4 md:w-5 h-5" />
+                    Legacy form validation <ArrowRight className="ml-2 w-4 h-4 md:w-5 h-5" />
                   </a>
                 </Button>
               </div>

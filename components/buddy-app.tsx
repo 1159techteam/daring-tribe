@@ -51,7 +51,7 @@ export function BuddyApp() {
                   Quests, Rewards
                   <br className="hidden sm:block" />
                   <span className="text-[#D4AF37]">&amp; Growth</span>{" "}
-                  <span className="font-serif italic text-[#8D5B3E] font-normal">
+                  <span className="font-sans font-bold text-[#8D5B3E]">
                     in one place
                   </span>
                 </h2>
@@ -59,7 +59,7 @@ export function BuddyApp() {
               </div>
 
               <p className="text-base md:text-lg text-[#6D5D56] leading-relaxed mt-6 mb-10 font-medium">
-                Complete quests, earn XP, redeem rewards, and track your performance — all within your organization. Your real estate journey, gamified.
+                Complete quests, earn XP from learning on Daring Tribe, redeem rewards, and track your performance — one wallet across both apps.
               </p>
 
               <Button

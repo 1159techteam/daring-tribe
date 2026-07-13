@@ -77,9 +77,9 @@
 }
 
 @theme inline {
-  /* Brand Fonts: Cinzel (display/headings) + Poppins (body) */
-  --font-sans: "Poppins", "Poppins Fallback", system-ui, sans-serif;
-  --font-display: "Cinzel", "Cinzel Fallback", serif;
+  /* Brand Font: Neulis (shared with Buddy) */
+  --font-sans: var(--font-neulis), system-ui, sans-serif;
+  --font-display: var(--font-neulis), system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
