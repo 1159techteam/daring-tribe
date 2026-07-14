@@ -15,23 +15,47 @@ export type CadreTier = {
   sort_order: number
 }
 
-/** Classic 2go star colors by cadre slug — saturated so ranks read clearly on light UI */
+/**
+ * Exact 2go star ladder colors (from official rank list).
+ * Novice red → Ultimate aquamarine — not grey/black.
+ */
 export const CADRE_STAR_COLORS: Record<string, string> = {
-  novice: "#A8B0BC",
-  amateur: "#1DB954",
-  senior: "#2F6BFF",
-  enthusiast: "#00B4D8",
-  professional: "#FF8A00",
-  expert: "#E53935",
-  leader: "#F5C518",
-  veteran: "#9B5CFF",
-  master: "#FF2D95",
-  ultimate: "#1A1A1A",
+  novice: "#E53935", // red
+  amateur: "#5E35B1", // deep purple
+  senior: "#C2185B", // magenta / pink-purple
+  enthusiast: "#C0CA33", // lime
+  professional: "#43A047", // green
+  expert: "#1E88E5", // medium blue
+  leader: "#00ACC1", // cyan / teal
+  veteran: "#F9A825", // muted gold
+  master: "#FDD835", // bright yellow
+  ultimate: "#26A69A", // aquamarine / teal-white metal
+}
+
+/** Metallic companions for star gradients */
+export const CADRE_STAR_METAL: Record<string, { highlight: string; mid: string; shade: string }> = {
+  novice: { highlight: "#FF8A80", mid: "#E53935", shade: "#B71C1C" },
+  amateur: { highlight: "#B39DDB", mid: "#5E35B1", shade: "#311B92" },
+  senior: { highlight: "#F48FB1", mid: "#C2185B", shade: "#880E4F" },
+  enthusiast: { highlight: "#E6EE9C", mid: "#C0CA33", shade: "#9E9D24" },
+  professional: { highlight: "#81C784", mid: "#43A047", shade: "#2E7D32" },
+  expert: { highlight: "#90CAF9", mid: "#1E88E5", shade: "#1565C0" },
+  leader: { highlight: "#80DEEA", mid: "#00ACC1", shade: "#00838F" },
+  veteran: { highlight: "#FFE082", mid: "#F9A825", shade: "#F57F17" },
+  master: { highlight: "#FFF59D", mid: "#FDD835", shade: "#FBC02D" },
+  ultimate: { highlight: "#E0F2F1", mid: "#26A69A", shade: "#00695C" },
 }
 
 export function getCadreStarColor(slug: string): string {
   return CADRE_STAR_COLORS[slug] || CADRE_STAR_COLORS.novice
 }
+
+export function getCadreStarMetal(slug: string) {
+  return CADRE_STAR_METAL[slug] || CADRE_STAR_METAL.novice
+}
+
+/** Fallback if app_settings.learn_daily_checkin_xp is missing */
+export const DAILY_CHECKIN_XP = 25
 
 /** Fallback curve if DB thresholds missing: level n at (n-1)^2 * 100 XP */
 export function xpRequiredForLevel(level: number): number {

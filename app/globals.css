@@ -177,6 +177,22 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  /* Soft breathe for XP fill */
+  @keyframes breathe {
+    0%, 100% {
+      opacity: 0.88;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 1;
+      filter: brightness(1.08);
+    }
+  }
+
+  .animate-breathe {
+    animation: breathe 2.8s ease-in-out infinite;
+  }
+
   /* Glow effects */
   .glow-accent {
     box-shadow: 0 0 40px oklch(0.78 0.12 85 / 0.3);

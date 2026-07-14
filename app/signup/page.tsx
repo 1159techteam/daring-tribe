@@ -1,21 +1,28 @@
 "use client"
 
-import { FormEvent, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
+import { useAuth } from "@/components/providers/auth-provider"
 
 export default function SignupPage() {
   const router = useRouter()
+  const { user, loading: authLoading } = useAuth()
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [info, setInfo] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (authLoading) return
+    if (user) router.replace("/learn")
+  }, [user, authLoading, router])
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
@@ -48,6 +55,17 @@ export default function SignupPage() {
     } finally {
       setLoading(false)
     }
+  }
+
+  if (authLoading || user) {
+    return (
+      <main className="min-h-screen bg-[#F5F5F0]">
+        <Navigation />
+        <p className="p-16 text-center text-[#6D5D56]">
+          {user ? "You're already signed in…" : "Checking session…"}
+        </p>
+      </main>
+    )
   }
 
   return (

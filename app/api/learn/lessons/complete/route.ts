@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
 import { grantXp } from "@/lib/learn/xp"
+import { issueCourseCertificate } from "@/lib/learn/certificates"
 
 /** POST /api/learn/lessons/complete — { lesson_id } */
 export async function POST(request: NextRequest) {
@@ -108,6 +109,13 @@ export async function POST(request: NextRequest) {
     // Course completion check
     let courseCompleted = false
     let courseXp = 0
+    let certificate: {
+      id: string
+      certificate_code: string
+      title: string
+      issued_at: string
+      course_id: string
+    } | null = null
     if (courseId) {
       const { data: modules } = await admin
         .from("learn_modules")
@@ -167,6 +175,12 @@ export async function POST(request: NextRequest) {
               { onConflict: "user_id,badge_id" }
             )
           }
+
+          certificate = await issueCourseCertificate({
+            userId: user.id,
+            courseId,
+            courseTitle: course?.title || "Course Certificate",
+          })
         }
       }
     }
@@ -176,6 +190,7 @@ export async function POST(request: NextRequest) {
       xp_awarded: xpReward,
       course_completed: courseCompleted,
       course_xp_awarded: courseXp,
+      certificate,
       progress_id: progress.id,
     })
   } catch (e) {

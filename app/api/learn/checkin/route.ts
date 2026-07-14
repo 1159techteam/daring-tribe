@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
 import { grantXp } from "@/lib/learn/xp"
-import { DAILY_CHECKIN_XP } from "@/lib/learn/levels"
+
+/** Fallback if app_settings.learn_daily_checkin_xp is missing */
+const DAILY_CHECKIN_XP = 25
 
 function lagosDateString() {
   return new Intl.DateTimeFormat("en-CA", {

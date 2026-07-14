@@ -9,8 +9,9 @@ import { Button } from "@/components/ui/button"
 import { useAuth } from "@/components/providers/auth-provider"
 import { LevelUpModal } from "@/components/learn/level-up-modal"
 import { CadreStar } from "@/components/learn/cadre-star"
+import { BadgeChip, FeaturedBadgeCard } from "@/components/learn/featured-badge-card"
 import { displayUsername } from "@/lib/learn/display-name"
-import { Zap, Award, BookOpen, GraduationCap, Flame, Trophy } from "lucide-react"
+import { Zap, Award, BookOpen, GraduationCap, Flame, Trophy, ChevronRight } from "lucide-react"
 
 type ProfilePayload = {
   user: { id: string; name?: string; email?: string }
@@ -49,6 +50,7 @@ export default function ProfilePage() {
   const [checkinMsg, setCheckinMsg] = useState<string | null>(null)
   const [levelUpOpen, setLevelUpOpen] = useState(false)
   const [prevLevel, setPrevLevel] = useState<number | null>(null)
+  const [continueHref, setContinueHref] = useState("/learn")
 
   const load = useCallback(async () => {
     const res = await fetch("/api/profile")
@@ -76,6 +78,18 @@ export default function ProfilePage() {
     }
     load()
   }, [user, authLoading, router, load])
+
+  useEffect(() => {
+    if (!user) return
+    fetch("/api/learn/courses")
+      .then(async (res) => {
+        const data = await res.json()
+        if (!res.ok) return
+        const slug = data.courses?.[0]?.slug as string | undefined
+        if (slug) setContinueHref(`/learn/${slug}`)
+      })
+      .catch(() => null)
+  }, [user])
 
   async function checkIn() {
     setCheckinMsg(null)
@@ -124,26 +138,31 @@ export default function ProfilePage() {
     <main className="min-h-screen bg-[#F5F5F0] text-[#3E2C1C]">
       <Navigation />
 
-      <section className="relative">
-        {/* Banner — LearnWeb3-style speed lines, warm palette */}
-        <div className="relative h-40 overflow-hidden md:h-48">
-          <div className="absolute inset-0 bg-[#2A1F18]" />
-          <div
-            className="absolute inset-y-0 right-0 w-[68%]"
-            style={{
-              background:
-                "linear-gradient(118deg, transparent 0%, #6B4423 18%, #8D5B3E 48%, #C9A227 78%, #E8C547 100%)",
-              clipPath: "polygon(18% 100%, 100% 0, 100% 100%)",
-            }}
-          />
-          <div
-            className="pointer-events-none absolute inset-y-0 right-0 w-[62%] opacity-50"
-            style={{
-              backgroundImage:
-                "repeating-linear-gradient(-32deg, transparent 0 14px, rgba(255,255,255,0.14) 14px 20px)",
-            }}
-          />
+      <section className="relative overflow-hidden">
+        {/* Soft cream banner — full header area, not a short half-band */}
+        <div className="pointer-events-none absolute inset-0 bg-[#F5F5F0]" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage: `repeating-radial-gradient(circle at 70% 40%, #8D5B3E 0, #8D5B3E 70px, transparent 71px, transparent 72px)`,
+            backgroundSize: "200px 200px",
+          }}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#8D5B3E]/15 via-[#D4AF37]/10 to-transparent" />
+        <div className="pointer-events-none absolute -left-20 top-0 h-48 w-48 rounded-full bg-[#D4AF37]/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 top-24 h-52 w-52 rounded-full bg-[#8D5B3E]/15 blur-3xl" />
+
+        <div className="absolute right-4 top-4 z-20 md:right-8 md:top-6">
+          <Button
+            asChild
+            size="sm"
+            className="bg-[#3E2C1C] text-[#F5F5F0] hover:bg-[#3E2C1C]/90"
+          >
+            <Link href="/profile/edit">Edit Profile</Link>
+          </Button>
         </div>
+
+        <div className="relative h-28 md:h-32" aria-hidden />
 
         {/* Hex avatar overlapping banner / strip */}
         <div className="relative z-10 mx-auto -mt-16 flex max-w-5xl justify-center px-4 md:-mt-[4.5rem]">
@@ -167,8 +186,8 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Identity strip */}
-        <div className="border-b border-[#3E2C1C]/10 bg-white">
+        {/* Identity strip — sits on the same cream field */}
+        <div className="relative z-10 border-b border-[#3E2C1C]/10">
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-y-5 px-4 pb-2 pt-5 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-0 md:pb-3 md:pt-4">
             <div className="order-2 flex divide-x divide-[#3E2C1C]/10 md:order-1 md:justify-start">
               <Metric
@@ -176,12 +195,14 @@ export default function ProfilePage() {
                 value={String(profile.stats.streak)}
                 icon={<Flame className="h-4 w-4 text-[#D4AF37]" />}
                 className="flex-1 px-4 md:px-6"
+                align="start"
               />
               <Metric
                 label="Badges"
                 value={String(profile.stats.badges)}
                 icon={<Award className="h-4 w-4 text-[#D4AF37]" />}
                 className="flex-1 px-4 md:px-6"
+                align="start"
               />
             </div>
 
@@ -214,8 +235,9 @@ export default function ProfilePage() {
                 label="Cadre"
                 value={profile.cadre.name.toUpperCase()}
                 icon={<CadreStar slug={profile.cadre.slug} size={18} />}
-                className="flex-1 px-4 md:px-6 md:text-right"
+                className="flex-1 px-4 md:px-6"
                 valueClassName="uppercase tracking-wide"
+                align="center"
               />
               <Metric
                 label="Level"
@@ -223,20 +245,21 @@ export default function ProfilePage() {
                 icon={
                   <span className="flex items-center gap-0.5" aria-hidden>
                     {Array.from({ length: levelStars }).map((_, i) => (
-                      <CadreStar key={i} slug="leader" size={12} />
+                      <CadreStar key={i} slug="master" size={12} />
                     ))}
                   </span>
                 }
-                className="flex-1 px-4 md:px-6 md:text-right"
+                className="flex-1 px-4 md:px-6"
+                align="center"
               />
             </div>
           </div>
 
           {/* Roomier XP bar */}
           <div className="mx-auto max-w-5xl px-4 pb-8 pt-6">
-            <div className="h-3.5 overflow-hidden rounded-full bg-[#3E2C1C]/08 shadow-inner md:h-4">
+            <div className="h-3.5 overflow-hidden rounded-full bg-[#3E2C1C]/18 shadow-inner md:h-4">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-[#D4AF37] via-[#C9A227] to-[#8D5B3E] transition-all duration-500"
+                className="h-full rounded-full bg-gradient-to-r from-[#E8C547] via-[#D4AF37] to-[#C9A04A] animate-breathe transition-[width] duration-500"
                 style={{ width: `${Math.round(profile.level.progress * 100)}%` }}
               />
             </div>
@@ -260,15 +283,24 @@ export default function ProfilePage() {
             variant="outline"
             className="border-[#3E2C1C]/20 text-[#3E2C1C] hover:bg-[#3E2C1C]/5"
           >
-            <Link href="/learn">Continue learning</Link>
+            <Link id="continue-learning" href={continueHref}>
+              Continue learning
+            </Link>
           </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="border-[#3E2C1C]/20 text-[#3E2C1C] hover:bg-[#3E2C1C]/5"
-          >
-            <Link href="/leaderboard">Leaderboard</Link>
-          </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-[#3E2C1C]/20 text-[#3E2C1C] hover:bg-[#3E2C1C]/5"
+              >
+                <Link href="/quests">Starter quests</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-[#3E2C1C]/20 text-[#3E2C1C] hover:bg-[#3E2C1C]/5"
+              >
+                <Link href="/leaderboard">Leaderboard</Link>
+              </Button>
           <Button variant="ghost" className="text-[#6D5D56]" onClick={() => signOut()}>
             Sign out
           </Button>
@@ -278,7 +310,7 @@ export default function ProfilePage() {
         )}
       </section>
 
-      <section className="mx-auto grid max-w-5xl gap-6 px-4 pb-16 lg:grid-cols-[260px_1fr]">
+      <section className="mx-auto grid max-w-5xl gap-6 px-4 pb-8 lg:grid-cols-[260px_1fr]">
         <aside className="rounded-2xl border border-[#3E2C1C]/10 bg-white p-6 shadow-sm">
           <h2 className="font-display text-lg font-bold">Stats</h2>
           <ul className="mt-4 space-y-3 text-sm">
@@ -290,54 +322,120 @@ export default function ProfilePage() {
           </ul>
         </aside>
 
-        <div className="rounded-2xl border border-[#3E2C1C]/10 bg-white p-6 shadow-sm md:p-8">
-          <h2 className="font-display text-lg font-bold">Featured Badge</h2>
-          {featured?.learn_badges ? (
-            <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="flex h-40 w-full max-w-[200px] flex-col items-center justify-center rounded-xl border border-[#D4AF37]/40 bg-[#F5F5F0] p-4 text-center">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#8D5B3E]">
-                  {featured.learn_badges.badge_type || "Badge"}
-                </span>
-                <Award className="my-3 h-12 w-12 text-[#D4AF37]" />
-                <span className="text-xs text-[#6D5D56]">ACHIEVEMENT</span>
+        <div className="space-y-6">
+          <div className="rounded-2xl border border-[#3E2C1C]/10 bg-white p-6 shadow-sm md:p-8">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="font-display text-lg font-bold">Starter Quests</h2>
+                <p className="mt-1 text-sm text-[#6D5D56]">
+                  Follow our social pages to earn starter XP while you begin learning.
+                </p>
               </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold">{featured.learn_badges.name}</h3>
-                <p className="mt-2 text-[#6D5D56]">{featured.learn_badges.description}</p>
-                {featured.learn_badges.xp_value != null && (
-                  <p className="mt-4 inline-block rounded-lg border border-[#3E2C1C]/10 bg-[#F5F5F0] px-3 py-2 text-sm">
-                    XP{" "}
-                    <span className="font-bold text-[#8D5B3E]">
-                      {featured.learn_badges.xp_value.toLocaleString()}
-                    </span>
-                  </p>
-                )}
-              </div>
+              <Button asChild className="bg-[#3E2C1C] text-[#F5F5F0] hover:bg-[#3E2C1C]/90">
+                <Link href="/quests">View quests</Link>
+              </Button>
             </div>
-          ) : (
-            <p className="mt-4 text-[#6D5D56]">
-              Complete your first lesson to earn badges.{" "}
-              <Link href="/learn" className="font-semibold text-[#8D5B3E] underline">
-                Start learning
-              </Link>
-            </p>
-          )}
+          </div>
 
-          {profile.badges.length > 1 && (
-            <div className="mt-10">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-[#6D5D56]">All badges</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {profile.badges.map((b) => (
-                  <span
-                    key={b.id}
-                    className="rounded-full border border-[#3E2C1C]/10 bg-[#F5F5F0] px-3 py-1 text-xs text-[#3E2C1C]"
-                  >
-                    {b.learn_badges?.name || "Badge"}
-                  </span>
-                ))}
-              </div>
+          <div className="rounded-2xl border border-[#3E2C1C]/10 bg-white p-6 shadow-sm md:p-8">
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="font-display text-lg font-bold">Featured Badge</h2>
+              <Link
+                href="/badges"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-[#8D5B3E] hover:underline"
+              >
+                Badges <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
-          )}
+            {featured?.learn_badges ? (
+              <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-start">
+                <FeaturedBadgeCard
+                  badge={featured.learn_badges}
+                  cadreSlug={profile.cadre.slug}
+                  cadreName={profile.cadre.name}
+                />
+                <div className="flex-1 pt-1">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8D5B3E]">
+                    {(featured.learn_badges.badge_type || "Badge").toUpperCase()}
+                  </p>
+                  <h3 className="mt-2 font-display text-2xl font-bold md:text-3xl">
+                    {featured.learn_badges.name}
+                  </h3>
+                  <p className="mt-3 text-[#6D5D56]">{featured.learn_badges.description}</p>
+                  {featured.learn_badges.xp_value != null && (
+                    <p className="mt-5 inline-flex items-center gap-2 rounded-lg border border-[#D4AF37]/40 bg-gradient-to-r from-[#D4AF37]/15 to-transparent px-3 py-2 text-sm">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#8D5B3E]">
+                        XP
+                      </span>
+                      <span className="font-bold text-[#3E2C1C]">
+                        {featured.learn_badges.xp_value.toLocaleString()}
+                      </span>
+                    </p>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-start">
+                <div
+                  className="relative flex h-[260px] w-full max-w-[220px] shrink-0 items-center justify-center bg-[#F5F5F0]"
+                  style={{
+                    clipPath:
+                      "polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%)",
+                    borderRadius: "14px 0 14px 14px",
+                    boxShadow: "inset 0 0 0 1px rgba(62,44,28,0.12)",
+                  }}
+                >
+                  <div className="px-6 text-center">
+                    <Award className="mx-auto h-10 w-10 text-[#D4AF37]/50" />
+                    <p className="mt-3 text-xs text-[#6D5D56]">No badge yet</p>
+                  </div>
+                </div>
+                <p className="pt-2 text-[#6D5D56]">
+                  Complete your first lesson to earn badges.{" "}
+                  <Link href={continueHref} className="font-semibold text-[#8D5B3E] underline">
+                    Start learning
+                  </Link>
+                </p>
+              </div>
+            )}
+
+            {profile.badges.length > 0 && (
+              <div className="mt-10">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#6D5D56]">
+                    All badges
+                  </h3>
+                  <Link href="/badges" className="text-xs font-semibold text-[#8D5B3E] underline">
+                    See all
+                  </Link>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {profile.badges.slice(0, 8).map((b) => (
+                    <BadgeChip
+                      key={b.id}
+                      name={b.learn_badges?.name || "Badge"}
+                      badgeType={b.learn_badges?.badge_type}
+                      active={b.id === featured?.id}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="rounded-2xl border border-[#3E2C1C]/10 bg-white p-6 shadow-sm md:p-8">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="font-display text-lg font-bold">Certificates</h2>
+                <p className="mt-1 text-sm text-[#6D5D56]">
+                  Finish an entire course to unlock a certificate. Full courses are on the way.
+                </p>
+              </div>
+              <Button asChild variant="outline" className="border-[#3E2C1C]/20 text-[#3E2C1C]">
+                <Link href="/certificates">View certificates</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -360,19 +458,26 @@ function Metric({
   icon,
   className = "",
   valueClassName = "",
+  align = "center",
 }: {
   label: string
   value: string
   icon: React.ReactNode
   className?: string
   valueClassName?: string
+  align?: "start" | "center" | "end"
 }) {
+  const alignClass =
+    align === "start"
+      ? "items-center md:items-start"
+      : align === "end"
+        ? "items-center md:items-end"
+        : "items-center"
+
   return (
-    <div className={`min-w-0 text-center md:text-left ${className}`}>
+    <div className={`flex min-w-0 flex-col ${alignClass} ${className}`}>
       <p className="text-[10px] font-bold uppercase tracking-wider text-[#6D5D56]">{label}</p>
-      <div
-        className={`mt-1.5 flex items-center justify-center gap-1.5 md:justify-start ${valueClassName.includes("right") || className.includes("text-right") ? "md:justify-end" : ""}`}
-      >
+      <div className="mt-1.5 flex items-center gap-1.5">
         <span className={`text-xl font-bold leading-none md:text-2xl ${valueClassName}`}>
           {value}
         </span>
