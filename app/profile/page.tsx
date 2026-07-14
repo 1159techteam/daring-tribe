@@ -145,17 +145,25 @@ export default function ProfilePage() {
           />
         </div>
 
-        {/* Hex-ish avatar overlapping banner / strip */}
+        {/* Hex avatar overlapping banner / strip */}
         <div className="relative z-10 mx-auto -mt-16 flex max-w-5xl justify-center px-4 md:-mt-[4.5rem]">
-          <div
-            className="flex h-[7.25rem] w-[6.5rem] items-center justify-center bg-[#3E2C1C] text-3xl font-bold text-[#D4AF37] shadow-[0_10px_32px_rgba(62,44,28,0.35)] md:h-[8.5rem] md:w-[7.5rem] md:text-4xl"
-            style={{
-              clipPath:
-                "polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)",
-              boxShadow: "0 0 0 4px #C9A227, 0 10px 32px rgba(62,44,28,0.35)",
-            }}
-          >
-            {initial}
+          <div className="relative h-[7.5rem] w-[6.75rem] drop-shadow-[0_10px_28px_rgba(62,44,28,0.35)] md:h-[8.75rem] md:w-[7.75rem]">
+            <div
+              className="absolute inset-0 bg-[#C9A227]"
+              style={{
+                clipPath:
+                  "polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)",
+              }}
+            />
+            <div
+              className="absolute inset-[4px] flex items-center justify-center bg-[#3E2C1C] text-3xl font-bold text-[#D4AF37] md:text-4xl"
+              style={{
+                clipPath:
+                  "polygon(50% 0%, 100% 22%, 100% 78%, 50% 100%, 0% 78%, 0% 22%)",
+              }}
+            >
+              {initial}
+            </div>
           </div>
         </div>
 

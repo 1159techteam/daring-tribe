@@ -1,3 +1,6 @@
+"use client"
+
+import { useId } from "react"
 import { getCadreStarColor } from "@/lib/learn/levels"
 
 type Props = {
@@ -14,7 +17,8 @@ type Props = {
 export function CadreStar({ slug, size = 22, className = "", title }: Props) {
   const fill = getCadreStarColor(slug)
   const isUltimate = slug === "ultimate"
-  const id = `cadre-star-${slug}-${size}`
+  const reactId = useId().replace(/:/g, "")
+  const id = `cadre-star-${reactId}`
 
   return (
     <svg
@@ -34,8 +38,8 @@ export function CadreStar({ slug, size = 22, className = "", title }: Props) {
           <stop offset="45%" stopColor="#ffffff" stopOpacity="0.08" />
           <stop offset="100%" stopColor="#000000" stopOpacity="0.18" />
         </linearGradient>
-        <filter id={`${id}-glow`} x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="1" stdDeviation="1.2" floodColor={fill} floodOpacity="0.45" />
+        <filter id={`${id}-glow`} x="-40%" y="-40%" width="180%" height="180%">
+          <feDropShadow dx="0" dy="1" stdDeviation="1.2" floodColor={fill} floodOpacity="0.5" />
         </filter>
       </defs>
       <g filter={`url(#${id}-glow)`}>

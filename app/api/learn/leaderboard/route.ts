@@ -6,6 +6,7 @@ import {
   getLevelFromXp,
   type CadreTier,
 } from "@/lib/learn/levels"
+import { displayUsername } from "@/lib/learn/display-name"
 
 /** GET /api/learn/leaderboard — top learners by lifetime XP */
 export async function GET() {
@@ -51,7 +52,7 @@ export async function GET() {
       return {
         rank: index + 1,
         user_id: b.user_id,
-        name: u?.name || u?.email || "Learner",
+        name: displayUsername({ name: u?.name, email: u?.email }),
         lifetime_xp: b.xp_balance || 0,
         level: levelInfo.level,
         cadre: cadre.name,
