@@ -1,4 +1,4 @@
-/** Level / cadre helpers — all-time XP based (LearnWeb3-style). */
+/** Level / cadre helpers — all-time XP based, 2go-style star cadres. */
 
 export type LevelInfo = {
   level: number
@@ -13,6 +13,24 @@ export type CadreTier = {
   name: string
   min_level: number
   sort_order: number
+}
+
+/** Classic 2go star colors by cadre slug — saturated so ranks read clearly on light UI */
+export const CADRE_STAR_COLORS: Record<string, string> = {
+  novice: "#A8B0BC",
+  amateur: "#1DB954",
+  senior: "#2F6BFF",
+  enthusiast: "#00B4D8",
+  professional: "#FF8A00",
+  expert: "#E53935",
+  leader: "#F5C518",
+  veteran: "#9B5CFF",
+  master: "#FF2D95",
+  ultimate: "#1A1A1A",
+}
+
+export function getCadreStarColor(slug: string): string {
+  return CADRE_STAR_COLORS[slug] || CADRE_STAR_COLORS.novice
 }
 
 /** Fallback curve if DB thresholds missing: level n at (n-1)^2 * 100 XP */
@@ -69,21 +87,24 @@ export function getCadreForLevel(level: number, tiers: CadreTier[]): CadreTier {
   const sorted = [...tiers].sort((a, b) => b.min_level - a.min_level)
   return (
     sorted.find((t) => level >= t.min_level) || {
-      slug: "recruit",
-      name: "Recruit",
+      slug: "novice",
+      name: "Novice",
       min_level: 1,
       sort_order: 1,
     }
   )
 }
 
+/** Classic 2go star ladder */
 export const DEFAULT_CADRE_TIERS: CadreTier[] = [
-  { slug: "recruit", name: "Recruit", min_level: 1, sort_order: 1 },
-  { slug: "scout", name: "Scout", min_level: 5, sort_order: 2 },
-  { slug: "challenger", name: "Challenger", min_level: 10, sort_order: 3 },
-  { slug: "elite", name: "Elite", min_level: 20, sort_order: 4 },
-  { slug: "diamond", name: "Diamond", min_level: 35, sort_order: 5 },
-  { slug: "grandmaster", name: "Grandmaster", min_level: 50, sort_order: 6 },
+  { slug: "novice", name: "Novice", min_level: 1, sort_order: 1 },
+  { slug: "amateur", name: "Amateur", min_level: 5, sort_order: 2 },
+  { slug: "senior", name: "Senior", min_level: 10, sort_order: 3 },
+  { slug: "enthusiast", name: "Enthusiast", min_level: 18, sort_order: 4 },
+  { slug: "professional", name: "Professional", min_level: 28, sort_order: 5 },
+  { slug: "expert", name: "Expert", min_level: 40, sort_order: 6 },
+  { slug: "leader", name: "Leader", min_level: 55, sort_order: 7 },
+  { slug: "veteran", name: "Veteran", min_level: 70, sort_order: 8 },
+  { slug: "master", name: "Master", min_level: 85, sort_order: 9 },
+  { slug: "ultimate", name: "Ultimate", min_level: 100, sort_order: 10 },
 ]
-
-export const DAILY_CHECKIN_XP = 5

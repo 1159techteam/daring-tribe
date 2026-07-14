@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, TrendingUp, Users, Award } from "lucide-react"
+import { ArrowRight, Users, Award } from "lucide-react"
 import Image from "next/image"
 
 export function Hero() {
@@ -23,7 +23,7 @@ export function Hero() {
             <div className="mb-8 flex flex-wrap items-center gap-3">
               <div className="inline-flex items-center gap-2 rounded-full border border-[#8D5B3E]/20 bg-[#8D5B3E]/5 px-4 py-2 text-[10px] md:text-xs font-bold text-[#8D5B3E] uppercase tracking-wider">
                 <Users className="h-3 w-3 md:h-4 md:w-4" />
-                <span>500+ Active Realtors</span>
+                <span>700+ Active Realtors</span>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#8D5B3E]/20 bg-[#8D5B3E]/5 px-4 py-2 text-[10px] md:text-xs font-bold text-[#8D5B3E] uppercase tracking-wider">
                 <Award className="h-3 w-3 md:h-4 md:w-4" />
@@ -57,40 +57,31 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-[#8D5B3E] hover:bg-[#724932] text-white font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
+                className="w-full sm:w-auto bg-[#8D5B3E] hover:bg-[#A06B4A] text-white font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] hover:shadow-[0_24px_48px_rgba(141,91,62,0.35)] hover:-translate-y-0.5 transition-all active:scale-95"
                 asChild
               >
                 <a href="/signup" className="flex items-center gap-2">
-                  Start Your Journey
+                  Join the Tribe
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
 
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-[white] hover:bg-[white] text-[#724932] font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
+                variant="ghost"
+                className="w-full sm:w-auto text-[#724932] hover:text-[#8D5B3E] hover:bg-[#8D5B3E]/5 font-semibold px-6 py-8 text-base transition-all"
                 asChild
               >
                 <a href="/learn" className="flex items-center gap-2">
-                  Start Learning
-                  <ArrowRight className="h-5 w-5" />
+                  Explore courses
+                  <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
             </div>
 
-            <div className="hidden sm:grid grid-cols-2 gap-8 pt-10 mt-10 border-t border-[#8D5B3E]/10">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 text-3xl font-bold text-[#3E2F28]">
-                  <TrendingUp className="h-6 w-6 text-[#8D5B3E]" />
-                  ₦2.5B+
-                </div>
-                <div className="text-sm font-semibold text-[#6D5D56] uppercase tracking-tighter">Closed Sales</div>
-              </div>
-              <div className="space-y-1">
-                <div className="text-3xl font-bold text-[#3E2F28]">95%</div>
-                <div className="text-sm font-semibold text-[#6D5D56] uppercase tracking-tighter">Success Rate</div>
-              </div>
-            </div>
+            <p className="mt-8 text-sm text-[#6D5D56]">
+              Join free · Train on-site · Earn XP that syncs with Buddy App
+            </p>
           </div>
 
           {/* --- IMAGE COMPOSITION WITH RESONATING BACKGROUNDS --- */}
@@ -106,7 +97,7 @@ export function Hero() {
                 <div className="absolute inset-0 border-2 border-[#8D5B3E]/10 rounded-[2rem] md:rounded-[3.5rem] translate-x-4 translate-y-4 -z-10" />
 
                 <div className="absolute -top-4 -right-4 md:-right-8 z-20 bg-white px-3 md:px-5 py-2 md:py-3 rounded-xl shadow-xl border border-[#F3EFE9] flex items-center gap-2">
-                  <span className="font-serif italic text-[#3E2F28] text-[10px] md:text-sm font-medium">Learn & Earn</span> 🤙🏾
+                  <span className="font-sans font-medium text-[#3E2F28] text-[10px] md:text-sm">Learn & Earn</span> 🤙🏾
                 </div>
                 <div className="w-[140px] h-[200px] sm:w-[220px] sm:h-[320px] md:w-[300px] md:h-[420px] relative rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl border-4 md:border-[8px] border-white bg-gradient-to-r">
                   <Image
@@ -139,7 +130,7 @@ export function Hero() {
                   />
                 </div>
                 <div className="absolute -bottom-4 -left-4 md:-left-8 z-20 bg-white px-3 md:px-5 py-2 md:py-3 rounded-xl shadow-xl border border-[#F3EFE9] flex items-center gap-2">
-                  <span className="font-serif italic text-[#3E2F28] text-[10px] md:text-sm font-medium">Win Together</span> ✌🏾
+                  <span className="font-sans font-medium text-[#3E2F28] text-[10px] md:text-sm">Win Together</span> ✌🏾
                 </div>
               </div>
 

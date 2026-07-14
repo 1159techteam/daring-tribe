@@ -7,6 +7,7 @@ import {
   getLevelFromXp,
   type CadreTier,
 } from "@/lib/learn/levels"
+import { displayUsername } from "@/lib/learn/display-name"
 
 export async function GET() {
   try {
@@ -82,8 +83,18 @@ export async function GET() {
     const label = (ul as { labels?: { id: string; name: string; color: string } | null } | null)
       ?.labels
 
+    const nameSource = {
+      name: profile?.name || (user.user_metadata?.name as string | undefined) || null,
+      email: profile?.email || user.email || null,
+    }
+    const username = displayUsername(nameSource)
+
     return NextResponse.json({
-      user: profile || { id: user.id, email: user.email, name: user.user_metadata?.name },
+      user: {
+        id: profile?.id || user.id,
+        name: username,
+        email: nameSource.email,
+      },
       label,
       season_xp: seasonXp,
       lifetime_xp: lifetimeXp,

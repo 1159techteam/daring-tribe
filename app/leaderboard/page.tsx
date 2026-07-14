@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { CadreStar } from "@/components/learn/cadre-star"
 
 type Row = {
   rank: number
@@ -11,6 +12,7 @@ type Row = {
   lifetime_xp: number
   level: number
   cadre: string
+  cadre_slug: string
 }
 
 export default function LeaderboardPage() {
@@ -33,8 +35,8 @@ export default function LeaderboardPage() {
       <section className="container mx-auto px-4 py-12">
         <h1 className="font-display text-4xl font-bold text-[#3E2C1C]">Cadre Leaderboard</h1>
         <p className="mt-2 text-[#6D5D56]">
-          Ranked by all-time XP.{" "}
-          <Link href="/profile" className="text-[#D4AF37] underline">
+          Ranked by all-time XP — climb the 2go star ladder.{" "}
+          <Link href="/profile" className="text-[#8D5B3E] underline">
             View your profile
           </Link>
         </p>
@@ -54,12 +56,20 @@ export default function LeaderboardPage() {
               {rows.map((r) => (
                 <tr key={r.rank} className="border-t border-[#3E2C1C]/5">
                   <td className="px-4 py-3 font-semibold text-[#D4AF37]">{r.rank}</td>
-                  <td className="px-4 py-3 text-[#3E2C1C]">{r.name}</td>
-                  <td className="px-4 py-3 font-bold uppercase tracking-wide text-[#3E2C1C]">
-                    {r.cadre}
+                  <td className="px-4 py-3">
+                    <span className="inline-flex items-center gap-2 font-medium text-[#3E2C1C]">
+                      {r.name}
+                      <CadreStar slug={r.cadre_slug || "novice"} size={16} title={r.cadre} />
+                    </span>
                   </td>
-                  <td className="px-4 py-3">{r.level}</td>
-                  <td className="px-4 py-3">{r.lifetime_xp.toLocaleString()}</td>
+                  <td className="px-4 py-3">
+                    <span className="inline-flex items-center gap-1.5 font-bold tracking-wide text-[#3E2C1C]">
+                      <CadreStar slug={r.cadre_slug || "novice"} size={14} />
+                      {r.cadre}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-[#3E2C1C]">{r.level}</td>
+                  <td className="px-4 py-3 text-[#3E2C1C]">{r.lifetime_xp.toLocaleString()}</td>
                 </tr>
               ))}
               {!error && rows.length === 0 && (

@@ -47,7 +47,7 @@ export function BuddyApp() {
               </div>
 
               <div className="mb-4">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] text-[#3E2F28] tracking-tight">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] text-[#8D5B3E] tracking-tight">
                   Quests, Rewards
                   <br className="hidden sm:block" />
                   <span className="text-[#D4AF37]">&amp; Growth</span>{" "}
@@ -59,24 +59,29 @@ export function BuddyApp() {
               </div>
 
               <p className="text-base md:text-lg text-[#6D5D56] leading-relaxed mt-6 mb-10 font-medium">
-                Complete quests, earn XP from learning on Daring Tribe, redeem rewards, and track your performance — one wallet across both apps.
+                Complete quests, earn XP from learning on Daring Tribe, redeem rewards, and track your performance — one wallet across both apps. Create your Tribe account first, then play on Buddy App with the same login.
               </p>
 
-              <Button
-                size="lg"
-                className="bg-[#8D5B3E] hover:bg-[#724932] text-white font-bold px-10 py-7 text-base rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] transition-all active:scale-95"
-                asChild
-              >
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <Button
+                  size="lg"
+                  className="bg-[#8D5B3E] hover:bg-[#A06B4A] text-white font-bold px-10 py-7 text-base rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] hover:-translate-y-0.5 transition-all active:scale-95"
+                  asChild
+                >
+                  <a href="/signup" className="inline-flex items-center gap-2">
+                    Join to start playing
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </Button>
                 <a
                   href="https://buddy.1159realty.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
+                  className="text-sm font-semibold text-[#8D5B3E] underline-offset-4 hover:underline"
                 >
-                  Start Playing
-                  <ArrowRight className="h-5 w-5" />
+                  Already a member? Open Buddy App
                 </a>
-              </Button>
+              </div>
             </div>
 
             {/* --- RIGHT: FEATURE CARDS --- */}
@@ -100,7 +105,7 @@ export function BuddyApp() {
               <div className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-[#D4AF37]/30 bg-[#D4AF37]/5">
                 <span className="text-2xl">🏆</span>
                 <p className="text-sm font-semibold text-[#8D5B3E]">
-                  Your grind earns more than a commission — it earns you a crown.
+                  Your grind earns more than a commission, it earns you a crown.
                 </p>
               </div>
             </div>

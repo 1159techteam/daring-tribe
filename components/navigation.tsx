@@ -18,9 +18,9 @@ export function Navigation() {
   const links = [
     { href: "/about", label: "About" },
     { href: "/learn", label: "Learn" },
-    { href: "/leaderboard", label: "Leaderboard" },
     { href: "/testimonials", label: "Testimonials" },
     { href: "/blog", label: "Blog" },
+    { href: "/leaderboard", label: "Leaderboard" },
     { href: "/contact", label: "Contact" },
   ]
 
@@ -51,7 +51,7 @@ export function Navigation() {
             ))}
             {!loading && user ? (
               <Button size="sm" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                <Link href="/profile">Profile</Link>
+                <Link href="/profile">My Profile</Link>
               </Button>
             ) : (
               <Button size="sm" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90" asChild>
@@ -86,7 +86,7 @@ export function Navigation() {
             ))}
             <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-2" asChild>
               <Link href={user ? "/profile" : "/signup"} onClick={() => setIsOpen(false)}>
-                {user ? "Profile" : "Join Tribe"}
+                {user ? "My Profile" : "Join Tribe"}
               </Link>
             </Button>
           </div>
