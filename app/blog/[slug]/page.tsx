@@ -4,7 +4,10 @@ import { Calendar, User, ArrowLeft, BookOpen, Megaphone, Users, GraduationCap, S
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getBlogPost, getRelatedPosts, getCategoryById, BLOG_DATA } from "@/lib/blog-data"
+import { getPublishedBlogPost, getRelatedPosts, getCategoryById, getPublishedBlogPosts } from "@/lib/blog-data"
+
+/** Re-check publish dates without waiting for a full redeploy. */
+export const revalidate = 3600
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
     salesbook: <BookOpen className="w-4 h-4" />,
@@ -14,14 +17,14 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 }
 
 export async function generateStaticParams() {
-    return BLOG_DATA.map((post) => ({
+    return getPublishedBlogPosts().map((post) => ({
         slug: post.slug,
     }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
-    const post = getBlogPost(slug)
+    const post = getPublishedBlogPost(slug)
 
     if (!post) {
         return {
@@ -43,7 +46,7 @@ function estimateReadTime(content: string): number {
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params
-    const post = getBlogPost(slug)
+    const post = getPublishedBlogPost(slug)
 
     if (!post) {
         notFound()

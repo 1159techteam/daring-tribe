@@ -6,6 +6,8 @@ export interface BlogPost {
   title: string;
   author: string;
   date: string;
+  /** ISO datetime — post is hidden until this moment. Omit = already live. */
+  publishedAt?: string;
   image: string;
   excerpt: string;
   content: string;
@@ -626,20 +628,323 @@ The final step is closing. When the earlier stages are done correctly, closing b
 
 The lesson is simple: structure creates confidence, and confidence closes deals. If you find yourself struggling on calls, the answer is rarely more pressure or more pitching. It is a clearer, more intentional process — one that puts the client first at every stage.`,
   },
+
+  // JULY BLOGS
+
+  {
+    id: "16",
+    slug: "the-property-is-legit-is-not-a-document",
+    categoryId: "insights",
+    category: "Real Estate Insights",
+    title: "“The Property Is Legit” Is Not a Document",
+    author: "Favour Abiodun",
+    date: "JULY 2026",
+    publishedAt: "2026-07-07T08:00:00+01:00",
+    image: "/blog/july-property-documents.png",
+    excerpt:
+      "“Don’t worry, the property is legit.” Here’s the truth: legit is not a document. And in real estate, if it’s not on paper, it doesn’t fully protect you.",
+    content: `You’ve heard it before.
+
+“Don’t worry, the property is legit.”
+
+And somehow… people believe it. They pay. They wait. Then things get complicated.
+
+Here’s the truth: “legit” is not a document. And in real estate, if it’s not on paper, it doesn’t fully protect you.
+
+As a Daring Realtor, this is one of the most important things you can understand and explain to your clients. Because the moment you can break down property documents clearly? You become the realtor people trust.
+
+**The Documents That Actually Matter**
+
+**1. Certificate of Occupancy (C of O)**
+This is the big one. Issued by the government, it means the land has been officially recognized and you have the right to occupy it. When clients ask “is it genuine?” a C of O is one of the strongest answers.
+
+**2. Deed of Assignment**
+This is the transfer document. It’s the paper that moves ownership from the seller to the buyer. No deed, no proof you own anything.
+
+**3. Survey Plan**
+Remember our land size article? The survey plan is what officially confirms the size, shape, and exact location of the land. It’s drawn by a licensed surveyor. Without it, you’re guessing.
+
+**4. Governor’s Consent**
+When land with a C of O is sold, the government needs to approve that transfer. That approval is called Governor’s Consent. Many buyers skip this. Don’t.
+
+**5. Receipt & Contract of Sale**
+Basic, but necessary. It shows money exchanged hands and under what terms.
+
+**Why Realtors Need to Know This**
+
+You’re not a lawyer. Nobody is asking you to be.
+But when a client asks “which documents should I collect?” you should not be the one saying “erm… the usual ones.”
+
+Know the names. Know what each one does. Explain it simply.
+
+That’s the difference between a realtor who just sends listings and one who actually guides people through a deal.
+
+**One Sentence to Remember**
+
+Documents protect the buyer. Your knowledge protects your deal.
+Know this stuff. Your clients will thank you. Your commissions will show it.`,
+  },
+  {
+    id: "17",
+    slug: "your-clients-are-waiting-are-you-ready",
+    categoryId: "salesbook",
+    category: "The Daring Salesbook",
+    title: "Your Clients Are Waiting. Are You Ready?",
+    author: "Emerald Akinjayeju",
+    date: "JULY 2026",
+    publishedAt: "2026-07-21T08:00:00+01:00",
+    image: "/blog/july-clients-waiting.png",
+    excerpt:
+      "You got the property details. You saved it to your phone. And then… nothing. Some realtors will close on Jonny Gate II this month. Others will watch it happen. The difference? This.",
+    content: `You got the property details. You saved it to your phone.
+
+And then… nothing.
+
+No calls made. No conversations started.
+Just a flyer sitting in your gallery collecting dust.
+
+Some realtors will close on Jonny Gate II this month. Others will watch it happen.
+
+The difference? This.
+
+**Know What You’re Selling**
+
+Few minutes from Kwara State University. Thousands of students, lecturers, and young professionals who need housing year-round.
+
+Dia’s Crest Hostel is right there — 24/7 light, water, solar, security. That kind of development doesn’t go up in just any area. It goes up where the demand is real and growing.
+
+BAJ Court launched in that same community and sold out fast. Jonny Gate II is the next opportunity in that same axis.
+
+That’s your story. Know it cold.
+
+**How to Open the Conversation**
+
+Don’t start with “I have a property in Malete.”
+
+Start with this:
+
+“There’s an axis in Ilorin that investors have been quietly moving into. We sold out our last property there faster than expected. We just opened something new and I think you should hear about it.”
+
+Now they’re curious. Now they want to know more.
+
+**The Questions They’ll Ask**
+
+“Is the land dry?” — Yes. Dry land, fully fenced. No stories.
+“What’s around it?” — Dia’s Crest Hostel. KWASU community. Growing infrastructure. The kind of neighbourhood that rewards early movers.
+“Is it worth it?” — BAJ Court answered that question. The people who moved early are glad they did.
+
+**How to Close**
+
+After you’ve answered their questions, don’t wait for them to decide alone. Say:
+“Based on everything, does this feel like something worth looking at further? I can send you the full details right now.”
+
+Soft. Direct. No pressure.
+
+Jonny Gate II sells itself — but only if you show up prepared.
+Know the story. Tell it well. Ask for the next step.
+Now go. Your clients are waiting.`,
+  },
+
+  // AUGUST BLOGS
+
+  {
+    id: "18",
+    slug: "the-rewards-have-been-claimed",
+    categoryId: "daring",
+    category: "What's Daring?",
+    title: "The Rewards Have Been Claimed",
+    author: "",
+    date: "AUGUST 2026",
+    publishedAt: "2026-08-04T08:00:00+01:00",
+    image: "/blog/august-rewards-claimed.png",
+    excerpt:
+      "Q2 is done. The power banks went to the ones who moved. Every sale and social engagement earns XP — currency you can trade for real rewards. Q3 is wide open.",
+    content: `Let’s talk about what happened in Q2.
+
+Some people in this tribe showed up — really showed up. They sold. They engaged. They earned their XP points on the Quest. And when the time came?
+
+They walked away with power banks.
+
+Not because they got lucky. Because they played the game.
+
+If you’re just hearing about the Quest for the first time — here’s how it works.
+
+Every time you sell a property or engage on our social media handles, you earn XP points. Those points are not just numbers. They are currency.
+
+Currency you can trade in for real things:
+- Trip to Seychelles
+- Mini Fridge
+- Electric Iron
+- Power Bank
+- Pen Mug
+- Note Pad
+- Branded Cap
+
+The more you show up, the more you earn. Simple.
+
+Q2 is done. The power banks went to the ones who moved.
+
+Q3 is wide open.
+
+The question is — what are you playing for?
+
+Get on the Quest. Earn your XP. And let’s see your name at the top when it’s time to celebrate again.`,
+  },
+  {
+    id: "19",
+    slug: "they-said-learn-first-i-learned-and-earned",
+    categoryId: "community",
+    category: "Community Hub",
+    title: "They Said Learn First. I Learned and Earned.",
+    author: "Andrew Olanbanjo",
+    date: "AUGUST 2026",
+    publishedAt: "2026-08-18T08:00:00+01:00",
+    image: "/blog/august-learn-and-earn.png",
+    excerpt:
+      "When I joined the Daring Tribe, I had nothing — no contacts, no sales background. What I had was a decision to take it seriously. That decision changed everything.",
+    content: `When I joined the Daring Tribe, I had nothing.
+
+No contacts in real estate. No background in sales. No idea how a property deal even worked from start to finish.
+
+What I had was a decision — that I was going to take this seriously.
+
+And that decision changed everything.
+
+**I Won’t Pretend It Was Easy**
+
+The first few weeks of training humbled me.
+
+People around me seemed to already understand things I was just hearing for the first time. There were processes, conversations, and skills I had never thought about before.
+
+But I kept showing up. I asked questions even when I felt like I should already know the answers. I practiced. I repeated things until they felt natural.
+
+Nobody handed me confidence. I built it session by session.
+
+**The Moment It Got Real**
+
+When my first serious lead came in, my head was doing the most.
+
+What if they ask something I can’t answer? What if I sound inexperienced? What if they don’t trust me?
+
+But I had put in the work. I knew what I was talking about.
+
+So I showed up for that conversation anyway — not perfectly, but prepared.
+
+I listened more than I talked. I focused on what they actually needed. I followed up when others would have let it go cold.
+And they came back.
+
+We closed.
+
+People act like having no experience is a problem.
+
+For me, it was a clean slate. No wrong habits. No shortcuts. I learned everything the right way from the beginning — and that foundation is what’s carrying me now.
+
+Zero experience didn’t hold me back. Choosing not to start would have.
+
+**Where I Am Now**
+
+I talk about properties with confidence. I handle objections without freezing. I follow up without fear.
+But the biggest thing that changed? How I see myself.
+Real estate didn’t just give me income. It gave me a version of myself I actually respect.
+
+If you’ve been waiting until you “know enough” to start — you’ll be waiting forever.
+
+The learning happens when you begin. Not before.
+The Daring Tribe taught me that. And now I’m living it.`,
+  },
+
+  // SEPTEMBER BLOGS
+
+  {
+    id: "20",
+    slug: "the-day-the-training-room-got-quiet",
+    categoryId: "community",
+    category: "Community Hub",
+    title: "The Day the Training Room Got Quiet",
+    author: "",
+    date: "SEPTEMBER 2026",
+    publishedAt: "2026-09-01T08:00:00+01:00",
+    image: "/blog/september-training-quiet.png",
+    excerpt:
+      "A simple question in Friday training — and real silence. Not failure. A turning point. The best realtors stay in the uncomfortable moments long enough to grow through them.",
+    content: `It was a regular Friday session.
+
+Everyone was on the call. Cameras off — because let’s be honest, that’s just how online training goes.
+A few people typing. A few people probably eating.
+
+And then the facilitator asked a simple question.
+
+“If a client asked you right now why they should invest in real estate over every other option — what would you say?”
+
+Silence.
+
+Not the polite silence where someone is about to answer.
+The real silence. The kind where everybody is hoping someone else speaks first.
+
+And in that moment something honest happened.
+People realised they had been learning about real estate. Reading about it. Saving flyers about it.
+But they hadn’t made it their own yet.
+
+They couldn’t answer the question in their own words. From their own conviction.
+
+That silence was not a failure. It was a turning point.
+
+Because the people who sat in that quiet and felt uncomfortable — they were the ones who showed up differently the next session. They came back with answers. With confidence. With their own words.
+
+That’s what training actually does.
+
+It doesn’t just give you information. It shows you exactly where your gaps are so you can fill them.
+
+The best realtors in the Daring Tribe are not the ones who knew everything from day one.
+
+They’re the ones who stayed in the uncomfortable moments long enough to grow through them.
+
+That Friday? It grew a lot of people.
+
+Are you in a quiet moment right now? Good. Stay in it. The answer is coming.`,
+  },
 ];
+
+
+export function isBlogPostPublished(
+  post: BlogPost,
+  now: Date = new Date(),
+): boolean {
+  if (!post.publishedAt) return true
+  const published = new Date(post.publishedAt)
+  if (Number.isNaN(published.getTime())) return true
+  return published.getTime() <= now.getTime()
+}
+
+export function getPublishedBlogPosts(now: Date = new Date()): BlogPost[] {
+  return BLOG_DATA.filter((post) => isBlogPostPublished(post, now))
+}
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_DATA.find((post) => post.slug === slug);
+}
+
+/** Live post only — returns undefined if missing or not yet published. */
+export function getPublishedBlogPost(
+  slug: string,
+  now: Date = new Date(),
+): BlogPost | undefined {
+  const post = getBlogPost(slug)
+  if (!post || !isBlogPostPublished(post, now)) return undefined
+  return post
 }
 
 export function getRelatedPosts(
   currentSlug: string,
   categoryId: string,
   limit: number = 3,
+  now: Date = new Date(),
 ): BlogPost[] {
-  return BLOG_DATA.filter(
-    (post) => post.slug !== currentSlug && post.categoryId === categoryId,
-  ).slice(0, limit);
+  return getPublishedBlogPosts(now)
+    .filter(
+      (post) => post.slug !== currentSlug && post.categoryId === categoryId,
+    )
+    .slice(0, limit);
 }
 
 export function getCategoryById(id: string) {
