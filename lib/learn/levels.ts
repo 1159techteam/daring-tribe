@@ -1,4 +1,4 @@
-/** Level / cadre helpers — all-time XP based, 2go-style star cadres. */
+/** Level / cadre helpers — all-time XP based, Tribe cadre ladder. */
 
 export type LevelInfo = {
   level: number
@@ -16,42 +16,42 @@ export type CadreTier = {
 }
 
 /**
- * Exact 2go star ladder colors (from official rank list).
- * Novice red → Ultimate aquamarine — not grey/black.
+ * Star colors for Scout → Elite.
+ * Bronze–Ascendant follow Valorant rank palette; early ranks + Elite are Tribe originals.
  */
 export const CADRE_STAR_COLORS: Record<string, string> = {
-  novice: "#E53935", // red
-  amateur: "#5E35B1", // deep purple
-  senior: "#C2185B", // magenta / pink-purple
-  enthusiast: "#C0CA33", // lime
-  professional: "#43A047", // green
-  expert: "#1E88E5", // medium blue
-  leader: "#00ACC1", // cyan / teal
-  veteran: "#F9A825", // muted gold
-  master: "#FDD835", // bright yellow
-  ultimate: "#26A69A", // aquamarine / teal-white metal
+  scout: "#6B8F5E", // olive — field scout
+  spartan: "#C62828", // warrior crimson
+  challenger: "#E65100", // competitive orange
+  "bronze-beginner": "#A36A3E", // Valorant bronze
+  "silver-achiever": "#8A949E", // Valorant silver
+  "gold-champion": "#E8B339", // Valorant gold
+  "platinum-trailblazer": "#4BA7A7", // Valorant platinum teal
+  diamond: "#C79CF2", // Valorant diamond lavender
+  ascendant: "#24A56A", // Valorant ascendant green
+  elite: "#7C3AED", // royal violet — top rank
 }
 
 /** Metallic companions for star gradients */
 export const CADRE_STAR_METAL: Record<string, { highlight: string; mid: string; shade: string }> = {
-  novice: { highlight: "#FF8A80", mid: "#E53935", shade: "#B71C1C" },
-  amateur: { highlight: "#B39DDB", mid: "#5E35B1", shade: "#311B92" },
-  senior: { highlight: "#F48FB1", mid: "#C2185B", shade: "#880E4F" },
-  enthusiast: { highlight: "#E6EE9C", mid: "#C0CA33", shade: "#9E9D24" },
-  professional: { highlight: "#81C784", mid: "#43A047", shade: "#2E7D32" },
-  expert: { highlight: "#90CAF9", mid: "#1E88E5", shade: "#1565C0" },
-  leader: { highlight: "#80DEEA", mid: "#00ACC1", shade: "#00838F" },
-  veteran: { highlight: "#FFE082", mid: "#F9A825", shade: "#F57F17" },
-  master: { highlight: "#FFF59D", mid: "#FDD835", shade: "#FBC02D" },
-  ultimate: { highlight: "#E0F2F1", mid: "#26A69A", shade: "#00695C" },
+  scout: { highlight: "#A8C49A", mid: "#6B8F5E", shade: "#3E5C34" },
+  spartan: { highlight: "#EF9A9A", mid: "#C62828", shade: "#7F1515" },
+  challenger: { highlight: "#FFB74D", mid: "#E65100", shade: "#BF360C" },
+  "bronze-beginner": { highlight: "#D4A574", mid: "#A36A3E", shade: "#6B4423" },
+  "silver-achiever": { highlight: "#E8ECF0", mid: "#8A949E", shade: "#5A636D" },
+  "gold-champion": { highlight: "#FFE082", mid: "#E8B339", shade: "#B8860B" },
+  "platinum-trailblazer": { highlight: "#A5E0DE", mid: "#4BA7A7", shade: "#2A6B6B" },
+  diamond: { highlight: "#E8D5FF", mid: "#C79CF2", shade: "#7B5BA8" },
+  ascendant: { highlight: "#7DDBAB", mid: "#24A56A", shade: "#0F6B40" },
+  elite: { highlight: "#C4B5FD", mid: "#7C3AED", shade: "#4C1D95" },
 }
 
 export function getCadreStarColor(slug: string): string {
-  return CADRE_STAR_COLORS[slug] || CADRE_STAR_COLORS.novice
+  return CADRE_STAR_COLORS[slug] || CADRE_STAR_COLORS.scout
 }
 
 export function getCadreStarMetal(slug: string) {
-  return CADRE_STAR_METAL[slug] || CADRE_STAR_METAL.novice
+  return CADRE_STAR_METAL[slug] || CADRE_STAR_METAL.scout
 }
 
 /** Fallback if app_settings.learn_daily_checkin_xp is missing */
@@ -111,24 +111,24 @@ export function getCadreForLevel(level: number, tiers: CadreTier[]): CadreTier {
   const sorted = [...tiers].sort((a, b) => b.min_level - a.min_level)
   return (
     sorted.find((t) => level >= t.min_level) || {
-      slug: "novice",
-      name: "Novice",
+      slug: "scout",
+      name: "Scout",
       min_level: 1,
       sort_order: 1,
     }
   )
 }
 
-/** Classic 2go star ladder */
+/** Tribe cadre ladder: Scout → Elite */
 export const DEFAULT_CADRE_TIERS: CadreTier[] = [
-  { slug: "novice", name: "Novice", min_level: 1, sort_order: 1 },
-  { slug: "amateur", name: "Amateur", min_level: 5, sort_order: 2 },
-  { slug: "senior", name: "Senior", min_level: 10, sort_order: 3 },
-  { slug: "enthusiast", name: "Enthusiast", min_level: 18, sort_order: 4 },
-  { slug: "professional", name: "Professional", min_level: 28, sort_order: 5 },
-  { slug: "expert", name: "Expert", min_level: 40, sort_order: 6 },
-  { slug: "leader", name: "Leader", min_level: 55, sort_order: 7 },
-  { slug: "veteran", name: "Veteran", min_level: 70, sort_order: 8 },
-  { slug: "master", name: "Master", min_level: 85, sort_order: 9 },
-  { slug: "ultimate", name: "Ultimate", min_level: 100, sort_order: 10 },
+  { slug: "scout", name: "Scout", min_level: 1, sort_order: 1 },
+  { slug: "spartan", name: "Spartan", min_level: 5, sort_order: 2 },
+  { slug: "challenger", name: "Challenger", min_level: 10, sort_order: 3 },
+  { slug: "bronze-beginner", name: "Bronze Beginner", min_level: 18, sort_order: 4 },
+  { slug: "silver-achiever", name: "Silver Achiever", min_level: 28, sort_order: 5 },
+  { slug: "gold-champion", name: "Gold Champion", min_level: 40, sort_order: 6 },
+  { slug: "platinum-trailblazer", name: "Platinum Trailblazer", min_level: 55, sort_order: 7 },
+  { slug: "diamond", name: "Diamond", min_level: 70, sort_order: 8 },
+  { slug: "ascendant", name: "Ascendant", min_level: 85, sort_order: 9 },
+  { slug: "elite", name: "Elite", min_level: 100, sort_order: 10 },
 ]

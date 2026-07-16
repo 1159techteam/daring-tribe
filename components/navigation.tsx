@@ -19,6 +19,7 @@ export function Navigation() {
     { href: "/about", label: "About" },
     { href: "/learn", label: "Learn" },
     { href: "/quests", label: "Quests" },
+    { href: "/badges", label: "Badges" },
     { href: "/testimonials", label: "Testimonials" },
     { href: "/blog", label: "Blog" },
     { href: "/leaderboard", label: "Leaderboard" },

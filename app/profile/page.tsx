@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { useAuth } from "@/components/providers/auth-provider"
 import { LevelUpModal } from "@/components/learn/level-up-modal"
 import { CadreStar } from "@/components/learn/cadre-star"
+import { CadreRanksInfo } from "@/components/learn/cadre-ranks-info"
 import { BadgeChip, FeaturedBadgeCard } from "@/components/learn/featured-badge-card"
 import { displayUsername } from "@/lib/learn/display-name"
 import { Zap, Award, BookOpen, GraduationCap, Flame, Trophy, ChevronRight } from "lucide-react"
@@ -233,6 +234,12 @@ export default function ProfilePage() {
             <div className="order-3 flex divide-x divide-[#3E2C1C]/10 md:justify-end">
               <Metric
                 label="Cadre"
+                labelAction={
+                  <CadreRanksInfo
+                    currentSlug={profile.cadre.slug}
+                    currentLevel={profile.level.level}
+                  />
+                }
                 value={profile.cadre.name.toUpperCase()}
                 icon={<CadreStar slug={profile.cadre.slug} size={18} />}
                 className="flex-1 px-4 md:px-6"
@@ -245,7 +252,7 @@ export default function ProfilePage() {
                 icon={
                   <span className="flex items-center gap-0.5" aria-hidden>
                     {Array.from({ length: levelStars }).map((_, i) => (
-                      <CadreStar key={i} slug="master" size={12} />
+                      <CadreStar key={i} slug="gold-champion" size={12} />
                     ))}
                   </span>
                 }
@@ -454,6 +461,7 @@ export default function ProfilePage() {
 
 function Metric({
   label,
+  labelAction,
   value,
   icon,
   className = "",
@@ -461,6 +469,7 @@ function Metric({
   align = "center",
 }: {
   label: string
+  labelAction?: React.ReactNode
   value: string
   icon: React.ReactNode
   className?: string
@@ -476,7 +485,10 @@ function Metric({
 
   return (
     <div className={`flex min-w-0 flex-col ${alignClass} ${className}`}>
-      <p className="text-[10px] font-bold uppercase tracking-wider text-[#6D5D56]">{label}</p>
+      <div className="flex items-center gap-1">
+        <p className="text-[10px] font-bold uppercase tracking-wider text-[#6D5D56]">{label}</p>
+        {labelAction}
+      </div>
       <div className="mt-1.5 flex items-center gap-1.5">
         <span className={`text-xl font-bold leading-none md:text-2xl ${valueClassName}`}>
           {value}

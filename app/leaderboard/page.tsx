@@ -59,12 +59,12 @@ export default function LeaderboardPage() {
                   <td className="px-4 py-3">
                     <span className="inline-flex items-center gap-2 font-medium text-[#3E2C1C]">
                       {r.name}
-                      <CadreStar slug={r.cadre_slug || "novice"} size={16} title={r.cadre} />
+                      <CadreStar slug={r.cadre_slug || "scout"} size={16} title={r.cadre} />
                     </span>
                   </td>
                   <td className="px-4 py-3">
                     <span className="inline-flex items-center gap-1.5 font-bold tracking-wide text-[#3E2C1C]">
-                      <CadreStar slug={r.cadre_slug || "novice"} size={14} />
+                      <CadreStar slug={r.cadre_slug || "scout"} size={14} />
                       {r.cadre}
                     </span>
                   </td>

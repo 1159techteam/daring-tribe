@@ -26,8 +26,8 @@ export default function BadgesPage() {
   const router = useRouter()
   const [badges, setBadges] = useState<BadgeRow[]>([])
   const [cadre, setCadre] = useState<{ name: string; slug: string }>({
-    name: "Novice",
-    slug: "novice",
+    name: "Scout",
+    slug: "scout",
   })
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
