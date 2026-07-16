@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Calendar, User, BookOpen, Megaphone, Users, GraduationCap, ArrowRight, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { BLOG_DATA, CATEGORIES } from "@/lib/blog-data"
+import { CATEGORIES, getPublishedBlogPosts } from "@/lib/blog-data"
 
 const CATEGORY_ICONS: Record<string, React.ReactNode> = {
     salesbook: <BookOpen className="w-4 h-4" />,
@@ -19,7 +19,7 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 export default function BlogPage() {
     const [activeCategory, setActiveCategory] = useState<string>("all")
 
-    const sortedPosts = [...BLOG_DATA].reverse()
+    const sortedPosts = [...getPublishedBlogPosts()].reverse()
 
     const filteredPosts = activeCategory === "all"
         ? sortedPosts
