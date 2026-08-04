@@ -1,19 +1,22 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Cinzel, Poppins } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
+import { AuthProvider } from "@/components/providers/auth-provider"
 import "./globals.css"
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-})
-const cinzel = Cinzel({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "700"],
+const neulis = localFont({
+  src: [
+    { path: "../public/fonts/NeulisAlt-Light.ttf", weight: "300", style: "normal" },
+    { path: "../public/fonts/NeulisAlt-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/NeulisAlt-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/NeulisAlt-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../public/fonts/NeulisAlt-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/NeulisAlt-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "../public/fonts/NeulisAlt-Black.ttf", weight: "900", style: "normal" },
+  ],
+  variable: "--font-neulis",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -66,7 +69,7 @@ export const metadata: Metadata = {
     icon: [
       {
         url: "/log.png",
-      }
+      },
     ],
     apple: "/apple-icon.png",
   },
@@ -121,12 +124,12 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${cinzel.variable} font-sans antialiased`}>
+      <body className={`${neulis.variable} ${neulis.className} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <AuthProvider>{children}</AuthProvider>
         <Analytics />
       </body>
     </html>

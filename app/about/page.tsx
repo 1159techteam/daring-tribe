@@ -67,11 +67,11 @@ export default function AboutPage() {
                   href="/course"
                   className="
     group inline-flex items-center justify-center 
-    bg-[#D4AF37] text-white 
+    bg-[#D4AF37] text-[#3E2C1C] 
     rounded-full px-10 py-5 
     font-poppins font-bold text-sm tracking-[0.15em] uppercase
     shadow-[0_10px_30px_-10px_rgba(212,175,55,0.5)]
-    hover:bg-[#3E2C1C] hover:shadow-[0_15px_35px_-10px_rgba(62,44,28,0.4)]
+    hover:bg-[#E5C65A] hover:shadow-[0_15px_40px_-10px_rgba(229,198,90,0.55)]
     hover:-translate-y-1
     transition-all duration-300 ease-out
     active:scale-95
