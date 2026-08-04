@@ -60,7 +60,7 @@ export function Hero() {
                 className="w-full sm:w-auto bg-[#8D5B3E] hover:bg-[#A06B4A] text-white font-bold px-10 py-8 text-lg rounded-xl shadow-[0_20px_40px_rgba(141,91,62,0.25)] hover:shadow-[0_24px_48px_rgba(141,91,62,0.35)] hover:-translate-y-0.5 transition-all active:scale-95"
                 asChild
               >
-                <a href="/signup" className="flex items-center gap-2">
+                <a href="/login" className="flex items-center gap-2">
                   Join the Tribe
                   <ArrowRight className="h-5 w-5" />
                 </a>

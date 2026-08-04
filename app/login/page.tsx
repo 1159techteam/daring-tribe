@@ -84,9 +84,9 @@ export default function LoginPage() {
       <Navigation />
       <section className="relative z-10 container mx-auto flex justify-center px-4 py-16">
         <div className="w-full max-w-md rounded-3xl border border-white/50 bg-white/40 p-8 shadow-[0_20px_60px_rgba(62,44,28,0.12)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/30">
-          <h1 className="font-display text-3xl font-bold text-[#3E2C1C]">Welcome back</h1>
+          <h1 className="font-display text-3xl font-bold text-[#3E2C1C]">Join the Tribe</h1>
           <p className="mt-2 text-sm text-[#6D5D56]">
-            Use your Buddy App / Daring Tribe account. One login for both apps.
+            Sign in with your Buddy App account. New here? Create one below — one login for both apps.
           </p>
           <form onSubmit={onSubmit} className="mt-8 space-y-4">
             <div>
@@ -128,9 +128,9 @@ export default function LoginPage() {
             Continue with Google
           </Button>
           <p className="mt-6 text-center text-sm text-[#6D5D56]">
-            New here?{" "}
+            Don’t have an account yet?{" "}
             <Link href="/signup" className="font-semibold text-[#D4AF37] hover:underline">
-              Create an account
+              Create one
             </Link>
           </p>
         </div>

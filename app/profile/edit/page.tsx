@@ -161,6 +161,27 @@ export default function EditProfilePage() {
             </Button>
           </div>
         </form>
+
+        <div className="mt-6 rounded-2xl border border-dashed border-[#3E2C1C]/15 bg-white/60 px-5 py-4">
+          <p className="text-sm font-semibold text-[#3E2C1C]">Tribe bio form</p>
+          <p className="mt-1 text-xs text-[#6D5D56]">
+            Need to update your onboarding details? You can also earn XP by completing this as a
+            starter quest.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a
+              href="https://forms.gle/xQHGSzQN1csm2Bxi7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#8D5B3E] underline-offset-2 hover:underline"
+            >
+              Open bio form
+            </a>
+            <Link href="/quests" className="font-medium text-[#8D5B3E] underline-offset-2 hover:underline">
+              View starter quests
+            </Link>
+          </div>
+        </div>
       </section>
       <Footer />
     </main>

@@ -57,7 +57,7 @@ export function Navigation() {
               </Button>
             ) : (
               <Button size="sm" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                <Link href="/signup">Join Tribe</Link>
+                <Link href="/login">Join Tribe</Link>
               </Button>
             )}
           </div>
@@ -87,7 +87,7 @@ export function Navigation() {
               </Link>
             ))}
             <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-2" asChild>
-              <Link href={user ? "/profile" : "/signup"} onClick={() => setIsOpen(false)}>
+              <Link href={user ? "/profile" : "/login"} onClick={() => setIsOpen(false)}>
                 {user ? "My Profile" : "Join Tribe"}
               </Link>
             </Button>

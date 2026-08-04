@@ -37,7 +37,7 @@ export default function Home() {
               className="bg-[#8D5B3E] hover:bg-[#A06B4A] text-white font-bold px-10 py-7 rounded-xl"
               asChild
             >
-              <Link href="/signup" className="inline-flex items-center gap-2">
+              <Link href="/login" className="inline-flex items-center gap-2">
                 Join the Tribe
                 <ArrowRight className="h-5 w-5" />
               </Link>

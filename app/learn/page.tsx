@@ -32,6 +32,11 @@ type Course = {
   difficulty: string
   xp_bonus: number
   learn_modules: Module[]
+  progress?: {
+    completed_lessons: number
+    total_lessons: number
+    percent: number
+  }
 }
 
 export default function LearnCatalogPage() {
@@ -94,14 +99,14 @@ export default function LearnCatalogPage() {
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button asChild className="bg-[#3E2C1C] text-[#F5F5F0] hover:bg-[#3E2C1C]/90">
-                <Link href="/signup">Sign up</Link>
+                <Link href="/login">Sign in</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 className="border-[#3E2C1C]/20 text-[#3E2C1C] hover:bg-[#3E2C1C]/5"
               >
-                <Link href="/login">Sign in</Link>
+                <Link href="/signup">Sign up</Link>
               </Button>
             </div>
           </div>
@@ -117,10 +122,17 @@ export default function LearnCatalogPage() {
         {user && !loading && !error && (
           <div className="grid gap-6 md:grid-cols-2">
             {courses.map((course) => {
-              const lessonCount = (course.learn_modules || []).reduce(
-                (n, m) => n + (m.learn_lessons?.filter((l) => l.is_published !== false).length || 0),
-                0
-              )
+              const lessonCount =
+                course.progress?.total_lessons ??
+                (course.learn_modules || []).reduce(
+                  (n, m) =>
+                    n + (m.learn_lessons?.filter((l) => l.is_published !== false).length || 0),
+                  0
+                )
+              const completed = course.progress?.completed_lessons ?? 0
+              const percent = course.progress?.percent ?? 0
+              const done = lessonCount > 0 && completed >= lessonCount
+
               return (
                 <article
                   key={course.id}
@@ -137,11 +149,35 @@ export default function LearnCatalogPage() {
                   <h2 className="mt-4 font-display text-2xl font-bold text-[#3E2C1C]">{course.title}</h2>
                   <p className="mt-2 flex-1 text-sm text-[#6D5D56]">{course.description}</p>
                   <p className="mt-4 text-xs text-[#6D5D56]">
-                    {lessonCount} lesson{lessonCount === 1 ? "" : "s"} · +{course.xp_bonus} XP course bonus
+                    {lessonCount} lesson{lessonCount === 1 ? "" : "s"} · +{course.xp_bonus} XP course
+                    bonus
                   </p>
+
+                  <div className="mt-4">
+                    <div className="mb-1.5 flex items-center justify-between text-[11px] font-semibold">
+                      <span className="text-[#6D5D56]">
+                        {done
+                          ? "Completed"
+                          : completed === 0
+                            ? "Not started"
+                            : `${completed} of ${lessonCount} lessons`}
+                      </span>
+                      <span className="tabular-nums text-[#3E2C1C]">{percent}%</span>
+                    </div>
+                    <div className="h-1.5 overflow-hidden rounded-full bg-[#3E2C1C]/10">
+                      <div
+                        className={`h-full rounded-full transition-[width] duration-500 ${
+                          done ? "bg-[#D4AF37]" : "bg-[#8D5B3E]"
+                        }`}
+                        style={{ width: `${percent}%` }}
+                      />
+                    </div>
+                  </div>
+
                   <Button asChild className="mt-6 bg-[#3E2C1C] text-[#F5F5F0] hover:bg-[#3E2C1C]/90">
                     <Link href={`/learn/${course.slug}`}>
-                      Open course <ArrowRight className="ml-2 h-4 w-4" />
+                      {done ? "Review course" : completed > 0 ? "Continue" : "Open course"}{" "}
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </article>

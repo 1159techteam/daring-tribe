@@ -34,6 +34,12 @@ type Course = {
   description: string | null
   xp_bonus: number
   learn_modules: Module[]
+  progress?: {
+    completed_lessons: number
+    total_lessons: number
+    percent: number
+    completed_lesson_ids?: string[]
+  }
 }
 
 function embedUrl(url: string | null): string | null {
@@ -58,6 +64,8 @@ export default function CourseDetailPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (authLoading) return
+
     fetch("/api/learn/courses")
       .then(async (res) => {
         const data = await res.json()
@@ -65,13 +73,24 @@ export default function CourseDetailPage() {
         const found = (data.courses || []).find((c: Course) => c.slug === slug)
         if (!found) throw new Error("Course not found")
         setCourse(found)
-        const first = found.learn_modules
-          ?.flatMap((m: Module) => m.learn_lessons || [])
-          ?.sort((a: Lesson, b: Lesson) => a.sort_order - b.sort_order)?.[0]
-        if (first) setActiveLessonId(first.id)
+
+        const doneIds = new Set<string>(found.progress?.completed_lesson_ids || [])
+        setCompleted(doneIds)
+
+        const published: Lesson[] = (found.learn_modules || [])
+          .sort((a: Module, b: Module) => a.sort_order - b.sort_order)
+          .flatMap((m: Module) =>
+            (m.learn_lessons || [])
+              .filter((l: Lesson) => l.is_published !== false)
+              .sort((a: Lesson, b: Lesson) => a.sort_order - b.sort_order)
+          )
+
+        const nextIncomplete = published.find((l) => !doneIds.has(l.id))
+        const start = nextIncomplete || published[0]
+        if (start) setActiveLessonId(start.id)
       })
       .catch((e) => setError(e.message))
-  }, [slug])
+  }, [slug, authLoading])
 
   const lessons = useMemo(() => {
     if (!course) return [] as Lesson[]
@@ -86,13 +105,14 @@ export default function CourseDetailPage() {
 
   const active = lessons.find((l) => l.id === activeLessonId) || lessons[0]
   const embed = embedUrl(active?.video_url || null)
+  const isDone = active ? completed.has(active.id) : false
 
   async function completeLesson() {
     if (!user) {
       router.push("/login")
       return
     }
-    if (!active) return
+    if (!active || isDone) return
     setBusy(true)
     setMsg(null)
     try {
@@ -108,7 +128,7 @@ export default function CourseDetailPage() {
         setMsg("Already completed — no extra XP")
       } else {
         let text = `+${data.xp_awarded} XP`
-        if (data.course_completed) text += ` · Course complete +${data.course_xp_awarded} XP!`
+        if (data.course_completed) text += ` · Course completed +${data.course_xp_awarded} XP!`
         setMsg(text)
       }
     } catch (e) {
@@ -133,6 +153,7 @@ export default function CourseDetailPage() {
       <main className="min-h-screen bg-[#F5F5F0]">
         <Navigation />
         <p className="p-16 text-center text-[#6D5D56]">Loading course…</p>
+        <Footer />
       </main>
     )
   }
@@ -179,13 +200,19 @@ export default function CourseDetailPage() {
           <div className="mt-6 rounded-2xl border border-[#3E2C1C]/10 bg-white p-6">
             <h2 className="font-display text-xl font-bold text-[#3E2C1C]">{active.title}</h2>
             <p className="mt-2 text-sm text-[#6D5D56]">{active.description}</p>
-            <p className="mt-3 text-sm font-semibold text-[#D4AF37]">+{active.xp_reward} XP on complete</p>
+            <p className="mt-3 text-sm font-semibold text-[#D4AF37]">
+              {isDone ? "XP already earned" : `+${active.xp_reward} XP on complete`}
+            </p>
             <Button
               onClick={completeLesson}
-              disabled={busy || authLoading}
-              className="mt-4 bg-[#3E2C1C] text-[#F5F5F0] hover:bg-[#3E2C1C]/90"
+              disabled={busy || authLoading || isDone}
+              className={`mt-4 ${
+                isDone
+                  ? "bg-[#D4AF37]/25 text-[#3E2C1C] hover:bg-[#D4AF37]/25"
+                  : "bg-[#3E2C1C] text-[#F5F5F0] hover:bg-[#3E2C1C]/90"
+              }`}
             >
-              {completed.has(active.id) ? (
+              {isDone ? (
                 <>
                   <CheckCircle2 className="mr-2 h-4 w-4" /> Completed
                 </>
@@ -208,7 +235,10 @@ export default function CourseDetailPage() {
               <li key={lesson.id}>
                 <button
                   type="button"
-                  onClick={() => setActiveLessonId(lesson.id)}
+                  onClick={() => {
+                    setMsg(null)
+                    setActiveLessonId(lesson.id)
+                  }}
                   className={`flex w-full items-center gap-2 rounded-xl px-3 py-3 text-left text-sm transition ${
                     active.id === lesson.id
                       ? "bg-[#3E2C1C] text-[#F5F5F0]"

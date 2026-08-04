@@ -49,9 +49,27 @@ export async function POST() {
       error,
     } = await supabase.auth.getUser()
     if (error || !user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+      // One refresh pass for stale access tokens before failing
+      const { data: refreshed } = await supabase.auth.refreshSession()
+      if (!refreshed.session?.user) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+      }
+      return handleCheckin(refreshed.session.user.id, supabase)
     }
 
+    return handleCheckin(user.id, supabase)
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Check-in failed"
+    return NextResponse.json({ error: message }, { status: 500 })
+  }
+}
+
+async function handleCheckin(
+  userId: string,
+  // kept for future cookie writes if needed
+  _supabase: Awaited<ReturnType<typeof createServerClient>>
+) {
+  try {
     const admin = createServiceRoleClient()
     const checkinXp = await getDailyCheckinXp(admin)
     const today = lagosDateString()
@@ -59,7 +77,7 @@ export async function POST() {
     const { data: existing } = await admin
       .from("learn_daily_activity")
       .select("id, streak_count, xp_awarded")
-      .eq("user_id", user.id)
+      .eq("user_id", userId)
       .eq("activity_date", today)
       .maybeSingle()
 
@@ -74,7 +92,7 @@ export async function POST() {
     const { data: yesterdayRow } = await admin
       .from("learn_daily_activity")
       .select("streak_count")
-      .eq("user_id", user.id)
+      .eq("user_id", userId)
       .eq("activity_date", yesterdayLagos())
       .maybeSingle()
 
@@ -83,7 +101,7 @@ export async function POST() {
     const { data: activity, error: insertErr } = await admin
       .from("learn_daily_activity")
       .insert({
-        user_id: user.id,
+        user_id: userId,
         activity_date: today,
         xp_awarded: checkinXp,
         streak_count: streak,
@@ -96,12 +114,12 @@ export async function POST() {
     }
 
     await grantXp({
-      userId: user.id,
+      userId,
       amount: checkinXp,
       type: "daily_checkin",
       referenceId: activity.id,
       note: `Daily check-in (streak ${streak})`,
-      createdBy: user.id,
+      createdBy: userId,
     })
 
     if (streak >= 7) {
@@ -112,7 +130,7 @@ export async function POST() {
         .maybeSingle()
       if (badge) {
         await admin.from("learn_user_badges").upsert(
-          { user_id: user.id, badge_id: badge.id },
+          { user_id: userId, badge_id: badge.id },
           { onConflict: "user_id,badge_id", ignoreDuplicates: true }
         )
       }

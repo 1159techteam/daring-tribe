@@ -7,7 +7,9 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/components/providers/auth-provider"
-import { GraduationCap, ScrollText } from "lucide-react"
+import { CertificateOfCompletion } from "@/components/learn/certificate-of-completion"
+import { displayUsername } from "@/lib/learn/display-name"
+import { ScrollText } from "lucide-react"
 
 type Certificate = {
   id: string
@@ -22,6 +24,7 @@ export default function CertificatesPage() {
   const { user, loading: authLoading } = useAuth()
   const router = useRouter()
   const [certs, setCerts] = useState<Certificate[]>([])
+  const [recipientName, setRecipientName] = useState("Tribe Member")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -36,6 +39,12 @@ export default function CertificatesPage() {
         const data = await res.json()
         if (!res.ok && !data.certificates) throw new Error(data.error || "Failed")
         setCerts(data.certificates || [])
+        setRecipientName(
+          displayUsername({
+            name: data.recipient?.name,
+            email: data.recipient?.email || user.email,
+          })
+        )
         if (data.error && !(data.certificates || []).length) {
           setError(
             "Certificates aren’t available yet — apply migration 046_learn_certificates.sql on Buddy Supabase."
@@ -58,7 +67,7 @@ export default function CertificatesPage() {
   return (
     <main className="min-h-screen bg-[#F5F5F0] text-[#3E2C1C]">
       <Navigation />
-      <section className="mx-auto max-w-5xl px-4 py-12">
+      <section className="mx-auto max-w-4xl px-4 py-12">
         <Link href="/profile" className="text-sm text-[#6D5D56] hover:text-[#3E2C1C]">
           ← Back to profile
         </Link>
@@ -66,8 +75,7 @@ export default function CertificatesPage() {
           <div>
             <h1 className="font-display text-4xl font-bold">Certificates</h1>
             <p className="mt-2 max-w-xl text-[#6D5D56]">
-              Finish an entire course to earn a Daring Tribe certificate. More full courses are
-              coming — this shelf is ready for them.
+              Finish an entire course to earn an official Daring Tribe certificate of completion.
             </p>
           </div>
           <Link href="/badges" className="text-sm font-semibold text-[#8D5B3E] underline">
@@ -92,42 +100,27 @@ export default function CertificatesPage() {
             </Button>
           </div>
         ) : (
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 space-y-10">
             {certs.map((c) => (
-              <article
-                key={c.id}
-                className="relative overflow-hidden rounded-2xl border border-[#D4AF37]/30 bg-white p-6 shadow-sm"
-              >
-                <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-[#D4AF37] to-[#8D5B3E]" />
-                <div className="flex items-start gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3E2C1C] text-[#D4AF37]">
-                    <GraduationCap className="h-6 w-6" />
+              <div key={c.id} className="space-y-3">
+                <CertificateOfCompletion
+                  title={c.learn_courses?.title || c.title}
+                  recipientName={recipientName}
+                  certificateCode={c.certificate_code}
+                  issuedAt={c.issued_at}
+                  courseSlug={c.learn_courses?.slug}
+                />
+                {c.learn_courses?.slug && (
+                  <div className="text-center">
+                    <Link
+                      href={`/learn/${c.learn_courses.slug}`}
+                      className="text-sm font-semibold text-[#8D5B3E] underline underline-offset-2"
+                    >
+                      View course
+                    </Link>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8D5B3E]">
-                      Certificate of completion
-                    </p>
-                    <h2 className="mt-1 font-display text-xl font-bold">{c.title}</h2>
-                    <p className="mt-2 font-mono text-xs text-[#6D5D56]">{c.certificate_code}</p>
-                    <p className="mt-3 text-sm text-[#6D5D56]">
-                      Issued{" "}
-                      {new Date(c.issued_at).toLocaleDateString(undefined, {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </p>
-                    {c.learn_courses?.slug && (
-                      <Link
-                        href={`/learn/${c.learn_courses.slug}`}
-                        className="mt-4 inline-block text-sm font-semibold text-[#8D5B3E] underline"
-                      >
-                        View course
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </article>
+                )}
+              </div>
             ))}
           </div>
         )}

@@ -12,6 +12,7 @@ import { CadreStar } from "@/components/learn/cadre-star"
 import { CadreRanksInfo } from "@/components/learn/cadre-ranks-info"
 import { BadgeChip, FeaturedBadgeCard } from "@/components/learn/featured-badge-card"
 import { displayUsername } from "@/lib/learn/display-name"
+import { Spinner } from "@/components/ui/spinner"
 import { Zap, Award, BookOpen, GraduationCap, Flame, Trophy, ChevronRight } from "lucide-react"
 
 type ProfilePayload = {
@@ -44,11 +45,12 @@ type ProfilePayload = {
 }
 
 export default function ProfilePage() {
-  const { user, loading: authLoading, signOut } = useAuth()
+  const { user, loading: authLoading, signOut, supabase } = useAuth()
   const router = useRouter()
   const [profile, setProfile] = useState<ProfilePayload | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [checkinMsg, setCheckinMsg] = useState<string | null>(null)
+  const [checkingIn, setCheckingIn] = useState(false)
   const [levelUpOpen, setLevelUpOpen] = useState(false)
   const [prevLevel, setPrevLevel] = useState<number | null>(null)
   const [continueHref, setContinueHref] = useState("/learn")
@@ -93,18 +95,33 @@ export default function ProfilePage() {
   }, [user])
 
   async function checkIn() {
+    if (checkingIn) return
+    setCheckingIn(true)
     setCheckinMsg(null)
-    const res = await fetch("/api/learn/checkin", { method: "POST" })
-    const data = await res.json()
-    if (!res.ok) {
-      setCheckinMsg(data.error || "Check-in failed")
-      return
-    }
-    if (data.already_checked_in) {
-      setCheckinMsg(`Already checked in today. Streak: ${data.streak}`)
-    } else {
-      setCheckinMsg(`+${data.xp_awarded} XP · Streak ${data.streak}`)
-      await load()
+    try {
+      // Ensure auth cookies are fresh before the Route Handler runs
+      if (supabase) {
+        await supabase.auth.getUser()
+      }
+      const res = await fetch("/api/learn/checkin", {
+        method: "POST",
+        credentials: "same-origin",
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setCheckinMsg(data.error || "Check-in failed")
+        return
+      }
+      if (data.already_checked_in) {
+        setCheckinMsg(`Already checked in today. Streak: ${data.streak}`)
+      } else {
+        setCheckinMsg(`+${data.xp_awarded} XP · Streak ${data.streak}`)
+        await load()
+      }
+    } catch {
+      setCheckinMsg("Check-in failed")
+    } finally {
+      setCheckingIn(false)
     }
   }
 
@@ -281,9 +298,18 @@ export default function ProfilePage() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <Button
             onClick={checkIn}
-            className="bg-[#D4AF37] font-bold text-[#3E2C1C] hover:bg-[#D4AF37]/90"
+            disabled={checkingIn}
+            className="bg-[#D4AF37] font-bold text-[#3E2C1C] hover:bg-[#D4AF37]/90 disabled:opacity-70"
           >
-            <Zap className="mr-2 h-4 w-4" /> Daily check-in
+            {checkingIn ? (
+              <>
+                <Spinner size="sm" className="mr-2" /> Checking in…
+              </>
+            ) : (
+              <>
+                <Zap className="mr-2 h-4 w-4" /> Daily check-in
+              </>
+            )}
           </Button>
           <Button
             asChild

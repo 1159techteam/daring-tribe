@@ -73,13 +73,20 @@ export async function getSeasonXp(userId: string): Promise<number> {
 
 export async function getLifetimeXp(userId: string): Promise<number> {
   const admin = createServiceRoleClient()
+  // Prefer raw ledger sum so Learn XP types are never dropped if the view is stale.
+  const { data: rows, error } = await admin
+    .from("xp_transactions")
+    .select("amount")
+    .eq("user_id", userId)
+
+  if (!error && rows) {
+    return rows.reduce((sum: number, r: { amount: number }) => sum + (r.amount || 0), 0)
+  }
+
   const { data } = await admin
     .from("v_user_xp_balance")
     .select("xp_balance")
     .eq("user_id", userId)
     .maybeSingle()
-  if (data?.xp_balance != null) return data.xp_balance
-
-  const { data: rows } = await admin.from("xp_transactions").select("amount").eq("user_id", userId)
-  return (rows || []).reduce((sum: number, r: { amount: number }) => sum + (r.amount || 0), 0)
+  return data?.xp_balance ?? 0
 }
