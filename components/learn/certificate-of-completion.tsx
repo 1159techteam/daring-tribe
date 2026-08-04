@@ -8,7 +8,7 @@ type Props = {
   courseSlug?: string | null
 }
 
-/** Formal landscape certificate of completion — Tribe cream / gold / brown */
+/** Formal landscape certificate of completion: Tribe cream / gold / brown */
 export function CertificateOfCompletion({
   title,
   recipientName,

@@ -8,7 +8,7 @@ import {
 } from "@/lib/learn/levels"
 import { displayUsername } from "@/lib/learn/display-name"
 
-/** GET /api/learn/leaderboard — top learners by lifetime XP */
+/** GET /api/learn/leaderboard: top learners by lifetime XP */
 export async function GET() {
   try {
     const admin = createServiceRoleClient()

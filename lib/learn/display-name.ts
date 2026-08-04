@@ -1,4 +1,4 @@
-/** Prefer a human username — never show a raw email address. */
+/** Prefer a human username; never show a raw email address. */
 export function displayUsername(user: {
   name?: string | null
   email?: string | null

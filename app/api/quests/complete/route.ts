@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
 import { normalizeInstagramHandle } from "@/lib/social-handles"
 
-/** POST /api/quests/complete — { quest_id } → pending review (Buddy admin approves XP) */
+/** POST /api/quests/complete: { quest_id } → pending review (Buddy admin approves XP) */
 export async function POST(request: Request) {
   try {
     const supabase = await createServerClient()

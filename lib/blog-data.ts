@@ -31,7 +31,7 @@ export const CATEGORIES = [
     id: "insights",
     name: "Real Estate Insights",
     description:
-      "Real estate fundamentals, definitions & explanations — a go-to learning hub of what real estate is all about.",
+      "Real estate fundamentals, definitions & explanations: a go-to learning hub of what real estate is all about.",
   },
   {
     id: "daring",
@@ -293,7 +293,7 @@ Because the moment you understand it well… you won’t need to convince client
       "You’ve probably heard this a million times if you are a realtor: “Prospecting is hard.”",
     content: `You’ve probably heard this a million times if you are a realtor: “Prospecting is hard.” “I don’t know what to say.” “Clients don’t reply anyway.” Sound familiar?
 
-Let me tell you something… prospecting doesn’t have to suck. In fact, if done right, it can become the easiest part of your day—the part where clients actually come to you instead of you chasing them.
+Let me tell you something… prospecting doesn’t have to suck. In fact, if done right, it can become the easiest part of your day, the part where clients actually come to you instead of you chasing them.
 
 Let’s be honest, most people treat prospecting like punishment. You scroll endlessly through social media, shoot messages, hope someone responds… and nothing. Then frustration hits.
 
@@ -319,7 +319,7 @@ See the difference? You’re not just selling a building, you're selling a dream
 
 Step 3: Consistency is Everything
 
-Prospecting isn’t a one-time thing. It’s like exercising—the results come with habit.
+Prospecting isn’t a one-time thing. It’s like exercising, the results come with habit.
 • Post consistently on social media  
 • Follow up with potential clients daily/weekly  
 • Keep your network updated on new opportunities  
@@ -354,9 +354,9 @@ Do this, and suddenly… deals aren’t a game of luck. They’re predictable, r
 
 Is it about taking risks, showing up daily, or pushing forward even when results aren’t immediate?
 
-In Q1, a few standout realtors didn’t just set goals—they went after them with intention, resilience, and bold action. From hosting their first webinars to converting skeptical prospects into paying clients, these individuals embodied what it means to step out of comfort zones and win.
+In Q1, a few standout realtors didn’t just set goals, they went after them with intention, resilience, and bold action. From hosting their first webinars to converting skeptical prospects into paying clients, these individuals embodied what it means to step out of comfort zones and win.
 
-This feature highlights real stories from our Q1 deal closers—individuals who chose consistency over excuses, courage over fear, and action over doubt. Who knows? Your story might be next.
+This feature highlights real stories from our Q1 deal closers, individuals who chose consistency over excuses, courage over fear, and action over doubt. Who knows? Your story might be next.
 
 Straight from the desk of Balogun Mutmainnah, the Real Estate Queen and one of our top Q1 closers:
 
@@ -370,7 +370,7 @@ I created my own strategy, which is educating people. I like to educate people o
 
 3. Can you briefly walk us through one deal you successfully closed?
 
-It wasn't easy, but with the support of my coach and the community lead, Miss Opemipo (DRealtor) at the Daring Tribe group, I was able to organize my first webinar. She was my first speaker and one of the first people who welcomed and encouraged me in the group. She supported me a lot—teaching me how to prospect, how to reply to clients, and motivating me to keep showing up.
+It wasn't easy, but with the support of my coach and the community lead, Miss Opemipo (DRealtor) at the Daring Tribe group, I was able to organize my first webinar. She was my first speaker and one of the first people who welcomed and encouraged me in the group. She supported me a lot, teaching me how to prospect, how to reply to clients, and motivating me to keep showing up.
 
 A well-deserved story from the top-selling triber in Q1: Christian Kuyet Martha
 
@@ -380,7 +380,7 @@ The most daring move I took was securing my first plot of land even when my bank
 
 2. What challenge did you face, and how did you overcome it?
 
-One challenge I faced was clients hesitating to make payment despite showing interest. I overcame this by creating urgency—letting them know that the land was limited and could be sold out if they delayed payment.
+One challenge I faced was clients hesitating to make payment despite showing interest. I overcame this by creating urgency, letting them know that the land was limited and could be sold out if they delayed payment.
 
 3. What one piece of advice would you give realtors looking to close deals in Q2?
 
@@ -396,7 +396,7 @@ Consistent follow-ups and helping clients see the value of the property played a
 
 I engaged a prospect who was initially undecided. I took time to understand their needs, and Baj Court turned out to be the best option. I showed them suitable options and maintained consistent communication.
 
-I helped the client see the future value—that the property was close to a school and had strong potential. Although the client was concerned about the cost, I helped them focus on the long-term benefits, and after a few days, I closed the deal.
+I helped the client see the future value, that the property was close to a school and had strong potential. Although the client was concerned about the cost, I helped them focus on the long-term benefits, and after a few days, I closed the deal.
 
 3. What was the most daring move you took that paid off?
 
@@ -435,9 +435,9 @@ When I started, I thought the biggest challenge would be learning the business, 
 
 Every time a client said “I’ll think about it,” I took it personally. Every “no” felt like I wasn’t good enough. And every delay made me question myself. There were days I genuinely wondered if I chose the right path.
 
-At some point, I had to be honest with myself. I realized something: If I kept waiting to feel confident, I might never move. So I made a decision — I would act, even if I was still scared.
+At some point, I had to be honest with myself. I realized something: If I kept waiting to feel confident, I might never move. So I made a decision, I would act, even if I was still scared.
 
-I started small. Every morning, I took time to go over my listings properly. I studied the market, practiced how I would talk to clients, and tried to sound more natural — not perfect, just better than yesterday. Then I started making the calls anyway. Not perfectly. Not confidently at first. But consistently.
+I started small. Every morning, I took time to go over my listings properly. I studied the market, practiced how I would talk to clients, and tried to sound more natural, not perfect, just better than yesterday. Then I started making the calls anyway. Not perfectly. Not confidently at first. But consistently.
 
 One thing that really changed my approach was this: I stopped focusing on “what if they reject me?” and started focusing on “how can I help this person?”
 
@@ -449,7 +449,7 @@ And then, one day, I closed a deal that reminded me why I started. That moment m
 
 Today, I won’t say I’m fearless. But I’m definitely more confident. Not because fear disappeared, but because I’ve learned how to move in spite of it. Now, I pick up calls without overthinking. I speak with more clarity. I trust what I know. And the same things that once scared me… are now part of my everyday work.
 
-If you’re in real estate and you’ve ever felt scared, unsure, or not “ready enough” — I get it. I’ve been there.
+If you’re in real estate and you’ve ever felt scared, unsure, or not “ready enough”, I get it. I’ve been there.
 
 But here’s what I’ve learned: Confidence doesn’t come before action. It comes because of action.
 
@@ -459,7 +459,7 @@ Real estate has taught me more than just how to sell properties. It has taught m
 
 And honestly, that’s where the real success starts.
 
-Fear is real — I won’t pretend it’s not.
+Fear is real, I won’t pretend it’s not.
 
 But so is growth. So is progress. And so is the version of you that becomes better because you didn’t give up.
 
@@ -499,7 +499,7 @@ That “ordinary” house was actually sitting in a location that was quietly gr
 
 Suddenly, it wasn’t just a house anymore. It had potential.
 
-Now the real work started — not convincing myself, but helping my client see what I was seeing.
+Now the real work started, not convincing myself, but helping my client see what I was seeing.
 
 Because let’s be honest, clients don’t care about your research sheets or how long you spent analyzing data. They care about what it means for them.
 
@@ -612,7 +612,7 @@ These insights helped her shift from generic presentations to personalized conve
 
 **Value Presentation: Benefits Over Features**
 
-After understanding the client’s needs, the next step is value presentation. At this stage, the focus is not on listing features but on communicating benefits. Ada learned to translate property details into real-life value. Instead of simply describing rooms or square footage, she helped clients visualize the experience — how a balcony could become a peaceful morning space, how a living room could support family moments, or how energy-efficient features could reduce long-term costs.
+After understanding the client’s needs, the next step is value presentation. At this stage, the focus is not on listing features but on communicating benefits. Ada learned to translate property details into real-life value. Instead of simply describing rooms or square footage, she helped clients visualize the experience, how a balcony could become a peaceful morning space, how a living room could support family moments, or how energy-efficient features could reduce long-term costs.
 
 This approach made properties feel more relevant and desirable. A property is not just a structure; it represents opportunity, comfort, and investment potential when properly presented.
 
@@ -626,7 +626,7 @@ With this approach, objections became part of the conversation rather than barri
 
 The final step is closing. When the earlier stages are done correctly, closing becomes a natural outcome rather than a forced action. Because Ada had prepared well, understood her clients, presented value effectively, and handled concerns professionally, her closing conversations became smooth and natural.
 
-The lesson is simple: structure creates confidence, and confidence closes deals. If you find yourself struggling on calls, the answer is rarely more pressure or more pitching. It is a clearer, more intentional process — one that puts the client first at every stage.`,
+The lesson is simple: structure creates confidence, and confidence closes deals. If you find yourself struggling on calls, the answer is rarely more pressure or more pitching. It is a clearer, more intentional process, one that puts the client first at every stage.`,
   },
 
   // JULY BLOGS

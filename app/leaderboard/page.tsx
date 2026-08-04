@@ -38,7 +38,7 @@ export default function LeaderboardPage() {
       <section className="container mx-auto px-4 py-12">
         <h1 className="font-display text-4xl font-bold text-[#3E2C1C]">Cadre Leaderboard</h1>
         <p className="mt-2 text-[#6D5D56]">
-          Ranked by all-time XP — climb the star ladder.{" "}
+          Ranked by all-time XP. Climb the star ladder.{" "}
           <Link href="/profile" className="text-[#8D5B3E] underline">
             View your profile
           </Link>
@@ -88,7 +88,7 @@ export default function LeaderboardPage() {
               {!loading && !error && rows.length === 0 && (
                 <tr>
                   <td colSpan={5} className="px-4 py-8 text-center text-[#6D5D56]">
-                    No rankings yet — be the first to earn XP.
+                    No rankings yet. Be the first to earn XP.
                   </td>
                 </tr>
               )}

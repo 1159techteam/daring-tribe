@@ -1,0 +1,35 @@
+---
+description: Never use em dashes in Daring Tribe copy or code
+alwaysApply: true
+---
+
+# No em dashes
+
+Never use the em dash character (`—`, U+2014) anywhere in this project.
+
+This applies to:
+
+- User-facing UI copy (headings, labels, error messages, empty states)
+- Blog posts and marketing content
+- Code comments and JSDoc
+- Documentation (`*.md`)
+
+## Use instead
+
+| Instead of | Use |
+|------------|-----|
+| `Clause — clause` | `Clause. Clause` or `Clause, clause` |
+| `Word—word` (glued) | `Word, word` or `Word: word` |
+| `/** API — description */` | `/** API: description */` |
+
+## Examples
+
+```tsx
+// Bad
+<p>Sign in below — one login for both apps.</p>
+
+// Good
+<p>Sign in below. One login for both apps.</p>
+```
+
+When editing existing text, remove em dashes rather than swapping them for en dashes (`–`).

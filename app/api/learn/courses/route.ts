@@ -41,7 +41,7 @@ function sanitizeLesson(lesson: LessonRow) {
   }
 }
 
-/** GET /api/learn/courses — published catalog for Tribe members (+ progress) */
+/** GET /api/learn/courses: published catalog for Tribe members (+ progress) */
 export async function GET() {
   try {
     const auth = await requireLearnMember()

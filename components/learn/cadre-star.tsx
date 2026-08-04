@@ -14,7 +14,7 @@ const STAR_PATH =
   "M16 2.2l3.55 7.2 7.95 1.16-5.75 5.6 1.36 7.92L16 20.4l-7.11 3.68 1.36-7.92-5.75-5.6 7.95-1.16L16 2.2z"
 
 /**
- * Metallic rank star — enamel fill with chrome highlight/shade.
+ * Metallic rank star: enamel fill with chrome highlight/shade.
  */
 export function CadreStar({ slug, size = 22, className = "", title }: Props) {
   const fill = getCadreStarColor(slug)

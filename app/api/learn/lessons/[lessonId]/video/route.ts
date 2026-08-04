@@ -6,7 +6,7 @@ import { isSpacesVideo, isYoutubeUrl, videoKind, youtubeEmbedUrl } from "@/lib/l
 
 type RouteContext = { params: Promise<{ lessonId: string }> }
 
-/** GET /api/learn/lessons/[lessonId]/video — signed Spaces URL or embed info (members only) */
+/** GET /api/learn/lessons/[lessonId]/video: signed Spaces URL or embed info (members only) */
 export async function GET(_request: Request, context: RouteContext) {
   try {
     const auth = await requireLearnMember()

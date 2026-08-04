@@ -1,4 +1,4 @@
-# Daring Tribe × Buddy — Platform Setup (Phase 0)
+# Daring Tribe × Buddy: Platform Setup (Phase 0)
 
 Shared backend: **Buddy’s Supabase project** (same Auth + XP ledger).
 
@@ -13,7 +13,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3001
 # NEXT_PUBLIC_COOKIE_DOMAIN=.1159realty.com
 ```
 
-## Required env (Buddy — add if missing)
+## Required env (Buddy: add if missing)
 
 ```bash
 # NEXT_PUBLIC_COOKIE_DOMAIN=.1159realty.com   # production only

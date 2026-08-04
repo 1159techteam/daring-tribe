@@ -86,7 +86,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md rounded-3xl border border-white/50 bg-white/40 p-8 shadow-[0_20px_60px_rgba(62,44,28,0.12)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/30">
           <h1 className="font-display text-3xl font-bold text-[#3E2C1C]">Join the Tribe</h1>
           <p className="mt-2 text-sm text-[#6D5D56]">
-            Sign in with your Buddy App account. New here? Create one below — one login for both apps.
+            Sign in with your Buddy App account. New here? Create one below. One login for both apps.
           </p>
           <form onSubmit={onSubmit} className="mt-8 space-y-4">
             <div>

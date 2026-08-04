@@ -34,7 +34,7 @@ export async function issueCourseCertificate(params: {
     .single()
 
   if (error) {
-    // Table may not be migrated yet — don't fail lesson completion
+    // Table may not be migrated yet; don't fail lesson completion
     console.warn("issueCourseCertificate:", error.message)
     return null
   }

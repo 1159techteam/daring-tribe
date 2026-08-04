@@ -24,7 +24,7 @@ function badgeIcon(type?: string) {
   return Award
 }
 
-/** LearnWeb3-inspired collectible badge card — Tribe cream / gold / brown */
+/** LearnWeb3-inspired collectible badge card: Tribe cream / gold / brown */
 export function FeaturedBadgeCard({ badge, cadreSlug, cadreName, className = "" }: Props) {
   const Icon = badgeIcon(badge.badge_type)
   const typeLabel = (badge.badge_type || "Badge").toUpperCase()

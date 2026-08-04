@@ -4,7 +4,7 @@ const steps = [
   {
     icon: UserPlus,
     title: "Sign up",
-    desc: "Create one free account for Daring Tribe and Buddy App — no second signup.",
+    desc: "Create one free account for Daring Tribe and Buddy App. No second signup.",
   },
   {
     icon: BookOpen,

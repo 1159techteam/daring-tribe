@@ -40,7 +40,7 @@ async function getDailyCheckinXp(admin: ReturnType<typeof createServiceRoleClien
   }
 }
 
-/** POST /api/learn/checkin — daily streak XP (once per Lagos day) */
+/** POST /api/learn/checkin: daily streak XP (once per Lagos day) */
 export async function POST() {
   try {
     const supabase = await createServerClient()

@@ -47,7 +47,7 @@ export default function CertificatesPage() {
         )
         if (data.error && !(data.certificates || []).length) {
           setError(
-            "Certificates aren’t available yet — apply migration 046_learn_certificates.sql on Buddy Supabase."
+            "Certificates aren’t available yet. Apply migration 046_learn_certificates.sql on Buddy Supabase."
           )
         }
       })
