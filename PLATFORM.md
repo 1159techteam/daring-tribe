@@ -24,7 +24,7 @@ NEXT_PUBLIC_SITE_URL=https://buddy.1159realty.com
 
 1. Authentication → URL configuration → Redirect URLs, add:
    - `http://localhost:3001/auth/callback`
-   - `https://daringtribe.1159realty.com/auth/callback`
+   - `https://daring-tribe.1159realty.com/auth/callback`
    - Existing Buddy callback URLs
 2. Site URL can stay Buddy’s; redirects are allowlisted per URL above.
 3. Ensure label **`Daring Tribe`** exists in `labels` (no KPIs). Apps resolve by **name**, not hardcoded UUID.
