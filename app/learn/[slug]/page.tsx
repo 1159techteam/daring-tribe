@@ -7,14 +7,16 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/components/providers/auth-provider"
-import { CheckCircle2, ExternalLink, Play } from "lucide-react"
+import { LessonVideoPlayer } from "@/components/learn/lesson-video-player"
+import { Spinner } from "@/components/ui/spinner"
+import { CheckCircle2 } from "lucide-react"
 
 type Lesson = {
   id: string
   slug: string
   title: string
   description: string | null
-  video_url: string | null
+  has_video: boolean
   xp_reward: number
   is_published: boolean
   sort_order: number
@@ -42,15 +44,6 @@ type Course = {
   }
 }
 
-function embedUrl(url: string | null): string | null {
-  if (!url) return null
-  if (url.includes("youtube.com/embed/")) return url
-  const yt = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/)
-  if (yt) return `https://www.youtube.com/embed/${yt[1]}`
-  if (url.includes("classroom.google.com")) return null
-  return url
-}
-
 export default function CourseDetailPage() {
   const params = useParams()
   const slug = params.slug as string
@@ -65,6 +58,10 @@ export default function CourseDetailPage() {
 
   useEffect(() => {
     if (authLoading) return
+    if (!user) {
+      router.replace(`/login?next=/learn/${slug}`)
+      return
+    }
 
     fetch("/api/learn/courses")
       .then(async (res) => {
@@ -90,7 +87,7 @@ export default function CourseDetailPage() {
         if (start) setActiveLessonId(start.id)
       })
       .catch((e) => setError(e.message))
-  }, [slug, authLoading])
+  }, [slug, authLoading, user, router])
 
   const lessons = useMemo(() => {
     if (!course) return [] as Lesson[]
@@ -104,7 +101,6 @@ export default function CourseDetailPage() {
   }, [course])
 
   const active = lessons.find((l) => l.id === activeLessonId) || lessons[0]
-  const embed = embedUrl(active?.video_url || null)
   const isDone = active ? completed.has(active.id) : false
 
   async function completeLesson() {
@@ -148,11 +144,13 @@ export default function CourseDetailPage() {
     )
   }
 
-  if (!course || !active) {
+  if (authLoading || !user || !course || !active) {
     return (
       <main className="min-h-screen bg-[#F5F5F0]">
         <Navigation />
-        <p className="p-16 text-center text-[#6D5D56]">Loading course…</p>
+        <div className="flex justify-center p-16">
+          <Spinner size="lg" />
+        </div>
         <Footer />
       </main>
     )
@@ -170,31 +168,12 @@ export default function CourseDetailPage() {
           <p className="mt-2 text-[#6D5D56]">{course.description}</p>
 
           <div className="mt-6 overflow-hidden rounded-2xl border border-[#3E2C1C]/10 bg-black">
-            {embed ? (
-              <iframe
-                title={active.title}
-                src={embed}
-                className="aspect-video w-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <div className="flex aspect-video flex-col items-center justify-center gap-4 bg-[#3E2C1C] p-6 text-center text-[#F5F5F0]">
-                <Play className="h-10 w-10 text-[#D4AF37]" />
-                <p className="max-w-md text-sm text-stone-300">
-                  {active.video_url
-                    ? "This lesson opens in Google Classroom / external link."
-                    : "Add a YouTube (or embed) URL for this lesson in the database."}
-                </p>
-                {active.video_url && (
-                  <Button asChild className="bg-[#D4AF37] text-[#3E2C1C] font-bold">
-                    <a href={active.video_url} target="_blank" rel="noopener noreferrer">
-                      Open lesson <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                )}
-              </div>
-            )}
+            <LessonVideoPlayer
+              lessonId={active.id}
+              lessonTitle={active.title}
+              hasVideo={active.has_video}
+              signedIn={Boolean(user)}
+            />
           </div>
 
           <div className="mt-6 rounded-2xl border border-[#3E2C1C]/10 bg-white p-6">

@@ -129,7 +129,9 @@ export default function ProfilePage() {
     return (
       <main className="min-h-screen bg-[#F5F5F0]">
         <Navigation />
-        <p className="p-16 text-center text-[#6D5D56]">Loading profile…</p>
+        <div className="flex justify-center p-16">
+          <Spinner size="lg" />
+        </div>
       </main>
     )
   }

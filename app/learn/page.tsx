@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/components/providers/auth-provider"
 import { BookOpen, ArrowRight } from "lucide-react"
+import { Spinner } from "@/components/ui/spinner"
 
 type Lesson = {
   id: string
@@ -15,6 +16,7 @@ type Lesson = {
   xp_reward: number
   is_published: boolean
   sort_order: number
+  has_video?: boolean
 }
 
 type Module = {
@@ -83,7 +85,9 @@ export default function LearnCatalogPage() {
 
       <section className="container mx-auto px-4 py-12">
         {(authLoading || (user && loading)) && (
-          <p className="text-[#6D5D56]">Loading courses…</p>
+          <div className="flex justify-center py-16">
+            <Spinner size="lg" />
+          </div>
         )}
 
         {!authLoading && !user && (

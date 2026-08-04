@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
-import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { createServiceRoleClient } from "@/lib/supabase/server"
+import { requireLearnMember } from "@/lib/learn/require-member"
 
 type LessonRow = {
   id: string
@@ -32,9 +33,20 @@ type CourseRow = {
   learn_modules: ModuleRow[] | null
 }
 
-/** GET /api/learn/courses — published catalog (+ progress when signed in) */
+function sanitizeLesson(lesson: LessonRow) {
+  const { video_url, ...rest } = lesson
+  return {
+    ...rest,
+    has_video: Boolean(video_url?.trim()),
+  }
+}
+
+/** GET /api/learn/courses — published catalog for Tribe members (+ progress) */
 export async function GET() {
   try {
+    const auth = await requireLearnMember()
+    if (auth.error) return auth.error
+
     const admin = createServiceRoleClient()
     const { data: courses, error } = await admin
       .from("learn_courses")
@@ -56,34 +68,23 @@ export async function GET() {
 
     const list = (courses || []) as CourseRow[]
 
+    const allLessonIds = list.flatMap((c) =>
+      (c.learn_modules || []).flatMap((m) =>
+        (m.learn_lessons || [])
+          .filter((l) => l.is_published !== false)
+          .map((l) => l.id)
+      )
+    )
+
     let completedLessonIds = new Set<string>()
-    try {
-      const supabase = await createServerClient()
-      const {
-        data: { user },
-      } = await supabase.auth.getUser()
+    if (allLessonIds.length > 0) {
+      const { data: progress } = await admin
+        .from("learn_lesson_progress")
+        .select("lesson_id")
+        .eq("user_id", auth.user.id)
+        .in("lesson_id", allLessonIds)
 
-      if (user) {
-        const allLessonIds = list.flatMap((c) =>
-          (c.learn_modules || []).flatMap((m) =>
-            (m.learn_lessons || [])
-              .filter((l) => l.is_published !== false)
-              .map((l) => l.id)
-          )
-        )
-
-        if (allLessonIds.length > 0) {
-          const { data: progress } = await admin
-            .from("learn_lesson_progress")
-            .select("lesson_id")
-            .eq("user_id", user.id)
-            .in("lesson_id", allLessonIds)
-
-          completedLessonIds = new Set((progress || []).map((p) => p.lesson_id as string))
-        }
-      }
-    } catch {
-      // Catalog still works without auth cookies
+      completedLessonIds = new Set((progress || []).map((p) => p.lesson_id as string))
     }
 
     const enriched = list.map((course) => {
@@ -97,8 +98,16 @@ export async function GET() {
       const completed = completedIds.length
       const percent = total === 0 ? 0 : Math.round((completed / total) * 100)
 
+      const learn_modules = (course.learn_modules || []).map((mod) => ({
+        ...mod,
+        learn_lessons: (mod.learn_lessons || [])
+          .filter((l) => l.is_published !== false)
+          .map(sanitizeLesson),
+      }))
+
       return {
         ...course,
+        learn_modules,
         progress: {
           completed_lessons: completed,
           total_lessons: total,
