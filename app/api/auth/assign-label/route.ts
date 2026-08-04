@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { createServerClient } from "@/lib/supabase/server"
 import { assignDaringTribeLabel } from "@/lib/labels"
 
-/** POST /api/auth/assign-label — attach Daring Tribe label after signup/login */
+/** POST /api/auth/assign-label: attach Daring Tribe label after signup/login */
 export async function POST() {
   try {
     const supabase = await createServerClient()

@@ -121,7 +121,7 @@ export default function CourseDetailPage() {
       if (!res.ok) throw new Error(data.error || "Failed")
       setCompleted((prev) => new Set(prev).add(active.id))
       if (data.already_completed) {
-        setMsg("Already completed — no extra XP")
+        setMsg("Already completed. No extra XP")
       } else {
         let text = `+${data.xp_awarded} XP`
         if (data.course_completed) text += " · Course completed!"

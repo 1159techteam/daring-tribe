@@ -159,7 +159,7 @@ export default function ProfilePage() {
       <Navigation />
 
       <section className="relative overflow-hidden">
-        {/* Soft cream banner — full header area, not a short half-band */}
+        {/* Soft cream banner: full header area, not a short half-band */}
         <div className="pointer-events-none absolute inset-0 bg-[#F5F5F0]" />
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.08]"
@@ -206,7 +206,7 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Identity strip — sits on the same cream field */}
+        {/* Identity strip: sits on the same cream field */}
         <div className="relative z-10 border-b border-[#3E2C1C]/10">
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-y-5 px-4 pb-2 pt-5 md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-0 md:pb-3 md:pt-4">
             <div className="order-2 flex divide-x divide-[#3E2C1C]/10 md:order-1 md:justify-start">

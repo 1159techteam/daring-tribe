@@ -21,7 +21,7 @@ type CompletionRow = {
   completed_at: string
 }
 
-/** GET /api/quests — Tribe starter social quests + user completion status */
+/** GET /api/quests: Tribe starter social quests + user completion status */
 export async function GET() {
   try {
     const supabase = await createServerClient()

@@ -1,4 +1,4 @@
-/** Lesson video URL helpers — Spaces, YouTube, external */
+/** Lesson video URL helpers: Spaces, YouTube, external */
 
 export type VideoKind = "spaces" | "youtube" | "external" | null
 

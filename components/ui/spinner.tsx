@@ -13,7 +13,7 @@ const sizeClass = {
 }
 
 /**
- * Reusable loading spinner — Buddy-style ring (gold accent on Tribe cream/brown).
+ * Reusable loading spinner: Buddy-style ring (gold accent on Tribe cream/brown).
  */
 export function Spinner({ className, size = "md", label }: SpinnerProps) {
   return (

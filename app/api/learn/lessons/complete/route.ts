@@ -3,7 +3,7 @@ import { createServerClient, createServiceRoleClient } from "@/lib/supabase/serv
 import { grantXp } from "@/lib/learn/xp"
 import { issueCourseCertificate } from "@/lib/learn/certificates"
 
-/** POST /api/learn/lessons/complete — { lesson_id } */
+/** POST /api/learn/lessons/complete: { lesson_id } */
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createServerClient()
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Course completion — badge & certificate only (XP earned per lesson)
+    // Course completion: badge & certificate only (XP earned per lesson)
     let courseCompleted = false
     let certificate: {
       id: string

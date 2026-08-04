@@ -1,4 +1,4 @@
-/** Level / cadre helpers — all-time XP based, Tribe cadre ladder. */
+/** Level / cadre helpers: all-time XP based, Tribe cadre ladder. */
 
 export type LevelInfo = {
   level: number
@@ -20,7 +20,7 @@ export type CadreTier = {
  * Bronze–Ascendant follow Valorant rank palette; early ranks + Elite are Tribe originals.
  */
 export const CADRE_STAR_COLORS: Record<string, string> = {
-  scout: "#6B8F5E", // olive — field scout
+  scout: "#6B8F5E", // olive, field scout
   spartan: "#C62828", // warrior crimson
   challenger: "#E65100", // competitive orange
   "bronze-beginner": "#A36A3E", // Valorant bronze
@@ -29,7 +29,7 @@ export const CADRE_STAR_COLORS: Record<string, string> = {
   "platinum-trailblazer": "#4BA7A7", // Valorant platinum teal
   diamond: "#C79CF2", // Valorant diamond lavender
   ascendant: "#24A56A", // Valorant ascendant green
-  elite: "#7C3AED", // royal violet — top rank
+  elite: "#7C3AED", // royal violet, top rank
 }
 
 /** Metallic companions for star gradients */

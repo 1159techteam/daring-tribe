@@ -117,7 +117,7 @@ export async function GET() {
   }
 }
 
-/** PUT /api/profile — update name + social_handles (Buddy-shared fields) */
+/** PUT /api/profile: update name + social_handles (Buddy-shared fields) */
 export async function PUT(request: Request) {
   try {
     const supabase = await createServerClient()

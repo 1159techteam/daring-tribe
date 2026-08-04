@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
 
-/** GET /api/learn/badges — current user's collected badges */
+/** GET /api/learn/badges: current user's collected badges */
 export async function GET() {
   try {
     const supabase = await createServerClient()
