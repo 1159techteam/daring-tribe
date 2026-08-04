@@ -45,7 +45,7 @@ type ProfilePayload = {
 }
 
 export default function ProfilePage() {
-  const { user, loading: authLoading, signOut, supabase } = useAuth()
+  const { user, loading: authLoading, supabase } = useAuth()
   const router = useRouter()
   const [profile, setProfile] = useState<ProfilePayload | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -336,9 +336,6 @@ export default function ProfilePage() {
               >
                 <Link href="/leaderboard">Leaderboard</Link>
               </Button>
-          <Button variant="ghost" className="text-[#6D5D56]" onClick={() => signOut()}>
-            Sign out
-          </Button>
         </div>
         {checkinMsg && (
           <p className="mt-3 text-center text-sm font-medium text-[#8D5B3E]">{checkinMsg}</p>

@@ -106,9 +106,8 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Course completion check
+    // Course completion — badge & certificate only (XP earned per lesson)
     let courseCompleted = false
-    let courseXp = 0
     let certificate: {
       id: string
       certificate_code: string
@@ -138,7 +137,7 @@ export async function POST(request: NextRequest) {
           courseCompleted = true
           const { data: course } = await admin
             .from("learn_courses")
-            .select("id, title, xp_bonus")
+            .select("id, title")
             .eq("id", courseId)
             .single()
           await admin
@@ -147,18 +146,6 @@ export async function POST(request: NextRequest) {
             .eq("user_id", user.id)
             .eq("course_id", courseId)
             .is("completed_at", null)
-
-          courseXp = course?.xp_bonus || 0
-          if (courseXp > 0) {
-            await grantXp({
-              userId: user.id,
-              amount: courseXp,
-              type: "course_complete",
-              referenceId: courseId,
-              note: `Completed course: ${course?.title}`,
-              createdBy: user.id,
-            })
-          }
 
           const { data: courseBadge } = await admin
             .from("learn_badges")
@@ -189,7 +176,6 @@ export async function POST(request: NextRequest) {
       already_completed: false,
       xp_awarded: xpReward,
       course_completed: courseCompleted,
-      course_xp_awarded: courseXp,
       certificate,
       progress_id: progress.id,
     })

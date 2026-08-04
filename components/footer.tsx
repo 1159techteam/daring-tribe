@@ -36,11 +36,6 @@ export function Footer() {
                     Success Stories
                   </Link>
                 </li>
-                <li>
-                  <Link href="/course" className="hover:text-accent transition-colors">
-                    Training Program
-                  </Link>
-                </li>
               </ul>
             </div>
 

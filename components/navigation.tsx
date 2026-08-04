@@ -6,6 +6,22 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useAuth } from "@/components/providers/auth-provider"
+import { UserMenu } from "@/components/user-menu"
+
+const publicLinks = [
+  { href: "/about", label: "About" },
+  { href: "/learn", label: "Learn" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+] as const
+
+const memberLinks = [
+  { href: "/learn", label: "Learn" },
+  { href: "/quests", label: "Quests" },
+  { href: "/badges", label: "Badges" },
+  { href: "/leaderboard", label: "Leaderboard" },
+] as const
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,16 +31,8 @@ export function Navigation() {
   const isActive = (path: string) =>
     pathname === path || (path !== "/" && pathname.startsWith(path))
 
-  const links = [
-    { href: "/about", label: "About" },
-    { href: "/learn", label: "Learn" },
-    { href: "/quests", label: "Quests" },
-    { href: "/badges", label: "Badges" },
-    { href: "/testimonials", label: "Testimonials" },
-    { href: "/blog", label: "Blog" },
-    { href: "/leaderboard", label: "Leaderboard" },
-    { href: "/contact", label: "Contact" },
-  ]
+  const links = !loading && user ? memberLinks : publicLinks
+  const showJoinTribe = !loading && !user
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -51,25 +59,26 @@ export function Navigation() {
                 {l.label}
               </Link>
             ))}
-            {!loading && user ? (
-              <Button size="sm" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                <Link href="/profile">My Profile</Link>
-              </Button>
-            ) : (
+            {showJoinTribe ? (
               <Button size="sm" className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90" asChild>
                 <Link href="/login">Join Tribe</Link>
               </Button>
-            )}
+            ) : !loading && user ? (
+              <UserMenu />
+            ) : null}
           </div>
 
-          <button
-            className="lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center gap-3 lg:hidden">
+            {!loading && user ? <UserMenu /> : null}
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {isOpen && (
@@ -86,11 +95,13 @@ export function Navigation() {
                 {l.label}
               </Link>
             ))}
-            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-2" asChild>
-              <Link href={user ? "/profile" : "/login"} onClick={() => setIsOpen(false)}>
-                {user ? "My Profile" : "Join Tribe"}
-              </Link>
-            </Button>
+            {showJoinTribe ? (
+              <Button className="mt-2 w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                <Link href="/login" onClick={() => setIsOpen(false)}>
+                  Join Tribe
+                </Link>
+              </Button>
+            ) : null}
           </div>
         )}
       </div>

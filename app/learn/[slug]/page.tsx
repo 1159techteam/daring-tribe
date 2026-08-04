@@ -124,7 +124,7 @@ export default function CourseDetailPage() {
         setMsg("Already completed — no extra XP")
       } else {
         let text = `+${data.xp_awarded} XP`
-        if (data.course_completed) text += ` · Course completed +${data.course_xp_awarded} XP!`
+        if (data.course_completed) text += " · Course completed!"
         setMsg(text)
       }
     } catch (e) {
@@ -231,7 +231,9 @@ export default function CourseDetailPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 px-2 text-xs text-[#6D5D56]">Course bonus: +{course.xp_bonus} XP</p>
+          <p className="mt-4 px-2 text-xs text-[#6D5D56]">
+            {lessons.reduce((sum, l) => sum + l.xp_reward, 0).toLocaleString()} XP total
+          </p>
         </aside>
       </div>
       <Footer />

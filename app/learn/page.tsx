@@ -153,8 +153,8 @@ export default function LearnCatalogPage() {
                   <h2 className="mt-4 font-display text-2xl font-bold text-[#3E2C1C]">{course.title}</h2>
                   <p className="mt-2 flex-1 text-sm text-[#6D5D56]">{course.description}</p>
                   <p className="mt-4 text-xs text-[#6D5D56]">
-                    {lessonCount} lesson{lessonCount === 1 ? "" : "s"} · +{course.xp_bonus} XP course
-                    bonus
+                    {lessonCount} lesson{lessonCount === 1 ? "" : "s"} ·{" "}
+                    {course.xp_bonus.toLocaleString()} XP total
                   </p>
 
                   <div className="mt-4">
