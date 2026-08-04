@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CadreStar } from "@/components/learn/cadre-star"
+import { Spinner } from "@/components/ui/spinner"
 
 type Row = {
   rank: number
@@ -17,6 +18,7 @@ type Row = {
 
 export default function LeaderboardPage() {
   const [rows, setRows] = useState<Row[]>([])
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -27,6 +29,7 @@ export default function LeaderboardPage() {
         setRows(data.leaderboard || [])
       })
       .catch((e) => setError(e.message))
+      .finally(() => setLoading(false))
   }, [])
 
   return (
@@ -53,7 +56,17 @@ export default function LeaderboardPage() {
               </tr>
             </thead>
             <tbody>
-              {rows.map((r) => (
+              {loading && (
+                <tr>
+                  <td colSpan={5} className="px-4 py-12">
+                    <div className="flex justify-center">
+                      <Spinner size="lg" />
+                    </div>
+                  </td>
+                </tr>
+              )}
+              {!loading &&
+                rows.map((r) => (
                 <tr key={r.rank} className="border-t border-[#3E2C1C]/5">
                   <td className="px-4 py-3 font-semibold text-[#D4AF37]">{r.rank}</td>
                   <td className="px-4 py-3">
@@ -72,7 +85,7 @@ export default function LeaderboardPage() {
                   <td className="px-4 py-3 text-[#3E2C1C]">{r.lifetime_xp.toLocaleString()}</td>
                 </tr>
               ))}
-              {!error && rows.length === 0 && (
+              {!loading && !error && rows.length === 0 && (
                 <tr>
                   <td colSpan={5} className="px-4 py-8 text-center text-[#6D5D56]">
                     No rankings yet — be the first to earn XP.
