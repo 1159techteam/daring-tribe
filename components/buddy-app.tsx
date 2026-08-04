@@ -59,7 +59,7 @@ export function BuddyApp() {
               </div>
 
               <p className="text-base md:text-lg text-[#6D5D56] leading-relaxed mt-6 mb-10 font-medium">
-                Complete quests, earn XP from learning on Daring Tribe, redeem rewards, and track your performance — one wallet across both apps. Create your Tribe account first, then play on Buddy App with the same login.
+                Complete quests, earn XP from learning on Daring Tribe, redeem rewards, and track your performance. Create your Tribe account first, then play on Buddy App with the same login.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
