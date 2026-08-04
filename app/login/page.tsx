@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/supabase/client"
 import { useAuth } from "@/components/providers/auth-provider"
+import { Icons } from "@/components/icons"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -16,6 +17,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [googleLoading, setGoogleLoading] = useState(false)
 
   useEffect(() => {
     if (authLoading) return
@@ -48,14 +50,19 @@ export default function LoginPage() {
 
   async function googleSignIn() {
     setError(null)
-    const supabase = createClient()
-    const { error: authError } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    })
-    if (authError) setError(authError.message)
+    setGoogleLoading(true)
+    try {
+      const supabase = createClient()
+      const { error: authError } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback?next=/profile`,
+        },
+      })
+      if (authError) setError(authError.message)
+    } finally {
+      setGoogleLoading(false)
+    }
   }
 
   if (authLoading || user) {
@@ -123,9 +130,11 @@ export default function LoginPage() {
             type="button"
             variant="outline"
             onClick={googleSignIn}
+            disabled={googleLoading}
             className="mt-3 w-full border-[#3E2C1C]/20 bg-white/50 py-6 text-[#3E2C1C] backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-[#8D5B3E]/40 hover:bg-[#8D5B3E]/10 hover:text-[#8D5B3E] hover:shadow-[0_12px_28px_rgba(141,91,62,0.15)]"
           >
-            Continue with Google
+            <Icons.google className="mr-2 h-4 w-4 shrink-0" />
+            {googleLoading ? "Redirecting…" : "Continue with Google"}
           </Button>
           <p className="mt-6 text-center text-sm text-[#6D5D56]">
             Don’t have an account yet?{" "}
