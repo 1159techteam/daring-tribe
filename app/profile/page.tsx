@@ -45,7 +45,7 @@ type ProfilePayload = {
 }
 
 export default function ProfilePage() {
-  const { user, loading: authLoading, supabase } = useAuth()
+  const { user, loading: authLoading } = useAuth()
   const router = useRouter()
   const [profile, setProfile] = useState<ProfilePayload | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -99,10 +99,6 @@ export default function ProfilePage() {
     setCheckingIn(true)
     setCheckinMsg(null)
     try {
-      // Ensure auth cookies are fresh before the Route Handler runs
-      if (supabase) {
-        await supabase.auth.getUser()
-      }
       const res = await fetch("/api/learn/checkin", {
         method: "POST",
         credentials: "same-origin",

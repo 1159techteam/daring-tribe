@@ -74,10 +74,7 @@ export function CertificateOfCompletion({
       {/* Content */}
       <div className="relative flex h-full flex-col items-center justify-between px-8 py-7 text-center sm:px-14 sm:py-10">
         <div>
-          <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-[#8D5B3E] sm:text-[10px]">
-            School for the Daring
-          </p>
-          <p className="mt-1 font-display text-lg font-bold tracking-tight text-[#3E2C1C] sm:text-2xl">
+          <p className="font-display text-lg font-bold tracking-tight text-[#3E2C1C] sm:text-2xl">
             Daring <span className="text-[#C9A227]">Tribe</span>
           </p>
           <div className="mx-auto mt-2 h-px w-24 bg-gradient-to-r from-transparent via-[#C9A227] to-transparent sm:w-36" />

@@ -49,12 +49,7 @@ export async function POST() {
       error,
     } = await supabase.auth.getUser()
     if (error || !user) {
-      // One refresh pass for stale access tokens before failing
-      const { data: refreshed } = await supabase.auth.refreshSession()
-      if (!refreshed.session?.user) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-      }
-      return handleCheckin(refreshed.session.user.id, supabase)
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
     return handleCheckin(user.id, supabase)

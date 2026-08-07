@@ -50,7 +50,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(false)
     })
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN" || event === "SIGNED_OUT" || event === "TOKEN_REFRESHED") {
+      if (event === "SIGNED_IN" || event === "SIGNED_OUT") {
         setUser(session?.user ?? null)
         setLoading(false)
       }
