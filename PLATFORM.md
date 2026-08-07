@@ -27,7 +27,8 @@ NEXT_PUBLIC_SITE_URL=https://buddy.1159realty.com
    - `https://daring-tribe.1159realty.com/auth/callback`
    - Existing Buddy callback URLs
 2. Site URL can stay Buddy’s; redirects are allowlisted per URL above.
-3. Ensure label **`Daring Tribe`** exists in `labels` (no KPIs). Apps resolve by **name**, not hardcoded UUID.
+3. **JWT expiry (session length):** Authentication → **Settings** (or JWT / Sessions) → set **JWT expiry** to `7200` (2 hours). Applies to both Buddy and Daring Tribe (shared project). Users must sign in again after that unless you add a safe refresh path later.
+4. Ensure label **`Daring Tribe`** exists in `labels` (no KPIs). Apps resolve by **name**, not hardcoded UUID.
 
 ## Label assignment
 

@@ -18,7 +18,7 @@ export function createClient() {
   client = createBrowserClient(url, anon, {
     cookieOptions: getAuthCookieOptions(),
     auth: {
-      autoRefreshToken: true,
+      autoRefreshToken: false,
       persistSession: true,
       detectSessionInUrl: false,
       flowType: "pkce",

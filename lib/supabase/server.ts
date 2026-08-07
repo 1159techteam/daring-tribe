@@ -25,6 +25,11 @@ export async function createServerClient() {
         }
       },
     },
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+      detectSessionInUrl: false,
+    },
   })
 }
 
