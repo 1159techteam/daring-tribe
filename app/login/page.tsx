@@ -38,7 +38,6 @@ export default function LoginPage() {
         setError(authError.message)
         return
       }
-      await fetch("/api/auth/assign-label", { method: "POST" }).catch(() => null)
       router.push("/profile")
       router.refresh()
     } catch (err) {
