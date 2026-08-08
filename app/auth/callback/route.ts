@@ -1,6 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server"
 import { NextRequest, NextResponse } from "next/server"
-import { assignDaringTribeLabel } from "@/lib/labels"
+import { assignDaringTribeLabelIfUnset } from "@/lib/labels"
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url)
@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
     const userId = data.session?.user?.id
     if (userId) {
       try {
-        await assignDaringTribeLabel(userId)
+        await assignDaringTribeLabelIfUnset(userId)
       } catch {
         // Label may already exist or DB not migrated yet
       }

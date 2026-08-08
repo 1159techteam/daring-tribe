@@ -32,7 +32,7 @@ NEXT_PUBLIC_SITE_URL=https://buddy.1159realty.com
 
 ## Label assignment
 
-On Tribe signup, server upserts `user_labels` for label name `Daring Tribe`.
+Buddy admin owns user labels (Media Generalist, etc.). Daring Tribe only assigns the **Daring Tribe** label when a user has **no label yet** (typically new signup). Logging in never overwrites an existing label.
 
 ## Future CRM migration (Phase 6)
 
