@@ -37,8 +37,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const refresh = useCallback(async () => {
     if (!supabase) return
-    const { data } = await supabase.auth.getUser()
-    setUser(data.user ?? null)
+    const { data } = await supabase.auth.getSession()
+    setUser(data.session?.user ?? null)
   }, [supabase])
 
   useEffect(() => {
