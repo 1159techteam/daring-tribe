@@ -1,14 +1,12 @@
 "use client"
 
 import { useEffect } from "react"
-import { createClient } from "@/lib/supabase/client"
 
 export default function LogoutPage() {
   useEffect(() => {
     const run = async () => {
       try {
-        const supabase = createClient()
-        await supabase.auth.signOut()
+        await fetch("/api/auth/signout", { method: "POST", credentials: "include" })
       } catch {
         // ignore
       }

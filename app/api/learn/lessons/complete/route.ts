@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { grantXp } from "@/lib/learn/xp"
 import { issueCourseCertificate } from "@/lib/learn/certificates"
 
@@ -7,10 +8,7 @@ import { issueCourseCertificate } from "@/lib/learn/certificates"
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }

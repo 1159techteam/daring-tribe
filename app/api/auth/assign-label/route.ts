@@ -1,15 +1,13 @@
 import { NextResponse } from "next/server"
 import { createServerClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { assignDaringTribeLabelIfUnset } from "@/lib/labels"
 
 /** POST /api/auth/assign-label: Daring Tribe label for new members only (never overwrites Buddy admin labels) */
 export async function POST() {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
