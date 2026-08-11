@@ -11,7 +11,7 @@ import {
 } from "react"
 import type { User } from "@supabase/supabase-js"
 import { SESSION_EXPIRED_ERROR } from "@/lib/auth/auth-errors"
-import { buddyCookieRefreshUrl } from "@/lib/auth/buddy-url"
+import { redirectToBuddyCookieRefresh } from "@/lib/auth/session-recovery"
 
 type AuthContextValue = {
   user: User | null
@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       const data = await res.json()
       if (data.sessionExpired || data.error === SESSION_EXPIRED_ERROR) {
-        window.location.href = buddyCookieRefreshUrl(window.location.href)
+        redirectToBuddyCookieRefresh()
         return
       }
       setUser(data.user ? toUser(data.user) : null)
