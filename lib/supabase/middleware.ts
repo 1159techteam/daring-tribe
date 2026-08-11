@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr"
 import { NextResponse, type NextRequest } from "next/server"
 import { buddyCookieRefreshUrl } from "@/lib/auth/buddy-url"
 import { getSessionEpoch, SESSION_EPOCH_COOKIE } from "@/lib/auth/session-epoch"
-import { decodeJwtPayload, isAccessTokenValid } from "@/lib/auth/jwt"
+import { decodeJwtPayload, shouldProactivelyRefresh } from "@/lib/auth/jwt"
 import { getAuthCookieOptions } from "@/lib/supabase/cookie-options"
 
 const AUTH_PATHS = ["/login", "/logout", "/signup", "/forgot-password", "/reset-password"]
@@ -61,7 +61,7 @@ export async function updateSession(request: NextRequest) {
     !pathname.startsWith("/api/")
   ) {
     const payload = decodeJwtPayload(session.access_token)
-    if (payload?.exp && !isAccessTokenValid(payload.exp)) {
+    if (payload?.exp && shouldProactivelyRefresh(payload.exp)) {
       return NextResponse.redirect(buddyCookieRefreshUrl(request.url))
     }
   }

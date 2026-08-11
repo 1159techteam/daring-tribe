@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { createServiceRoleClient } from "@/lib/supabase/server"
+import { requireLearnMember } from "@/lib/learn/require-member"
 import {
   DEFAULT_CADRE_TIERS,
   getCadreForLevel,
@@ -8,9 +9,12 @@ import {
 } from "@/lib/learn/levels"
 import { displayUsername } from "@/lib/learn/display-name"
 
-/** GET /api/learn/leaderboard: top learners by lifetime XP */
+/** GET /api/learn/leaderboard: top learners by lifetime XP (learn members only) */
 export async function GET() {
   try {
+    const auth = await requireLearnMember()
+    if (auth.error) return auth.error
+
     const admin = createServiceRoleClient()
 
     const { data: balances } = await admin
