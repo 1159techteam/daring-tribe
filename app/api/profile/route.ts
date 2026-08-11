@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { getLifetimeXp, getSeasonXp } from "@/lib/learn/xp"
 import {
   DEFAULT_CADRE_TIERS,
@@ -13,10 +14,7 @@ import { sanitizeSocialHandles } from "@/lib/social-handles"
 export async function GET() {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
@@ -121,10 +119,7 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }

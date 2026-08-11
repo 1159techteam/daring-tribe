@@ -12,7 +12,7 @@ import { Icons } from "@/components/icons"
 
 export default function LoginPage() {
   const router = useRouter()
-  const { user, loading: authLoading } = useAuth()
+  const { user, loading: authLoading, refresh } = useAuth()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
@@ -38,7 +38,8 @@ export default function LoginPage() {
         setError(authError.message)
         return
       }
-      router.push("/profile")
+      await refresh()
+      router.replace("/profile")
       router.refresh()
     } catch (err) {
       setError(err instanceof Error ? err.message : "Login failed")

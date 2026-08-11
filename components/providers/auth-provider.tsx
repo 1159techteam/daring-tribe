@@ -9,67 +9,75 @@ import {
   useState,
   type ReactNode,
 } from "react"
-import type { User, SupabaseClient } from "@supabase/supabase-js"
-import { createClient } from "@/lib/supabase/client"
+import type { User } from "@supabase/supabase-js"
 
 type AuthContextValue = {
   user: User | null
   loading: boolean
-  supabase: SupabaseClient | null
   signOut: () => Promise<void>
   refresh: () => Promise<void>
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null)
 
+type SessionUser = {
+  id: string
+  email?: string
+  user_metadata?: User["user_metadata"]
+}
+
+function toUser(sessionUser: SessionUser): User {
+  return {
+    id: sessionUser.id,
+    email: sessionUser.email,
+    user_metadata: sessionUser.user_metadata ?? {},
+    app_metadata: {},
+    aud: "authenticated",
+    created_at: "",
+  } as User
+}
+
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [supabase, setSupabase] = useState<SupabaseClient | null>(null)
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+  const refresh = useCallback(async () => {
     try {
-      setSupabase(createClient())
+      const res = await fetch("/api/auth/session", { credentials: "include" })
+      if (!res.ok) {
+        setUser(null)
+        return
+      }
+      const data = await res.json()
+      setUser(data.user ? toUser(data.user) : null)
     } catch {
-      setLoading(false)
+      setUser(null)
     }
   }, [])
 
-  const refresh = useCallback(async () => {
-    if (!supabase) return
-    const { data } = await supabase.auth.getSession()
-    setUser(data.session?.user ?? null)
-  }, [supabase])
-
   useEffect(() => {
-    if (!supabase) return
     let mounted = true
-    supabase.auth.getSession().then(({ data }) => {
-      if (!mounted) return
-      setUser(data.session?.user ?? null)
-      setLoading(false)
-    })
-    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN" || event === "SIGNED_OUT") {
-        setUser(session?.user ?? null)
-        setLoading(false)
-      }
+    refresh().finally(() => {
+      if (mounted) setLoading(false)
     })
     return () => {
       mounted = false
-      sub.subscription.unsubscribe()
     }
-  }, [supabase])
+  }, [refresh])
 
   const signOut = useCallback(async () => {
-    if (supabase) await supabase.auth.signOut()
+    try {
+      await fetch("/api/auth/signout", { method: "POST", credentials: "include" })
+    } catch {
+      // ignore
+    }
     setUser(null)
     window.location.href = "/"
-  }, [supabase])
+  }, [])
 
   const value = useMemo(
-    () => ({ user, loading, supabase, signOut, refresh }),
-    [user, loading, supabase, signOut, refresh]
+    () => ({ user, loading, signOut, refresh }),
+    [user, loading, signOut, refresh]
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

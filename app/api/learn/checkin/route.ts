@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { grantXp } from "@/lib/learn/xp"
 
 /** Fallback if app_settings.learn_daily_checkin_xp is missing */
@@ -44,10 +45,7 @@ async function getDailyCheckinXp(admin: ReturnType<typeof createServiceRoleClien
 export async function POST() {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }

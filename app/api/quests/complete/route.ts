@@ -1,15 +1,13 @@
 import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { normalizeInstagramHandle } from "@/lib/social-handles"
 
 /** POST /api/quests/complete: { quest_id } → pending review (Buddy admin approves XP) */
 export async function POST(request: Request) {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }

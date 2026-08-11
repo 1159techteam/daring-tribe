@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { DARING_TRIBE_LABEL_NAME } from "@/lib/labels"
-import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { createServiceRoleClient } from "@/lib/supabase/server"
 
 type MemberResult =
   | { user: { id: string }; error?: never }
@@ -8,11 +9,7 @@ type MemberResult =
 
 /** Authenticated user with the Daring Tribe label (learn member). */
 export async function requireLearnMember(): Promise<MemberResult> {
-  const supabase = await createServerClient()
-  const {
-    data: { user },
-    error: authError,
-  } = await supabase.auth.getUser()
+  const { user, error: authError } = await getSessionUser()
 
   if (authError || !user) {
     return { error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }) }

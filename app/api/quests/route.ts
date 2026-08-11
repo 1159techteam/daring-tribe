@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { createServerClient, createServiceRoleClient } from "@/lib/supabase/server"
+import { getSessionUser } from "@/lib/auth/get-session-user"
 import { normalizeInstagramHandle } from "@/lib/social-handles"
 
 const TRIBE_TITLE_PREFIX = "Tribe:"
@@ -25,10 +26,7 @@ type CompletionRow = {
 export async function GET() {
   try {
     const supabase = await createServerClient()
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser()
+    const { user, error } = await getSessionUser()
     if (error || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
