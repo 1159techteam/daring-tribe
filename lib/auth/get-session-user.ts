@@ -1,7 +1,8 @@
 import type { User } from "@supabase/supabase-js"
+import { cookies } from "next/headers"
 import { SESSION_EXPIRED_ERROR } from "@/lib/auth/auth-errors"
 import { decodeJwtPayload, isAccessTokenValid } from "@/lib/auth/jwt"
-import { createServerClient } from "@/lib/supabase/server"
+import { readStoredAuthSession, userFromStoredSession } from "@/lib/auth/read-auth-cookies"
 
 export type SessionState =
   | { kind: "authenticated"; user: User }
@@ -9,28 +10,37 @@ export type SessionState =
   | { kind: "none" }
   | { kind: "error"; error: Error }
 
+/** Read session from cookies only. Never calls getSession()/getUser() (those refresh tokens). */
 export async function getSessionState(): Promise<SessionState> {
-  const supabase = await createServerClient()
-  const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+  try {
+    const cookieStore = await cookies()
+    const session = readStoredAuthSession(cookieStore.getAll())
 
-  if (sessionError) {
-    return { kind: "error", error: sessionError }
+    if (!session?.access_token) {
+      return { kind: "none" }
+    }
+
+    const payload = decodeJwtPayload(session.access_token)
+    if (!payload?.sub || !payload.exp) {
+      return { kind: "none" }
+    }
+
+    if (!isAccessTokenValid(payload.exp)) {
+      return { kind: "expired" }
+    }
+
+    const user = userFromStoredSession(session)
+    if (!user) {
+      return { kind: "none" }
+    }
+
+    return { kind: "authenticated", user }
+  } catch (error) {
+    return {
+      kind: "error",
+      error: error instanceof Error ? error : new Error("Failed to read session"),
+    }
   }
-
-  if (!session?.user || !session.access_token) {
-    return { kind: "none" }
-  }
-
-  const payload = decodeJwtPayload(session.access_token)
-  if (!payload?.sub || !payload.exp) {
-    return { kind: "none" }
-  }
-
-  if (!isAccessTokenValid(payload.exp)) {
-    return { kind: "expired" }
-  }
-
-  return { kind: "authenticated", user: session.user }
 }
 
 export async function getSessionUser(): Promise<{ user: User | null; error: Error | null }> {
