@@ -903,6 +903,42 @@ That Friday? It grew a lot of people.
 
 Are you in a quiet moment right now? Good. Stay in it. The answer is coming.`,
   },
+
+  {
+    id: "21",
+    slug: "exclusive-yacht-party-for-top-performing-realtors",
+    categoryId: "daring",
+    category: "What's Daring?",
+    title: "Exclusive Yacht Party for Top-Performing Realtors",
+    author: "Editorial Team",
+    date: "SEPTEMBER 2026",
+    image: "/blog/september-yacht-party.jpg",
+    excerpt:
+      "Okay so… we might have gone a little overboard this time. We're putting 25 top-performing realtors on a yacht this September, and the invite list is being written one closed deal at a time.",
+    content: `Okay so… we might have gone a little overboard this time.
+
+Sun on the water, a glass in hand, and a boat full of the sharpest realtors in the game — that's not a daydream, that's Realtors Escape, and it's happening this September.
+
+We're putting 25 top-performing realtors on a yacht, and the invite list is being written right now, one closed deal at a time.
+
+**How To Qualify**
+
+Close property worth 100 million naira, or close units at Cisca Villa, or an acre deal on any other 1159 Realty listed property, and your access awaits.
+
+**What You Get**
+
+- Your full commission, as usual — no changes there
+- A spot among the first qualified agents
+- A seat at the table with people who can genuinely open doors for your career
+
+This isn't just a party. It's a room full of people who can move your career forward, and a seat there is worth more than the view.
+
+**Sell Your Way On Board**
+
+25 spots. One clear path in. Close a qualifying deal, and the yacht is waiting.
+
+Sell your way onboard. Let's get you on that yacht!`,
+  },
 ];
 
 
