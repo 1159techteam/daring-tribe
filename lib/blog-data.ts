@@ -912,7 +912,7 @@ Are you in a quiet moment right now? Good. Stay in it. The answer is coming.`,
     title: "Exclusive Yacht Party for Top-Performing Realtors",
     author: "Editorial Team",
     date: "SEPTEMBER 2026",
-    image: "/blog/september-yacht-party.jpg",
+    image: "/blog/yatch.png",
     excerpt:
       "Okay so… we might have gone a little overboard this time. We're putting 25 top-performing realtors on a yacht this September, and the invite list is being written one closed deal at a time.",
     content: `Okay so… we might have gone a little overboard this time.
