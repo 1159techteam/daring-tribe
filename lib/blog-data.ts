@@ -863,8 +863,7 @@ The Daring Tribe taught me that. And now I’m living it.`,
     title: "The Day the Training Room Got Quiet",
     author: "",
     date: "SEPTEMBER 2026",
-    publishedAt: "2026-09-01T08:00:00+01:00",
-    image: "/blog/september-training-quiet.png",
+    image: "/blog/september-training-quiet.jpg",
     excerpt:
       "A simple question in Friday training — and real silence. Not failure. A turning point. The best realtors stay in the uncomfortable moments long enough to grow through them.",
     content: `It was a regular Friday session.
