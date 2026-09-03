@@ -6,7 +6,7 @@ export interface BlogPost {
   title: string;
   author: string;
   date: string;
-  /** ISO datetime — post is hidden until this moment. Omit = already live. */
+  /** ISO datetime  post is hidden until this moment. Omit = already live. */
   publishedAt?: string;
   image: string;
   excerpt: string;
@@ -711,7 +711,7 @@ The difference? This.
 
 Few minutes from Kwara State University. Thousands of students, lecturers, and young professionals who need housing year-round.
 
-Dia’s Crest Hostel is right there — 24/7 light, water, solar, security. That kind of development doesn’t go up in just any area. It goes up where the demand is real and growing.
+Dia’s Crest Hostel is right there  24/7 light, water, solar, security. That kind of development doesn’t go up in just any area. It goes up where the demand is real and growing.
 
 BAJ Court launched in that same community and sold out fast. Jonny Gate II is the next opportunity in that same axis.
 
@@ -729,9 +729,9 @@ Now they’re curious. Now they want to know more.
 
 **The Questions They’ll Ask**
 
-“Is the land dry?” — Yes. Dry land, fully fenced. No stories.
-“What’s around it?” — Dia’s Crest Hostel. KWASU community. Growing infrastructure. The kind of neighbourhood that rewards early movers.
-“Is it worth it?” — BAJ Court answered that question. The people who moved early are glad they did.
+“Is the land dry?”  Yes. Dry land, fully fenced. No stories.
+“What’s around it?”  Dia’s Crest Hostel. KWASU community. Growing infrastructure. The kind of neighbourhood that rewards early movers.
+“Is it worth it?”  BAJ Court answered that question. The people who moved early are glad they did.
 
 **How to Close**
 
@@ -740,7 +740,7 @@ After you’ve answered their questions, don’t wait for them to decide alone. 
 
 Soft. Direct. No pressure.
 
-Jonny Gate II sells itself — but only if you show up prepared.
+Jonny Gate II sells itself  but only if you show up prepared.
 Know the story. Tell it well. Ask for the next step.
 Now go. Your clients are waiting.`,
   },
@@ -758,16 +758,16 @@ Now go. Your clients are waiting.`,
     publishedAt: "2026-08-04T08:00:00+01:00",
     image: "/blog/august-rewards-claimed.png",
     excerpt:
-      "Q2 is done. The power banks went to the ones who moved. Every sale and social engagement earns XP — currency you can trade for real rewards. Q3 is wide open.",
+      "Q2 is done. The power banks went to the ones who moved. Every sale and social engagement earns XP  currency you can trade for real rewards. Q3 is wide open.",
     content: `Let’s talk about what happened in Q2.
 
-Some people in this tribe showed up — really showed up. They sold. They engaged. They earned their XP points on the Quest. And when the time came?
+Some people in this tribe showed up  really showed up. They sold. They engaged. They earned their XP points on the Quest. And when the time came?
 
 They walked away with power banks.
 
 Not because they got lucky. Because they played the game.
 
-If you’re just hearing about the Quest for the first time — here’s how it works.
+If you’re just hearing about the Quest for the first time  here’s how it works.
 
 Every time you sell a property or engage on our social media handles, you earn XP points. Those points are not just numbers. They are currency.
 
@@ -786,7 +786,7 @@ Q2 is done. The power banks went to the ones who moved.
 
 Q3 is wide open.
 
-The question is — what are you playing for?
+The question is  what are you playing for?
 
 Get on the Quest. Earn your XP. And let’s see your name at the top when it’s time to celebrate again.`,
   },
@@ -801,12 +801,12 @@ Get on the Quest. Earn your XP. And let’s see your name at the top when it’s
     publishedAt: "2026-08-18T08:00:00+01:00",
     image: "/blog/august-learn-and-earn.png",
     excerpt:
-      "When I joined the Daring Tribe, I had nothing — no contacts, no sales background. What I had was a decision to take it seriously. That decision changed everything.",
+      "When I joined the Daring Tribe, I had nothing  no contacts, no sales background. What I had was a decision to take it seriously. That decision changed everything.",
     content: `When I joined the Daring Tribe, I had nothing.
 
 No contacts in real estate. No background in sales. No idea how a property deal even worked from start to finish.
 
-What I had was a decision — that I was going to take this seriously.
+What I had was a decision  that I was going to take this seriously.
 
 And that decision changed everything.
 
@@ -828,7 +828,7 @@ What if they ask something I can’t answer? What if I sound inexperienced? What
 
 But I had put in the work. I knew what I was talking about.
 
-So I showed up for that conversation anyway — not perfectly, but prepared.
+So I showed up for that conversation anyway  not perfectly, but prepared.
 
 I listened more than I talked. I focused on what they actually needed. I followed up when others would have let it go cold.
 And they came back.
@@ -837,7 +837,7 @@ We closed.
 
 People act like having no experience is a problem.
 
-For me, it was a clean slate. No wrong habits. No shortcuts. I learned everything the right way from the beginning — and that foundation is what’s carrying me now.
+For me, it was a clean slate. No wrong habits. No shortcuts. I learned everything the right way from the beginning  and that foundation is what’s carrying me now.
 
 Zero experience didn’t hold me back. Choosing not to start would have.
 
@@ -847,7 +847,7 @@ I talk about properties with confidence. I handle objections without freezing. I
 But the biggest thing that changed? How I see myself.
 Real estate didn’t just give me income. It gave me a version of myself I actually respect.
 
-If you’ve been waiting until you “know enough” to start — you’ll be waiting forever.
+If you’ve been waiting until you “know enough” to start  you’ll be waiting forever.
 
 The learning happens when you begin. Not before.
 The Daring Tribe taught me that. And now I’m living it.`,
@@ -865,7 +865,7 @@ The Daring Tribe taught me that. And now I’m living it.`,
     date: "SEPTEMBER 2026",
     image: "/blog/september-training-quiet.jpg",
     excerpt:
-      "A simple question in Friday training — and real silence. Not failure. A turning point. The best realtors stay in the uncomfortable moments long enough to grow through them.",
+      "A simple question in Friday training  and real silence. Not failure. A turning point. The best realtors stay in the uncomfortable moments long enough to grow through them.",
     content: `It was a regular Friday session.
 
 Everyone was on the call. Cameras off because let’s be honest, that’s just how online training goes.
@@ -959,7 +959,7 @@ export function getBlogPost(slug: string): BlogPost | undefined {
   return BLOG_DATA.find((post) => post.slug === slug);
 }
 
-/** Live post only — returns undefined if missing or not yet published. */
+/** Live post only  returns undefined if missing or not yet published. */
 export function getPublishedBlogPost(
   slug: string,
   now: Date = new Date(),
