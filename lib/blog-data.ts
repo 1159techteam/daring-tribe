@@ -868,12 +868,12 @@ The Daring Tribe taught me that. And now I’m living it.`,
       "A simple question in Friday training — and real silence. Not failure. A turning point. The best realtors stay in the uncomfortable moments long enough to grow through them.",
     content: `It was a regular Friday session.
 
-Everyone was on the call. Cameras off — because let’s be honest, that’s just how online training goes.
+Everyone was on the call. Cameras off because let’s be honest, that’s just how online training goes.
 A few people typing. A few people probably eating.
 
 And then the facilitator asked a simple question.
 
-“If a client asked you right now why they should invest in real estate over every other option — what would you say?”
+“If a client asked you right now why they should invest in real estate over every other option what would you say?”
 
 Silence.
 
@@ -888,7 +888,7 @@ They couldn’t answer the question in their own words. From their own convictio
 
 That silence was not a failure. It was a turning point.
 
-Because the people who sat in that quiet and felt uncomfortable — they were the ones who showed up differently the next session. They came back with answers. With confidence. With their own words.
+Because the people who sat in that quiet and felt uncomfortable they were the ones who showed up differently the next session. They came back with answers. With confidence. With their own words.
 
 That’s what training actually does.
 
