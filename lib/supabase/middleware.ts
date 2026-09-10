@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { buddyCookieRefreshUrl } from "@/lib/auth/buddy-url"
 import { getSessionEpoch, SESSION_EPOCH_COOKIE } from "@/lib/auth/session-epoch"
+import { AUTH_REFRESH_FAILED_COOKIE } from "@/lib/auth/session-cookies"
 import { decodeJwtPayload, shouldProactivelyRefresh } from "@/lib/auth/jwt"
 import {
   clearSupabaseAuthCookies,
@@ -53,6 +54,15 @@ export async function updateSession(request: NextRequest) {
     return response
   }
 
+  if (
+    !isAuthPath &&
+    !pathname.startsWith("/api/") &&
+    request.cookies.get(AUTH_REFRESH_FAILED_COOKIE)?.value
+  ) {
+    const loginUrl = new URL("/login", request.url)
+    return NextResponse.redirect(loginUrl)
+  }
+
   if (!isAuthPath && !isPublicPath && !pathname.startsWith("/api/")) {
     const accessToken = readAccessTokenFromRequest(request)
     if (accessToken) {
@@ -61,6 +71,14 @@ export async function updateSession(request: NextRequest) {
         return NextResponse.redirect(buddyCookieRefreshUrl(request.url))
       }
     }
+  }
+
+  if (pathname === "/login" || pathname === "/signup") {
+    response.cookies.set(AUTH_REFRESH_FAILED_COOKIE, "", {
+      ...cookieOptions,
+      maxAge: 0,
+      path: "/",
+    })
   }
 
   response.cookies.set(SESSION_EPOCH_COOKIE, sessionEpoch, {
