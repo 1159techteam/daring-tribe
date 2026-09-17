@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero"
 import { HowItWorks } from "@/components/how-it-works"
 import { BuddyApp } from "@/components/buddy-app"
 import { HomeProof } from "@/components/home-proof"
+import { UpcomingEvent } from "@/components/upcoming-event"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
 import { Target, ArrowRight } from "lucide-react"
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen relative overflow-hidden">
       <Navigation />
       <Hero />
+      <UpcomingEvent />
       <HowItWorks />
       <BuddyApp />
       <HomeProof />
